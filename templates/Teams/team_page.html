@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block page_content %}
+
+<div class="container">
+    <div class="bs-docs-section">
+        <div class="page-header">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">{{ team.name }}</h3>
+                        </div>
+                        <div class="panel-body">
+                            <h4>Informacje</h4>
+                            <hr>
+                            <p>
+                                <!-- TODO Spis zawodników -->
+                                <b>Kolor:</b> {{ team.color }}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

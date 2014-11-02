@@ -1,0 +1,293 @@
+[
+{
+    "pk": 1,
+    "fields": {
+        "short_name": "PG",
+        "full_name": "Point Guard"
+    },
+    "model": "Players.position"
+},
+{
+    "pk": 2,
+    "fields": {
+        "short_name": "PG/SG",
+        "full_name": "Point Guard / Shooting Guard"
+    },
+    "model": "Players.position"
+},
+{
+    "pk": 3,
+    "fields": {
+        "short_name": "SG",
+        "full_name": "Shooting Guard"
+    },
+    "model": "Players.position"
+},
+{
+    "pk": 4,
+    "fields": {
+        "short_name": "SG/SF",
+        "full_name": "Shooting Guard / Small Forward"
+    },
+    "model": "Players.position"
+},
+{
+    "pk": 5,
+    "fields": {
+        "short_name": "SF",
+        "full_name": "Small Forward"
+    },
+    "model": "Players.position"
+},
+{
+    "pk": 6,
+    "fields": {
+        "short_name": "SF/PF",
+        "full_name": "Small Forward / Power Forward"
+    },
+    "model": "Players.position"
+},
+{
+    "pk": 7,
+    "fields": {
+        "short_name": "PF",
+        "full_name": "Power Forward"
+    },
+    "model": "Players.position"
+},
+{
+    "pk": 8,
+    "fields": {
+        "short_name": "PF/C",
+        "full_name": "Power Forward / Center"
+    },
+    "model": "Players.position"
+},
+{
+    "pk": 9,
+    "fields": {
+        "short_name": "C",
+        "full_name": "Center"
+    },
+    "model": "Players.position"
+},
+{
+    "pk": 1,
+    "fields": {
+        "first_name": "Pawe\u0142",
+        "height": 186,
+        "birth_date": "1995-01-25",
+        "number": 33,
+        "position": 3,
+        "team": 1,
+        "last_name": "Adamczak"
+    },
+    "model": "Players.player"
+},
+{
+    "pk": 2,
+    "fields": {
+        "first_name": "Michael",
+        "height": 198,
+        "birth_date": "1980-02-19",
+        "number": 23,
+        "position": 3,
+        "team": 1,
+        "last_name": "Jordan"
+    },
+    "model": "Players.player"
+},
+{
+    "pk": 3,
+    "fields": {
+        "first_name": "Kevin",
+        "height": 208,
+        "birth_date": "1985-08-21",
+        "number": 67,
+        "position": 8,
+        "team": 1,
+        "last_name": "Love"
+    },
+    "model": "Players.player"
+},
+{
+    "pk": 4,
+    "fields": {
+        "first_name": "Dwight",
+        "height": 210,
+        "birth_date": "1990-07-24",
+        "number": 14,
+        "position": 9,
+        "team": 1,
+        "last_name": "Howard"
+    },
+    "model": "Players.player"
+},
+{
+    "pk": 5,
+    "fields": {
+        "first_name": "LeBron",
+        "height": 206,
+        "birth_date": "1988-07-31",
+        "number": 24,
+        "position": 6,
+        "team": 1,
+        "last_name": "James"
+    },
+    "model": "Players.player"
+},
+{
+    "pk": 6,
+    "fields": {
+        "first_name": "Kobe",
+        "height": 196,
+        "birth_date": "1982-06-25",
+        "number": 8,
+        "position": 3,
+        "team": 3,
+        "last_name": "Bryant"
+    },
+    "model": "Players.player"
+},
+{
+    "pk": 7,
+    "fields": {
+        "first_name": "Steve",
+        "height": 190,
+        "birth_date": "1982-02-28",
+        "number": 13,
+        "position": 1,
+        "team": 3,
+        "last_name": "Nash"
+    },
+    "model": "Players.player"
+},
+{
+    "pk": 8,
+    "fields": {
+        "first_name": "Marcin",
+        "height": 211,
+        "birth_date": "1989-05-15",
+        "number": 76,
+        "position": 9,
+        "team": 3,
+        "last_name": "Gortat"
+    },
+    "model": "Players.player"
+},
+{
+    "pk": 9,
+    "fields": {
+        "first_name": "Chris",
+        "height": 208,
+        "birth_date": "1983-08-20",
+        "number": 56,
+        "position": 8,
+        "team": 3,
+        "last_name": "Bosh"
+    },
+    "model": "Players.player"
+},
+{
+    "pk": 10,
+    "fields": {
+        "first_name": "Kevin",
+        "height": 207,
+        "birth_date": "1991-11-19",
+        "number": 34,
+        "position": 6,
+        "team": 3,
+        "last_name": "Durant"
+    },
+    "model": "Players.player"
+},
+{
+    "pk": 11,
+    "fields": {
+        "first_name": "Chris",
+        "height": 190,
+        "birth_date": "1986-07-17",
+        "number": 3,
+        "position": 1,
+        "team": 2,
+        "last_name": "Paul"
+    },
+    "model": "Players.player"
+},
+{
+    "pk": 12,
+    "fields": {
+        "first_name": "Jerry",
+        "height": 196,
+        "birth_date": "1970-06-25",
+        "number": 71,
+        "position": 2,
+        "team": 2,
+        "last_name": "West"
+    },
+    "model": "Players.player"
+},
+{
+    "pk": 13,
+    "fields": {
+        "first_name": "Giannis",
+        "height": 204,
+        "birth_date": "1994-09-17",
+        "number": 41,
+        "position": 4,
+        "team": 2,
+        "last_name": "Antetokounmpo"
+    },
+    "model": "Players.player"
+},
+{
+    "pk": 14,
+    "fields": {
+        "first_name": "Wojtek",
+        "height": 206,
+        "birth_date": "1994-08-21",
+        "number": 77,
+        "position": 7,
+        "team": 2,
+        "last_name": "Adaszy\u0144ski"
+    },
+    "model": "Players.player"
+},
+{
+    "pk": 15,
+    "fields": {
+        "first_name": "Maciek",
+        "height": 222,
+        "birth_date": "1994-05-14",
+        "number": 86,
+        "position": 9,
+        "team": 2,
+        "last_name": "Popiel"
+    },
+    "model": "Players.player"
+},
+{
+    "pk": 1,
+    "fields": {
+        "name": "Chicago Bulls",
+        "color": "czerwony"
+    },
+    "model": "Teams.team"
+},
+{
+    "pk": 2,
+    "fields": {
+        "name": "Utah Jazz",
+        "color": "niebieski"
+    },
+    "model": "Teams.team"
+},
+{
+    "pk": 3,
+    "fields": {
+        "name": "New York Knicks",
+        "color": "pomara\u0144czowy"
+    },
+    "model": "Teams.team"
+}
+]
