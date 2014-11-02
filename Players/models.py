@@ -14,10 +14,11 @@ class Player(models.Model):
     first_name = models.CharField(max_length=64)
     last_name = models.CharField(max_length=64)
     team = models.ForeignKey(Team)
-    birth_date = models.DateField()
-    number = models.PositiveIntegerField()
-    height = models.PositiveIntegerField()
     position = models.ForeignKey(Position)
+    birth_date = models.DateField()
+    height = models.PositiveIntegerField()
+    weight = models.PositiveIntegerField()
+    number = models.PositiveIntegerField()
 
     def __str__(self):
         return self.first_name + ' ' + self.last_name

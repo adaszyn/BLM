@@ -35,13 +35,14 @@
             </button>
             <a class="navbar-brand" href="#">Basketball League Manager</a>
         </div>
+        {% block navigation %}
         <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
                 <li class="active"><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="#">Drużyny</a></li>
             </ul>
         </div>
+        {% endblock %}
     </div>
 </nav>
 
@@ -51,7 +52,7 @@
     <div class="container">
         <h1>Error</h1>
 
-        <p>Coś się zjebawszy.</p>
+        <p>Coś się zjebawszy, bo to jest domyślny 'page_content'.</p>
     </div>
 </div>
 

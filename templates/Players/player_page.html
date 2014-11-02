@@ -15,12 +15,13 @@
                             <h4>Informacje</h4>
                             <hr>
                             <p>
-                                <b>Drużyna:</b> {{ player.team }}<br>
+                                <b>Drużyna:</b> <a href="/team/{{ team_name }}/">{{ player.team }}</a><br>
+                                <b>Pozycja:</b> {{ player.position }}<br>
                                 <b>Wzrost:</b> {{ player.height }}<br>
+                                <b>Waga:</b> {{ player.weight }}<br>
                                 <!--TODO Aktualny wiek-->
                                 <b>Data urodzenia:</b> {{ player.birth_date }}<br>
-                                <b>Numer:</b> {{ player.number }}<br>
-                                <b>Pozycja:</b> {{ player.position }}
+                                <b>Numer:</b> {{ player.number }}
                             </p>
                         </div>
                     </div>
