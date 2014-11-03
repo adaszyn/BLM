@@ -1,28 +1,269 @@
 {% extends 'base.html' %}
+{% load staticfiles %}
+
+
+{% block navigation %}
+
+<div id="navbar" class="collapse navbar-collapse">
+    <ul class="nav navbar-nav">
+        <li><a href="{% url 'home' %}">Home</a></li>
+        <li><a href="{% url 'team_index' %}">Teams</a></li>
+        <li class="active"><a href="{% url 'player_index' %}">Players</a></li>
+    </ul>
+</div>
+
+{% endblock %}
+
 
 {% block page_content %}
 
 <div class="container">
     <div class="bs-docs-section">
-        <div class="page-header">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="panel panel-primary">
-                        <div class="panel-heading">
-                            <h3 class="panel-title">{{ player.first_name }} {{ player.last_name }}</h3>
-                        </div>
-                        <div class="panel-body">
-                            <h4>Informacje</h4>
-                            <hr>
-                            <p>
-                                <b>Drużyna:</b> <a href="/team/{{ team_name }}/">{{ player.team }}</a><br>
-                                <b>Pozycja:</b> {{ player.position }}<br>
-                                <b>Wzrost:</b> {{ player.height }}<br>
-                                <b>Waga:</b> {{ player.weight }}<br>
-                                <!--TODO Aktualny wiek-->
-                                <b>Data urodzenia:</b> {{ player.birth_date }}<br>
-                                <b>Numer:</b> {{ player.number }}
-                            </p>
+        <div class="row page-header">
+            <div class="col-lg-12">
+                <div class="panel with-nav-tabs panel-primary">
+                    <div class="panel-heading">
+                        <ul class="nav nav-tabs">
+                            <li class="active"><a href="#tabProfile" data-toggle="tab">Profile</a></li>
+                            <li><a href="#tabGameStats" data-toggle="tab">Game stats</a></li>
+                            <li><a href="#tabSeasonStats" data-toggle="tab">Season stats</a></li>
+                        </ul>
+                    </div>
+                    <div class="panel-body">
+                        <div class="tab-content">
+                            <div class="tab-pane fade in active" id="tabProfile">
+                                <h1>
+                                   &#35;{{ player.number }} | {{ player.first_name }} {{ player.last_name }}
+                                    <span class="pull-right label label-default">
+                                        <img title="Player image"
+                                             class="img-rounded img-responsive"
+                                             width="250px"
+                                             src="{% static 'default_images/jordan.jpg' %}">
+                                    </span>
+                                </h1>
+
+                                <hr>
+                                <div class="col-lg-8">
+                                    <table class="table table-user-information">
+                                        <tbody>
+                                        <tr>
+                                            <td>Team:</td>
+                                            <td><a href="{% url 'team_page' team_name %}">{{ player.team }}</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Position:</td>
+                                            <td>{{ player.position }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Date of Birth:</td>
+                                            <td>{{ birth_date }} (age {{ age }})</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Height:</td>
+                                            <td>{{ player.height }} cm</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Weight:</td>
+                                            <td>{{ player.weight }} kg</td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+
+                            <div class="tab-pane fade" id="tabGameStats">
+                                <table class="table table-striped table-hover table-bordered table-condensed">
+                                    <thead>
+                                    <tr>
+                                        <th>Game</th>
+                                        <th>MIN</th>
+                                        <th>PTS</th>
+                                        <th>FGM</th>
+                                        <th>FGA</th>
+                                        <th>FG%</th>
+                                        <th>3PM</th>
+                                        <th>3PA</th>
+                                        <th>3P%</th>
+                                        <th>FTM</th>
+                                        <th>FTA</th>
+                                        <th>FT%</th>
+                                        <th>OREB</th>
+                                        <th>DREB</th>
+                                        <th>REB</th>
+                                        <th>AST</th>
+                                        <th>STL</th>
+                                        <th>BLK</th>
+                                        <th>TOV</th>
+                                        <th>PF</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>OCT 31, 2014 - CLE @ CHI</td>
+                                        <td>42</td>
+                                        <td>36</td>
+                                        <td>14</td>
+                                        <td>30</td>
+                                        <td>46.7</td>
+                                        <td>1</td>
+                                        <td>3</td>
+                                        <td>33.3</td>
+                                        <td>7</td>
+                                        <td>9</td>
+                                        <td>77.8</td>
+                                        <td>1</td>
+                                        <td>7</td>
+                                        <td>8</td>
+                                        <td>4</td>
+                                        <td>4</td>
+                                        <td>1</td>
+                                        <td>3</td>
+                                        <td>1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>OCT 30, 2014 - CLE vs. NYK</td>
+                                        <td>43</td>
+                                        <td>17</td>
+                                        <td>5</td>
+                                        <td>15</td>
+                                        <td>33.3</td>
+                                        <td>1</td>
+                                        <td>5</td>
+                                        <td>20.0</td>
+                                        <td>6</td>
+                                        <td>7</td>
+                                        <td>85.7</td>
+                                        <td>0</td>
+                                        <td>5</td>
+                                        <td>5</td>
+                                        <td>4</td>
+                                        <td>0</td>
+                                        <td>0</td>
+                                        <td>8</td>
+                                        <td>3</td>
+                                    </tr>
+                                    <tr>
+                                        <td>OCT 31, 2014 - CLE @ CHI</td>
+                                        <td>42</td>
+                                        <td>36</td>
+                                        <td>14</td>
+                                        <td>30</td>
+                                        <td>46.7</td>
+                                        <td>1</td>
+                                        <td>3</td>
+                                        <td>33.3</td>
+                                        <td>7</td>
+                                        <td>9</td>
+                                        <td>77.8</td>
+                                        <td>1</td>
+                                        <td>7</td>
+                                        <td>8</td>
+                                        <td>4</td>
+                                        <td>4</td>
+                                        <td>1</td>
+                                        <td>3</td>
+                                        <td>1</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div class="tab-pane fade" id="tabSeasonStats">
+                                <table class="table table-striped table-hover table-condensed">
+                                    <thead>
+                                    <tr>
+                                        <th>Game</th>
+                                        <th>MIN</th>
+                                        <th>PTS</th>
+                                        <th>FGM</th>
+                                        <th>FGA</th>
+                                        <th>FG%</th>
+                                        <th>3PM</th>
+                                        <th>3PA</th>
+                                        <th>3P%</th>
+                                        <th>FTM</th>
+                                        <th>FTA</th>
+                                        <th>FT%</th>
+                                        <th>OREB</th>
+                                        <th>DREB</th>
+                                        <th>REB</th>
+                                        <th>AST</th>
+                                        <th>STL</th>
+                                        <th>BLK</th>
+                                        <th>TOV</th>
+                                        <th>PF</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>OCT 31, 2014 - CLE @ CHI</td>
+                                        <td>42</td>
+                                        <td>36</td>
+                                        <td>14</td>
+                                        <td>30</td>
+                                        <td>46.7</td>
+                                        <td>1</td>
+                                        <td>3</td>
+                                        <td>33.3</td>
+                                        <td>7</td>
+                                        <td>9</td>
+                                        <td>77.8</td>
+                                        <td>1</td>
+                                        <td>7</td>
+                                        <td>8</td>
+                                        <td>4</td>
+                                        <td>4</td>
+                                        <td>1</td>
+                                        <td>3</td>
+                                        <td>1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>OCT 30, 2014 - CLE vs. NYK</td>
+                                        <td>43</td>
+                                        <td>17</td>
+                                        <td>5</td>
+                                        <td>15</td>
+                                        <td>33.3</td>
+                                        <td>1</td>
+                                        <td>5</td>
+                                        <td>20.0</td>
+                                        <td>6</td>
+                                        <td>7</td>
+                                        <td>85.7</td>
+                                        <td>0</td>
+                                        <td>5</td>
+                                        <td>5</td>
+                                        <td>4</td>
+                                        <td>0</td>
+                                        <td>0</td>
+                                        <td>8</td>
+                                        <td>3</td>
+                                    </tr>
+                                    <tr>
+                                        <td>OCT 31, 2014 - CLE @ CHI</td>
+                                        <td>42</td>
+                                        <td>36</td>
+                                        <td>14</td>
+                                        <td>30</td>
+                                        <td>46.7</td>
+                                        <td>1</td>
+                                        <td>3</td>
+                                        <td>33.3</td>
+                                        <td>7</td>
+                                        <td>9</td>
+                                        <td>77.8</td>
+                                        <td>1</td>
+                                        <td>7</td>
+                                        <td>8</td>
+                                        <td>4</td>
+                                        <td>4</td>
+                                        <td>1</td>
+                                        <td>3</td>
+                                        <td>1</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                     </div>
                 </div>

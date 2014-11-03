@@ -3,21 +3,16 @@ from django.shortcuts import render
 
 from Teams.models import Team
 
-# TODO Drużyny z polskimi znakami
-# @wojtek zastanów się jak to zrobić
-# Ja póki co widzę tylko dodanie do modelu pola '*_name_en' które zawiera to samo co '*_name' ale przesiane przez:
-# abc.translate(str.maketrans("ąćęłńóśżźĄĆĘŁŃÓŚŻŹ", "acelnoszzACELNOSZZ"))
-# ^ zamienia w abc polskie znaki an angielskie odpowiedniki
-# ale średnio mi się ten pomysł podoba
-
 
 def team_index(request):
-    # TODO Wyświetlanie spisu drużyn
+    # TODO /team/
 
-    return render(request, 'Teams/team_index.html', {'teams': teams})
+    return render(request, 'Teams/team_index.html')
 
 
 def team_page(request, team_name):
+    # TODO Lista zawodników danej drużyny
+
     team_name = team_name.replace("_", " ")
     team_name = team_name.title()
 
