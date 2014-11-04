@@ -19,6 +19,7 @@ class Player(models.Model):
     height = models.PositiveIntegerField()
     weight = models.PositiveIntegerField()
     number = models.PositiveIntegerField()
+    image = models.ImageField(default="default_images/default_photo.jpg", upload_to="photos")
 
     def __str__(self):
         return self.first_name + ' ' + self.last_name
