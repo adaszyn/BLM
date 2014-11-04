@@ -1,311 +1,254 @@
 [
 {
     "pk": 1,
+    "model": "Teams.team",
     "fields": {
         "full_name": "Chicago Bulls",
-        "short_name": "CHI",
-        "color": "czerwony"
-    },
-    "model": "Teams.team"
+        "logo": "team_logos/default.png",
+        "short_name": "CHI"
+    }
 },
 {
     "pk": 2,
+    "model": "Teams.team",
     "fields": {
         "full_name": "Utah Jazz",
-        "short_name": "UTA",
-        "color": "niebieski"
-    },
-    "model": "Teams.team"
+        "logo": "team_logos/default.png",
+        "short_name": "UTA"
+    }
 },
 {
     "pk": 3,
+    "model": "Teams.team",
     "fields": {
         "full_name": "New York Knicks",
-        "short_name": "NYK",
-        "color": "pomara\u0144czowy"
-    },
-    "model": "Teams.team"
+        "logo": "team_logos/knicks_logo.png",
+        "short_name": "NYK"
+    }
 },
 {
     "pk": 1,
+    "model": "Players.player",
     "fields": {
-        "full_name": "Point Guard",
-        "short_name": "PG"
-    },
-    "model": "Players.position"
-},
-{
-    "pk": 2,
-    "fields": {
-        "full_name": "Point Guard / Shooting Guard",
-        "short_name": "PG/SG"
-    },
-    "model": "Players.position"
-},
-{
-    "pk": 3,
-    "fields": {
-        "full_name": "Shooting Guard",
-        "short_name": "SG"
-    },
-    "model": "Players.position"
-},
-{
-    "pk": 4,
-    "fields": {
-        "full_name": "Shooting Guard / Small Forward",
-        "short_name": "SG/SF"
-    },
-    "model": "Players.position"
-},
-{
-    "pk": 5,
-    "fields": {
-        "full_name": "Small Forward",
-        "short_name": "SF"
-    },
-    "model": "Players.position"
-},
-{
-    "pk": 6,
-    "fields": {
-        "full_name": "Small Forward / Power Forward",
-        "short_name": "SF/PF"
-    },
-    "model": "Players.position"
-},
-{
-    "pk": 7,
-    "fields": {
-        "full_name": "Power Forward",
-        "short_name": "PF"
-    },
-    "model": "Players.position"
-},
-{
-    "pk": 8,
-    "fields": {
-        "full_name": "Power Forward / Center",
-        "short_name": "PF/C"
-    },
-    "model": "Players.position"
-},
-{
-    "pk": 9,
-    "fields": {
-        "full_name": "Center",
-        "short_name": "C"
-    },
-    "model": "Players.position"
-},
-{
-    "pk": 1,
-    "fields": {
-        "number": 33,
-        "first_name": "Pawe\u0142",
-        "weight": 50,
-        "last_name": "Adamczak",
-        "position": 3,
         "height": 186,
-        "team": 1,
-        "birth_date": "1995-01-25"
-    },
-    "model": "Players.player"
+        "birth_date": "1995-01-25",
+        "position": "PG",
+        "first_name": "Pawe\u0142",
+        "number": 33,
+        "last_name": "Adamczak",
+        "weight": 50,
+        "image": "player_photos/default.jpg",
+        "team": 1
+    }
 },
 {
     "pk": 2,
+    "model": "Players.player",
     "fields": {
-        "number": 23,
-        "first_name": "Michael",
-        "weight": 108,
-        "last_name": "Jordan",
-        "position": 3,
         "height": 198,
-        "team": 1,
-        "birth_date": "1980-02-19"
-    },
-    "model": "Players.player"
+        "birth_date": "1980-02-19",
+        "position": "SG",
+        "first_name": "Michael",
+        "number": 23,
+        "last_name": "Jordan",
+        "weight": 108,
+        "image": "player_photos/default.jpg",
+        "team": 1
+    }
 },
 {
     "pk": 3,
+    "model": "Players.player",
     "fields": {
-        "number": 67,
-        "first_name": "Kevin",
-        "weight": 112,
-        "last_name": "Love",
-        "position": 8,
         "height": 208,
-        "team": 1,
-        "birth_date": "1985-08-21"
-    },
-    "model": "Players.player"
+        "birth_date": "1985-08-21",
+        "position": "PF/C",
+        "first_name": "Kevin",
+        "number": 67,
+        "last_name": "Love",
+        "weight": 112,
+        "image": "player_photos/default.jpg",
+        "team": 1
+    }
 },
 {
     "pk": 4,
+    "model": "Players.player",
     "fields": {
-        "number": 14,
-        "first_name": "Dwight",
-        "weight": 150,
-        "last_name": "Howard",
-        "position": 9,
         "height": 210,
-        "team": 1,
-        "birth_date": "1990-07-24"
-    },
-    "model": "Players.player"
+        "birth_date": "1990-07-24",
+        "position": "C",
+        "first_name": "Dwight",
+        "number": 14,
+        "last_name": "Howard",
+        "weight": 150,
+        "image": "player_photos/default.jpg",
+        "team": 1
+    }
 },
 {
     "pk": 5,
+    "model": "Players.player",
     "fields": {
-        "number": 24,
-        "first_name": "LeBron",
-        "weight": 135,
-        "last_name": "James",
-        "position": 6,
         "height": 206,
-        "team": 1,
-        "birth_date": "1988-07-31"
-    },
-    "model": "Players.player"
+        "birth_date": "1988-07-31",
+        "position": "SF/PF",
+        "first_name": "LeBron",
+        "number": 24,
+        "last_name": "James",
+        "weight": 135,
+        "image": "player_photos/default.jpg",
+        "team": 1
+    }
 },
 {
     "pk": 6,
+    "model": "Players.player",
     "fields": {
-        "number": 8,
-        "first_name": "Kobe",
-        "weight": 101,
-        "last_name": "Bryant",
-        "position": 3,
         "height": 196,
-        "team": 3,
-        "birth_date": "1982-06-25"
-    },
-    "model": "Players.player"
+        "birth_date": "1982-06-25",
+        "position": "SG",
+        "first_name": "Kobe",
+        "number": 8,
+        "last_name": "Bryant",
+        "weight": 101,
+        "image": "player_photos/default.jpg",
+        "team": 3
+    }
 },
 {
     "pk": 7,
+    "model": "Players.player",
     "fields": {
-        "number": 13,
-        "first_name": "Steve",
-        "weight": 89,
-        "last_name": "Nash",
-        "position": 1,
         "height": 190,
-        "team": 3,
-        "birth_date": "1982-02-28"
-    },
-    "model": "Players.player"
+        "birth_date": "1982-02-28",
+        "position": "PG",
+        "first_name": "Steve",
+        "number": 13,
+        "last_name": "Nash",
+        "weight": 89,
+        "image": "player_photos/default.jpg",
+        "team": 3
+    }
 },
 {
     "pk": 8,
+    "model": "Players.player",
     "fields": {
-        "number": 76,
-        "first_name": "Marcin",
-        "weight": 130,
-        "last_name": "Gortat",
-        "position": 9,
         "height": 211,
-        "team": 3,
-        "birth_date": "1989-05-15"
-    },
-    "model": "Players.player"
+        "birth_date": "1989-05-15",
+        "position": "C",
+        "first_name": "Marcin",
+        "number": 76,
+        "last_name": "Gortat",
+        "weight": 130,
+        "image": "player_photos/default.jpg",
+        "team": 3
+    }
 },
 {
     "pk": 9,
+    "model": "Players.player",
     "fields": {
-        "number": 56,
-        "first_name": "Chris",
-        "weight": 124,
-        "last_name": "Bosh",
-        "position": 8,
         "height": 208,
-        "team": 3,
-        "birth_date": "1983-08-20"
-    },
-    "model": "Players.player"
+        "birth_date": "1983-08-20",
+        "position": "PF/C",
+        "first_name": "Chris",
+        "number": 56,
+        "last_name": "Bosh",
+        "weight": 124,
+        "image": "player_photos/default.jpg",
+        "team": 3
+    }
 },
 {
     "pk": 10,
+    "model": "Players.player",
     "fields": {
-        "number": 34,
-        "first_name": "Kevin",
-        "weight": 120,
-        "last_name": "Durant",
-        "position": 6,
         "height": 207,
-        "team": 3,
-        "birth_date": "1991-11-19"
-    },
-    "model": "Players.player"
+        "birth_date": "1991-11-19",
+        "position": "SF/PF",
+        "first_name": "Kevin",
+        "number": 34,
+        "last_name": "Durant",
+        "weight": 120,
+        "image": "player_photos/default.jpg",
+        "team": 3
+    }
 },
 {
     "pk": 11,
+    "model": "Players.player",
     "fields": {
-        "number": 3,
-        "first_name": "Chris",
-        "weight": 112,
-        "last_name": "Paul",
-        "position": 1,
         "height": 190,
-        "team": 2,
-        "birth_date": "1986-07-17"
-    },
-    "model": "Players.player"
+        "birth_date": "1986-07-17",
+        "position": "PG",
+        "first_name": "Chris",
+        "number": 3,
+        "last_name": "Paul",
+        "weight": 112,
+        "image": "player_photos/default.jpg",
+        "team": 2
+    }
 },
 {
     "pk": 12,
+    "model": "Players.player",
     "fields": {
-        "number": 71,
-        "first_name": "Jerry",
-        "weight": 93,
-        "last_name": "West",
-        "position": 2,
         "height": 196,
-        "team": 2,
-        "birth_date": "1970-06-25"
-    },
-    "model": "Players.player"
+        "birth_date": "1970-06-25",
+        "position": "SG",
+        "first_name": "Jerry",
+        "number": 71,
+        "last_name": "West",
+        "weight": 93,
+        "image": "player_photos/default.jpg",
+        "team": 2
+    }
 },
 {
     "pk": 13,
+    "model": "Players.player",
     "fields": {
-        "number": 41,
-        "first_name": "Giannis",
-        "weight": 120,
-        "last_name": "Antetokounmpo",
-        "position": 4,
         "height": 204,
-        "team": 2,
-        "birth_date": "1994-09-17"
-    },
-    "model": "Players.player"
+        "birth_date": "1994-09-17",
+        "position": "SG/SF",
+        "first_name": "Giannis",
+        "number": 41,
+        "last_name": "Antetokounmpo",
+        "weight": 120,
+        "image": "player_photos/default.jpg",
+        "team": 2
+    }
 },
 {
     "pk": 14,
+    "model": "Players.player",
     "fields": {
-        "number": 77,
-        "first_name": "Wojtek",
-        "weight": 70,
-        "last_name": "Adaszy\u0144ski",
-        "position": 7,
         "height": 206,
-        "team": 2,
-        "birth_date": "1994-08-21"
-    },
-    "model": "Players.player"
+        "birth_date": "1994-08-21",
+        "position": "PF",
+        "first_name": "Wojtek",
+        "number": 77,
+        "last_name": "Adaszy\u0144ski",
+        "weight": 70,
+        "image": "player_photos/default.jpg",
+        "team": 2
+    }
 },
 {
     "pk": 15,
+    "model": "Players.player",
     "fields": {
-        "number": 86,
-        "first_name": "Maciek",
-        "weight": 90,
-        "last_name": "Popiel",
-        "position": 9,
         "height": 222,
-        "team": 2,
-        "birth_date": "1994-05-14"
-    },
-    "model": "Players.player"
+        "birth_date": "1994-05-14",
+        "position": "C",
+        "first_name": "Maciek",
+        "number": 86,
+        "last_name": "Popiel",
+        "weight": 90,
+        "image": "player_photos/default.jpg",
+        "team": 2
+    }
 }
 ]

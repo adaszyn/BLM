@@ -33,17 +33,11 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">Basketball League Manager</a>
+            <a class="navbar-brand" href="{% url 'home' %}">Basketball League Manager</a>
         </div>
+        {% load nav %}
         {% block navigation %}
-        <div id="navbar" class="collapse navbar-collapse">
-            <ul class="nav navbar-nav">
-                <li><a href="{% url 'home' %}">Home</a></li>
-                <!--TODO Dropdown menu z listą drużyn-->
-                <li><a href="{% url 'team_index' %}">Teams</a></li>
-                <li><a href="{% url 'player_index' %}">Players</a></li>
-            </ul>
-        </div>
+            {% nav %}
         {% endblock %}
     </div>
 </nav>

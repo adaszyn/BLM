@@ -2,19 +2,6 @@
 {% load staticfiles %}
 
 
-{% block navigation %}
-
-<div id="navbar" class="collapse navbar-collapse">
-    <ul class="nav navbar-nav">
-        <li><a href="{% url 'home' %}">Home</a></li>
-        <li class="active"><a href="{% url 'team_index' %}">Teams</a></li>
-        <li><a href="{% url 'player_index' %}">Players</a></li>
-    </ul>
-</div>
-
-{% endblock %}
-
-
 {% block page_content %}
 
 <div class="container">
@@ -34,10 +21,10 @@
                                 <h1>
                                    {{ team.full_name }}
                                     <span class="pull-right label label-default">
-                                        <img title="Player image"
+                                        <img title="Team logo"
                                              class="img-rounded img-responsive"
                                              width="250px"
-                                             src="{% static 'default_images/chicago_bulls_logo.png' %}">
+                                             src="{{ MEDIA_URL }}{{ team.logo }}">
                                     </span>
                                 </h1>
 
@@ -48,10 +35,6 @@
                                         <tr>
                                             <td>Shortcut:</td>
                                             <td>{{ team.short_name }}</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Color:</td>
-                                            <td>{{ team.color }}</td>
                                         </tr>
                                         </tbody>
                                     </table>

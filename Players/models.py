@@ -2,24 +2,28 @@ from django.db import models
 from Teams.models import Team
 
 
-class Position(models.Model):
-    full_name = models.CharField(max_length=32)
-    short_name = models.CharField(max_length=5)
-
-    def __str__(self):
-        return self.short_name
-
-
 class Player(models.Model):
+    position_choices = (
+        ('PG', 'Point Guard'),
+        ('PG/SG', 'Point Guard/Shooting Guard'),
+        ('SG', 'Shooting Guard'),
+        ('SG/SF', 'Shooting Guard/Small Forward'),
+        ('SF', 'Small Forward'),
+        ('SF/PF', 'Small Forward/Power Forward'),
+        ('PF', 'Power Forward'),
+        ('PF/C', 'Power Forward/Center'),
+        ('C', 'Center'),
+    )
+
     first_name = models.CharField(max_length=64)
     last_name = models.CharField(max_length=64)
     team = models.ForeignKey(Team)
-    position = models.ForeignKey(Position)
+    position = models.CharField(max_length=5, choices=position_choices)
     birth_date = models.DateField()
     height = models.PositiveIntegerField()
     weight = models.PositiveIntegerField()
     number = models.PositiveIntegerField()
-    image = models.ImageField(default="default_images/default_photo.jpg", upload_to="photos")
+    image = models.ImageField(default="player_photos/default.jpg", upload_to="player_photos")
 
     def __str__(self):
         return self.first_name + ' ' + self.last_name

@@ -1,0 +1,24 @@
+<!-- A bit too hardcoded; to revisit -->
+
+<div id="navbar" class="collapse navbar-collapse">
+    <ul class="nav navbar-nav">
+        {% for link in links %}
+            {% if link.name == 'Home' %}
+                <li{% ifequal path link.url %} class="active"{% endifequal %}><a href="{{ link.url }}">{{ link.name }}</a></li>
+            {% elif link.name == 'Teams' %}
+                <li class="dropdown{% if link.url in path %} active{% endif %}">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Teams <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li{% ifequal path link.url %} class="active"{% endifequal %}><a href="{{ link.url }}">All</a></li>
+                        <li class="divider"></li>
+                        {% for team in teams %}
+                            <li{% ifequal path team.url %} class="active"{% endifequal %}><a href="{{ team.url }}">{{ team.name }}</a></li>
+                        {% endfor %}
+                    </ul>
+                </li>
+            {% elif link.name == 'Players' %}
+                <li{% if link.url in path %} class="active"{% endif %}><a href="{{ link.url }}">{{ link.name }}</a></li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+</div>

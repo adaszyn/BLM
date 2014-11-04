@@ -1,19 +1,6 @@
 {% extends 'base.html' %}
 
 
-{% block navigation %}
-
-<div id="navbar" class="collapse navbar-collapse">
-    <ul class="nav navbar-nav">
-        <li><a href="{% url 'home' %}">Home</a></li>
-        <li><a href="{% url 'team_index' %}">Teams</a></li>
-        <li class="active"><a href="{% url 'player_index' %}">Players</a></li>
-    </ul>
-</div>
-
-{% endblock %}
-
-
 {% block page_content %}
 
 <div class="jumbotron">
