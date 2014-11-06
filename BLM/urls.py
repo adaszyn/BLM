@@ -19,7 +19,7 @@ urlpatterns = patterns('',
     url(r'^player/', include('Players.urls')),
     url(r'^players/', PlayerUrls.views.players_index),
     url(r'^team/', include('Teams.urls')),
-    url(r'^teams/', include('Teams.urls')),
+    url(r'^game/', include('Games.urls')),
 )
 
 if settings.DEBUG:
