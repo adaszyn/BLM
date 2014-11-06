@@ -4,6 +4,7 @@ from django.db.models import Q
 from django.utils.datetime_safe import date
 from Teams import models as teamModels
 from Players.models import Player
+from django.http import HttpResponseRedirect
 
 def player_index(request):
     # TODO /player/
@@ -50,3 +51,9 @@ def player_page(request, player_fullname):
     birth_date = player.birth_date.strftime("%d.%m.%Y")
 
     return render(request, 'Players/player_page.html', {'player': player, 'team_name': team_name, 'birth_date': birth_date, 'age': age})
+
+def players_index(request):
+    return HttpResponseRedirect("/player")
+
+def players_page(request,player_fullname):
+    return HttpResponseRedirect("/player/"+player_fullname)

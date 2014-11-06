@@ -1,4 +1,4 @@
-from django.http import Http404
+from django.http import Http404, HttpResponseRedirect
 from django.shortcuts import render
 
 from Teams.models import Team
@@ -22,3 +22,7 @@ def team_page(request, team_name):
         raise Http404
 
     return render(request, 'Teams/team_page.html', {'team': team})
+def teams_page(request, team_name):
+    return HttpResponseRedirect("/team/"+team_name)
+def teams_index(request):
+    return HttpResponseRedirect("/team/")
