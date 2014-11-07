@@ -16,7 +16,7 @@
                         {% endfor %}
                     </ul>
                 </li>
-            {% elif link.name == 'Players' %}
+            {% else %}
                 <li{% if link.url in path %} class="active"{% endif %}><a href="{{ link.url }}">{{ link.name }}</a></li>
             {% endif %}
         {% endfor %}
