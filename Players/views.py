@@ -17,9 +17,9 @@ def player_index(request):
         teams_dict[player.team.full_name].append(player)   #append player to ones appropriate list
     for team in teams_dict:
         teams_dict[team].sort(key=lambda player: player.last_name)
-        print (teams_dict[team])
+        print(teams_dict[team])
 
-    return render(request, 'Players/player_index.html', {'teams_dict' : teams_dict, "players" : all_players})
+    return render(request, 'Players/player_index.html', {'teams_dict': teams_dict, "players": all_players})
 
 
 def player_page(request, player_fullname):

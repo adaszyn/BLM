@@ -1,4 +1,6 @@
 from django.db import models
+from django.utils.datetime_safe import date
+
 from Teams.models import Team
 
 

@@ -1,7 +1,8 @@
-from django.http import Http404, HttpResponseRedirect
+from django.http import Http404
 from django.shortcuts import render
 
 from Teams.models import Team
+from Players.models import Player
 
 
 def team_index(request):

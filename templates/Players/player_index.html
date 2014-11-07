@@ -1,8 +1,8 @@
 {% extends 'base.html' %}
-{%  load staticfiles %}
+{% load staticfiles %}
 
 {% block page_content %}
-        <div class="container">
+<div class="container">
     <div class="bs-docs-section">
         <div class="row page-header">
             <div class="col-lg-12">
@@ -11,59 +11,59 @@
                         <ul class="nav nav-tabs main">
                             <li class="active"><a href="#tabTable" data-toggle="tab">Sortable table</a></li>
                             <li><a href="#tabTeams" data-toggle="tab">Grouped by teams</a></li>
-            </ul>
+                        </ul>
                     </div>
                     <div class="panel-body">
                         <div class="tab-content">
                             <div class="tab-pane fade in active" id="tabTable">
-                    <table class="table table-hover " id="player_table">
-                        <thead>
+                                <table class="table table-hover " id="player_table">
+                                    <thead>
                                     <tr>
-                            <th>#</th>
+                                        <th>#</th>
                                         <th>Name</th>
                                         <th>Team</th>
                                         <th>Position</th>
                                         <th>Height</th>
                                         <th>Weight</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        {% for player in players %}
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    {% for player in players %}
                                         <tr>
                                             <td>{{ player.number }}</td>
                                             <td><a href="#">{{ player.last_name }} {{ player.first_name }}</a></td>
                                             <td><a href="#">{{ player.team.full_name }}</a></td>
-                                <td>{{ player.position }}</td>
+                                            <td>{{ player.position }}</td>
                                             <td>{{ player.height }}</td>
                                             <td>{{ player.weight }}</td>
-                            </tr>
-                        {% endfor %}
-                        </tbody>
-                    </table>
-                </div>
+                                        </tr>
+                                    {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
 
                             <div class="tab-pane fade" id="tabTeams">
-                    <div class="row">
-                        {% for key, value in teams_dict.items %}
-                            <div class="col-md-4">
+                                <div class="row">
+                                    {% for key, value in teams_dict.items %}
+                                    <div class="col-md-4">
                                         <div class="panel panel-default">
-                                    <div class="panel-heading">
-                                        <h3 class="panel-title">{{ key }}</h3>
-                                    </div>
-                                    <div class="panel-body">
-                                        {% for player in value %}
-                                            <a href="/player/{{ player.first_name }}_{{ player.last_name }}"
+                                            <div class="panel-heading">
+                                                <h3 class="panel-title">{{ key }}</h3>
+                                             </div>
+                                            <div class="panel-body">
+                                                {% for player in value %}
+                                                <a href="/player/{{ player.first_name }}_{{ player.last_name }}"
                                                class="btn btn-default btn-lg btn-block">{{ player.last_name }} {{ player.first_name }}</a>
-                                        {% endfor %}
+                                                {% endfor %}
+                                            </div>
+                                        </div>
                                     </div>
+                                    {% endfor %}
                                 </div>
                             </div>
-                        {% endfor %}
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
             </div>
         </div>
     </div>
