@@ -9,8 +9,8 @@
         <div class="row page-header">
             <div class="col-lg-12">
                 <div class="panel with-nav-tabs panel-primary">
-                    <div class="panel-heading">
-                        <ul class="nav nav-tabs">
+                    <div class="panel-heading main">
+                        <ul class="nav nav-tabs main">
                             <li class="active"><a href="#tabInfo" data-toggle="tab">Info</a></li>
                             <li><a href="#tabPlayers" data-toggle="tab">Players</a></li>
                         </ul>
@@ -18,66 +18,110 @@
                     <div class="panel-body">
                         <div class="tab-content">
                             <div class="tab-pane fade in active" id="tabInfo">
-                                <h1>
-                                   {{ team.full_name }}
-                                    <span class="pull-right label label-default">
-                                        <img title="Team logo"
-                                             class="img-rounded img-responsive"
-                                             width="250px"
-                                             src="{{ MEDIA_URL }}{{ team.logo }}">
-                                    </span>
-                                </h1>
-
-                                <hr>
                                 <div class="col-lg-8">
+                                    <h1>{{ team.full_name }}</h1>
+                                <hr>
                                     <table class="table table-user-information">
                                         <tbody>
                                         <tr>
-                                            <td>Shortcut:</td>
+                                            <td>Record:</td>
+                                            <td>72-10 (1st place)</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Short name:</td>
                                             <td>{{ team.short_name }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Captain:</td>
+                                            <td><a href="#">Michael Jordan</a></td>
                                         </tr>
                                         </tbody>
                                     </table>
                                 </div>
+                                <div class="col-lg-4">
+                                    <h1><span class="pull-right label label-default">
+                                        <img title="Team logo"
+                                             class="img-rounded img-responsive"
+                                             width="250px"
+                                             src="{{ MEDIA_URL }}{{ team.logo }}">
+                                    </span></h1>
                             </div>
-                            <!-- TODO Lista zawodników danej drużyny -->
+
+                                <div class="col-lg-4">
+                                    <h2>Leaders</h2>
+                                    <ul class="list-group">
+                                        <li class="list-group-item">
+                                            <span class="badge">34.2 PPG</span>
+                                            <a href="#">Michael Jordan</a>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <span class="badge">8.9 RPG</span>
+                                            <a href="#">Michael Jordan</a>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <span class="badge">11.2 APG</span>
+                                            <a href="#">Michael Jordan</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="col-lg-4">
+                                    <h2>Previous games</h2>
+                                    <ul class="list-group">
+                                        <li class="list-group-item">
+                                            <span class="badge">8 Nov</span>
+                                            <a href="#">CHI 89 vs <b>NYK 96</b></a>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <span class="badge">10 Nov</span>
+                                             <a href="#">CHI 80 @ <b>UTA 106</b></a>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <span class="badge">11 Nov</span>
+                                            <b><a href="#">CHI 116</b> vs UTA 98</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="col-lg-4">
+                                    <h2>Next games</h2>
+                                    <ul class="list-group">
+                                        <li class="list-group-item">
+                                            <span class="badge">14 Nov</span>
+                                            <a href="#">CHI @ NYK</a>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <span class="badge">16 Nov</span>
+                                            <a href="#">CHI vs UTA</a>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <span class="badge">20 Nov</span>
+                                            <a href="#">CHI @ UTA</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
                             <div class="tab-pane fade" id="tabPlayers">
-                                <table class="table table-striped table-hover table-condensed">
+                                <table class="table table-striped table-hover">
                                     <thead>
                                     <tr>
-                                        <th>Number</th>
+                                        <th>#</th>
                                         <th>Name</th>
-                                        <th>Position</th>
                                         <th>Age</th>
+                                        <th>Position</th>
                                         <th>Height</th>
                                         <th>Weight</th>
                                     </tr>
                                     </thead>
                                     <tbody>
+                                    {% for player in team_players %}
                                     <tr>
-                                        <td>#25</td>
-                                        <td>Michael Jordan</td>
-                                        <td>SG</td>
-                                        <td>32</td>
-                                        <td>196</td>
-                                        <td>198</td>
+                                        <td>#{{ player.number }}</td>
+                                        <td><a href="{% url 'player_page' player.link %}">{{ player.name }}</a></td>
+                                        <td>{{ player.age }}</td>
+                                        <td>{{ player.position }}</td>
+                                        <td>{{ player.height }} cm</td>
+                                        <td>{{ player.weight }} kg</td>
                                     </tr>
-                                    <tr>
-                                        <td>#25</td>
-                                        <td>Michael Jordan</td>
-                                        <td>SG</td>
-                                        <td>32</td>
-                                        <td>196</td>
-                                        <td>198</td>
-                                    </tr>
-                                    <tr>
-                                        <td>#25</td>
-                                        <td>Michael Jordan</td>
-                                        <td>SG</td>
-                                        <td>32</td>
-                                        <td>196</td>
-                                        <td>198</td>
-                                    </tr>
+                                    {% endfor %}
                                     </tbody>
                                 </table>
                             </div>

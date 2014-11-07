@@ -7,9 +7,10 @@ register = template.Library()
 
 @register.inclusion_tag('nav.html', takes_context=True)
 def nav(context):
-    links = [{'name': 'Home', 'url': reverse('home'), 'tag': 'home'},
-             {'name': 'Teams', 'url': reverse('team_index'), 'tag': 'team_index'},
-             {'name': 'Players', 'url': reverse('player_index'), 'tag': 'player_index'},
+    links = [{'name': 'Home', 'url': reverse('home')},
+             {'name': 'Teams', 'url': reverse('team_index')},
+             {'name': 'Players', 'url': reverse('player_index')},
+             {'name': 'Games', 'url': reverse('game_index')},
              ]
 
     teams = []
