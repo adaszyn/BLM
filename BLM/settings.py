@@ -40,6 +40,7 @@ INSTALLED_APPS = (
     'Navigation',
     'Players',
     'Teams',
+    'Games',
 
 )
 
