@@ -10,11 +10,11 @@ def player_index(request):
     teams_dict = {}
     all_teams = teamModels.Team.objects.all()
     for team in all_teams:
-        teams_dict[team.full_name] = []    #list for each entry in dictionary
+        teams_dict[team] = []    #list for each entry in dictionary
 
     all_players = Player.objects.all()
     for player in all_players:
-        teams_dict[player.team.full_name].append(player)   #append player to ones appropriate list
+        teams_dict[player.team].append(player)   #append player to ones appropriate list
     for team in teams_dict:
         teams_dict[team].sort(key=lambda player: player.last_name)
         print(teams_dict[team])
@@ -30,9 +30,7 @@ def player_page(request, player_fullname):
     except Player.DoesNotExist:
         raise Http404
 
-    # For team page link
-    team_name = str(player.team).replace(" ", "_")
     birth_date = player.birth_date.strftime("%d.%m.%Y")
 
     return render(request, 'Players/player_page.html',
-                  {'player': player, 'team_name': team_name, 'birth_date': birth_date, 'age': player.age()})
+                  {'player': player, 'birth_date': birth_date})

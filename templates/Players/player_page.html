@@ -35,7 +35,7 @@
                                         <tbody>
                                         <tr>
                                             <td>Team:</td>
-                                            <td><a href="{% url 'team_page' team_name %}">{{ player.team }}</a></td>
+                                            <td><a href="{{ player.team.get_absolute_url }}">{{ player.team }}</a></td>
                                         </tr>
                                         <tr>
                                             <td>Position:</td>
@@ -43,7 +43,7 @@
                                         </tr>
                                         <tr>
                                             <td>Date of Birth:</td>
-                                            <td>{{ birth_date }} (age {{ age }})</td>
+                                            <td>{{ birth_date }} (age {{ player.age }})</td>
                                         </tr>
                                         <tr>
                                             <td>Height:</td>

@@ -39,5 +39,9 @@ class Player(models.Model):
         else:
             return today.year - born.year
 
+    def get_absolute_url(self):
+        from django.core.urlresolvers import reverse
+        return reverse('player_page', args=[str(self.first_name) + '_' + str(self.last_name)])
+
     def __str__(self):
         return self.first_name + ' ' + self.last_name

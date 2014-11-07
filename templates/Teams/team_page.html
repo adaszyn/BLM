@@ -35,6 +35,12 @@
                                             <td>Captain:</td>
                                             <td><a href="#">Michael Jordan</a></td>
                                         </tr>
+                                        {% if team.description %}
+                                        <tr>
+                                            <td>Description:</td>
+                                            <td>{{ team.description }}</td>
+                                        </tr>
+                                        {% endif %}
                                         </tbody>
                                     </table>
                                 </div>
@@ -103,7 +109,7 @@
                                 <table class="table table-striped table-hover">
                                     <thead>
                                     <tr>
-                                        <th>#</th>
+                                        <th>&#35;</th>
                                         <th>Name</th>
                                         <th>Age</th>
                                         <th>Position</th>
@@ -115,7 +121,7 @@
                                     {% for player in team_players %}
                                     <tr>
                                         <td>#{{ player.number }}</td>
-                                        <td><a href="{% url 'player_page' player.link %}">{{ player.name }}</a></td>
+                                        <td><a href="{{ player.get_absolute_url }}">{{ player.last_name }} {{ player.first_name }}</a></td>
                                         <td>{{ player.age }}</td>
                                         <td>{{ player.position }}</td>
                                         <td>{{ player.height }} cm</td>

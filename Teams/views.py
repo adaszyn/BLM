@@ -20,9 +20,6 @@ def team_page(request, team_name):
     team_players = []
 
     for player in Player.objects.filter(team=team).order_by('last_name', 'first_name'):
-        team_players.append(
-            {'number': player.number, 'name': player.first_name + ' ' + player.last_name, 'age': player.age(),
-             'position': player.position, 'height': player.height, 'weight': player.weight,
-             'link': player.first_name + '_' + player.last_name})
+        team_players.append(player)
 
     return render(request, 'Teams/team_page.html', {'team': team, 'team_players': team_players})
