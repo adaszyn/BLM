@@ -1,6 +1,11 @@
 from django.contrib import admin
 
-from Games.models import Game, PlayerBoxscore
+from Games.models import Game, PlayerBoxscore, TeamBoxscore, PeriodScore
+
+
+class PeriodScoreInline(admin.TabularInline):
+    model = PeriodScore
+    extra = 4
 
 
 class PlayerBoxscoreInline(admin.TabularInline):
@@ -17,5 +22,16 @@ class GameAdmin(admin.ModelAdmin):
     fieldsets = [
         ('Team info', {'fields': ['home_team', 'away_team', 'date', 'overtime']}),
     ]
-    # inlines = [PlayerBoxscoreInline]
-    # TODO Wyświetlanie wszystkich zawodników tylko z podanych drużyn; Kurwa, ale męczarnia
+
+
+@admin.register(TeamBoxscore)
+class TeamBoxscoreAdmin(admin.ModelAdmin):
+    # TODO Wyświetlanie w dropdown tylko drużyn z danego meczu, i tylko zawodników z danej drużyny
+    list_display = ('game', 'team')
+    list_filter = ['game', 'team']
+    view_on_site = False
+
+    fieldsets = [
+        ('Team info', {'fields': ['game', 'team']}),
+    ]
+    inlines = [PeriodScoreInline, PlayerBoxscoreInline]
