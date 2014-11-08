@@ -8,6 +8,12 @@ def game_index(request):
     return render(request, 'Games/game_index.html')
 
 
+def game_on_date(request, game_date):
+    # TODO /game/date/
+
+    return render(request, 'Games/game_on_date.html')
+
+
 def game_page(request, game_date, away_team, home_team):
     # TODO /game/date/away-team_@_home-team
 

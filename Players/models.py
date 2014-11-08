@@ -22,10 +22,11 @@ class Player(models.Model):
     team = models.ForeignKey(Team)
     position = models.CharField(max_length=5, choices=position_choices)
     birth_date = models.DateField()
-    height = models.PositiveIntegerField()
-    weight = models.PositiveIntegerField()
+    height = models.PositiveIntegerField(verbose_name='Height [cm]')
+    weight = models.PositiveIntegerField(verbose_name='Weight [kg]')
     number = models.PositiveIntegerField()
-    image = models.ImageField(default="player_photos/default.jpg", upload_to="player_photos")
+    image = models.ImageField(verbose_name='Player photo', default='player_photos/default.jpg',
+                              upload_to='player_photos')
 
     def age(self):
         born = self.birth_date

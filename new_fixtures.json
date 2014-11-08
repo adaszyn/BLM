@@ -1,0 +1,1602 @@
+[
+{
+    "pk": 0,
+    "fields": {
+        "full_name": "Chicago Bulls",
+        "description": "Officia pariatur voluptate aliqua do dolore velit. Labore et esse proident ut dolor Lorem nulla. Consectetur eu tempor pariatur et culpa labore eu deserunt dolore. Amet sunt aute cillum Lorem cupidatat nulla dolore adipisicing labore laboris id ut irure nostrud. Proident exercitation dolor labore sint laborum consectetur veniam labore consectetur Lorem aute ullamco dolor. Labore cillum quis culpa enim cillum. Sunt proident reprehenderit Lorem eu officia aliqua veniam amet proident.\r\n",
+        "short_name": "CHI",
+        "logo": "team_logos/bulls_logo.png"
+    },
+    "model": "Teams.team"
+},
+{
+    "pk": 1,
+    "fields": {
+        "full_name": "New York Knicks",
+        "description": "Reprehenderit anim eiusmod occaecat enim sit. Sint magna incididunt enim labore laborum. Lorem consectetur aliquip elit enim do ex culpa Lorem aliquip qui ad anim nostrud enim. Lorem ex ex excepteur velit culpa ut sint et Lorem est Lorem.\r\n",
+        "short_name": "NYK",
+        "logo": "team_logos/knicks_logo.png"
+    },
+    "model": "Teams.team"
+},
+{
+    "pk": 2,
+    "fields": {
+        "full_name": "Oklahoma City Thunder",
+        "description": "Velit pariatur nostrud quis nisi adipisicing ea. Sint magna esse duis eu nostrud eu minim ex eiusmod sunt ea exercitation cillum commodo. Culpa irure tempor fugiat eu. Dolore enim sint ex occaecat labore ipsum consectetur commodo occaecat reprehenderit elit eiusmod. Qui cupidatat labore et amet tempor pariatur do ad tempor eu occaecat.\r\n",
+        "short_name": "OKC",
+        "logo": "team_logos/default.png"
+    },
+    "model": "Teams.team"
+},
+{
+    "pk": 3,
+    "fields": {
+        "full_name": "San Antonio Spurs",
+        "description": "Excepteur id do fugiat fugiat excepteur qui commodo consectetur laboris qui et esse. Sint et pariatur reprehenderit est quis deserunt aliquip. Proident magna enim non proident duis sunt est Lorem et adipisicing incididunt minim aute ipsum. Duis tempor deserunt nisi amet dolor. Deserunt reprehenderit proident enim nisi ipsum culpa aliquip labore commodo exercitation do eiusmod. Deserunt proident enim cillum voluptate voluptate labore labore aliqua.\r\n",
+        "short_name": "SAS",
+        "logo": "team_logos/default.png"
+    },
+    "model": "Teams.team"
+},
+{
+    "pk": 4,
+    "fields": {
+        "full_name": "Atlanta Hawks",
+        "description": "Est ex sunt enim commodo enim incididunt. Deserunt ad veniam laborum sunt incididunt nostrud anim consectetur sit consectetur ad. Consequat fugiat aliquip deserunt pariatur do consequat eiusmod. Sint reprehenderit pariatur non quis sit adipisicing sint occaecat ad. Incididunt est commodo aliqua sint occaecat. Cillum ut nostrud magna ea reprehenderit proident aliqua cupidatat ipsum esse commodo proident. Ullamco anim id mollit aute irure cupidatat est ea magna elit pariatur aliquip sunt.\r\n",
+        "short_name": "ATL",
+        "logo": "team_logos/default.png"
+    },
+    "model": "Teams.team"
+},
+{
+    "pk": 5,
+    "fields": {
+        "full_name": "Dallas Mavericks",
+        "description": "Id officia voluptate quis consequat ut labore id voluptate enim. Ea proident aliquip aliquip in adipisicing tempor magna commodo sunt ad quis laboris. Est eiusmod nisi aliqua nisi ullamco dolore elit nostrud quis velit cillum culpa irure. Anim voluptate ut tempor eiusmod anim magna. Sit culpa commodo amet voluptate cupidatat dolore in elit irure dolor consectetur deserunt. Excepteur eiusmod pariatur est nostrud mollit ut culpa do ipsum dolore labore ullamco nulla. Occaecat pariatur magna ut exercitation magna et duis non nulla tempor veniam sint ipsum.\r\n",
+        "short_name": "DAL",
+        "logo": "team_logos/default.png"
+    },
+    "model": "Teams.team"
+},
+{
+    "pk": 6,
+    "fields": {
+        "full_name": "Boston Celtics",
+        "description": "Do ut qui esse ea aliquip sit reprehenderit velit et consectetur incididunt. Officia velit adipisicing commodo est culpa ad cillum. Commodo amet ipsum est ut consequat dolor cupidatat minim consequat adipisicing ad. Aliquip minim officia sint do consectetur proident deserunt et eu excepteur excepteur.\r\n",
+        "short_name": "BOS",
+        "logo": "team_logos/default.png"
+    },
+    "model": "Teams.team"
+},
+{
+    "pk": 7,
+    "fields": {
+        "full_name": "Memphis Grizzlies",
+        "description": "Consequat minim aute do tempor commodo. Ex aliqua irure consequat et commodo reprehenderit ullamco sint do eiusmod. Amet duis qui pariatur culpa.\r\n",
+        "short_name": "MEM",
+        "logo": "team_logos/default.png"
+    },
+    "model": "Teams.team"
+},
+{
+    "pk": 8,
+    "fields": {
+        "full_name": "Golden State Warriors",
+        "description": "Velit in sint laborum laboris aliqua. Et commodo proident anim excepteur consectetur ex cillum. Mollit excepteur proident et ipsum veniam.\r\n",
+        "short_name": "GSW",
+        "logo": "team_logos/default.png"
+    },
+    "model": "Teams.team"
+},
+{
+    "pk": 9,
+    "fields": {
+        "full_name": "Los Angeles Lakers",
+        "description": "Nostrud do laboris sit do. Eu aliqua dolor fugiat duis minim proident eiusmod mollit mollit Lorem adipisicing. Amet minim aute ea laborum irure incididunt voluptate in velit exercitation. Aliquip excepteur amet dolore ipsum Lorem consequat est eu culpa aliqua eu consequat cupidatat. Do minim exercitation est non in duis incididunt nostrud deserunt nisi commodo fugiat.\r\n",
+        "short_name": "LAL",
+        "logo": "team_logos/default.png"
+    },
+    "model": "Teams.team"
+},
+{
+    "pk": 0,
+    "fields": {
+        "weight": 118,
+        "number": 78,
+        "position": "PF",
+        "birth_date": "1979-06-18",
+        "first_name": "Jennings",
+        "height": 213,
+        "last_name": "Mendez",
+        "image": "player_photos/default.jpg",
+        "team": 0
+    },
+    "model": "Players.player"
+},
+{
+    "pk": 1,
+    "fields": {
+        "weight": 113,
+        "number": 98,
+        "position": "PF",
+        "birth_date": "1976-02-27",
+        "first_name": "Levy",
+        "height": 181,
+        "last_name": "Bowen",
+        "image": "player_photos/default.jpg",
+        "team": 1
+    },
+    "model": "Players.player"
+},
+{
+    "pk": 2,
+    "fields": {
+        "weight": 82,
+        "number": 44,
+        "position": "PG",
+        "birth_date": "1979-06-05",
+        "first_name": "Rogers",
+        "height": 195,
+        "last_name": "Mcgowan",
+        "image": "player_photos/default.jpg",
+        "team": 2
+    },
+    "model": "Players.player"
+},
+{
+    "pk": 3,
+    "fields": {
+        "weight": 76,
+        "number": 91,
+        "position": "PG",
+        "birth_date": "1978-08-05",
+        "first_name": "Irene",
+        "height": 201,
+        "last_name": "Osborne",
+        "image": "player_photos/default.jpg",
+        "team": 3
+    },
+    "model": "Players.player"
+},
+{
+    "pk": 4,
+    "fields": {
+        "weight": 92,
+        "number": 4,
+        "position": "PF/C",
+        "birth_date": "1985-05-10",
+        "first_name": "Lola",
+        "height": 218,
+        "last_name": "Reilly",
+        "image": "player_photos/default.jpg",
+        "team": 4
+    },
+    "model": "Players.player"
+},
+{
+    "pk": 5,
+    "fields": {
+        "weight": 87,
+        "number": 61,
+        "position": "SG",
+        "birth_date": "1992-08-26",
+        "first_name": "Garner",
+        "height": 170,
+        "last_name": "Carr",
+        "image": "player_photos/default.jpg",
+        "team": 5
+    },
+    "model": "Players.player"
+},
+{
+    "pk": 6,
+    "fields": {
+        "weight": 103,
+        "number": 97,
+        "position": "C",
+        "birth_date": "1979-06-12",
+        "first_name": "Sutton",
+        "height": 172,
+        "last_name": "Barry",
+        "image": "player_photos/default.jpg",
+        "team": 6
+    },
+    "model": "Players.player"
+},
+{
+    "pk": 7,
+    "fields": {
+        "weight": 72,
+        "number": 39,
+        "position": "SF/PF",
+        "birth_date": "1987-05-21",
+        "first_name": "Ofelia",
+        "height": 209,
+        "last_name": "Nunez",
+        "image": "player_photos/default.jpg",
+        "team": 7
+    },
+    "model": "Players.player"
+},
+{
+    "pk": 8,
+    "fields": {
+        "weight": 70,
+        "number": 34,
+        "position": "SF/PF",
+        "birth_date": "1980-03-21",
+        "first_name": "Robert",
+        "height": 204,
+        "last_name": "Coleman",
+        "image": "player_photos/default.jpg",
+        "team": 8
+    },
+    "model": "Players.player"
+},
+{
+    "pk": 9,
+    "fields": {
+        "weight": 84,
+        "number": 46,
+        "position": "SF",
+        "birth_date": "1984-08-26",
+        "first_name": "Chaney",
+        "height": 182,
+        "last_name": "Fitzpatrick",
+        "image": "player_photos/default.jpg",
+        "team": 9
+    },
+    "model": "Players.player"
+},
+{
+    "pk": 10,
+    "fields": {
+        "weight": 99,
+        "number": 49,
+        "position": "PG",
+        "birth_date": "1990-02-02",
+        "first_name": "Mindy",
+        "height": 207,
+        "last_name": "Norris",
+        "image": "player_photos/default.jpg",
+        "team": 0
+    },
+    "model": "Players.player"
+},
+{
+    "pk": 11,
+    "fields": {
+        "weight": 74,
+        "number": 65,
+        "position": "SG/SF",
+        "birth_date": "1981-04-18",
+        "first_name": "Bradley",
+        "height": 195,
+        "last_name": "Hanson",
+        "image": "player_photos/default.jpg",
+        "team": 1
+    },
+    "model": "Players.player"
+},
+{
+    "pk": 12,
+    "fields": {
+        "weight": 105,
+        "number": 90,
+        "position": "SF/PF",
+        "birth_date": "1987-06-14",
+        "first_name": "Cleo",
+        "height": 192,
+        "last_name": "Pierce",
+        "image": "player_photos/default.jpg",
+        "team": 2
+    },
+    "model": "Players.player"
+},
+{
+    "pk": 13,
+    "fields": {
+        "weight": 106,
+        "number": 99,
+        "position": "PG/SG",
+        "birth_date": "1989-06-24",
+        "first_name": "Gladys",
+        "height": 179,
+        "last_name": "Blair",
+        "image": "player_photos/default.jpg",
+        "team": 3
+    },
+    "model": "Players.player"
+},
+{
+    "pk": 14,
+    "fields": {
+        "weight": 117,
+        "number": 18,
+        "position": "SG/SF",
+        "birth_date": "1992-08-08",
+        "first_name": "Alice",
+        "height": 182,
+        "last_name": "Farley",
+        "image": "player_photos/default.jpg",
+        "team": 4
+    },
+    "model": "Players.player"
+},
+{
+    "pk": 15,
+    "fields": {
+        "weight": 97,
+        "number": 12,
+        "position": "SF/PF",
+        "birth_date": "1989-06-12",
+        "first_name": "Lott",
+        "height": 192,
+        "last_name": "Burks",
+        "image": "player_photos/default.jpg",
+        "team": 5
+    },
+    "model": "Players.player"
+},
+{
+    "pk": 16,
+    "fields": {
+        "weight": 111,
+        "number": 43,
+        "position": "PF",
+        "birth_date": "1986-09-12",
+        "first_name": "Julianne",
+        "height": 173,
+        "last_name": "Velazquez",
+        "image": "player_photos/default.jpg",
+        "team": 6
+    },
+    "model": "Players.player"
+},
+{
+    "pk": 17,
+    "fields": {
+        "weight": 84,
+        "number": 54,
+        "position": "PF/C",
+        "birth_date": "1973-06-19",
+        "first_name": "Curtis",
+        "height": 198,
+        "last_name": "Warner",
+        "image": "player_photos/default.jpg",
+        "team": 7
+    },
+    "model": "Players.player"
+},
+{
+    "pk": 18,
+    "fields": {
+        "weight": 78,
+        "number": 89,
+        "position": "C",
+        "birth_date": "1977-06-09",
+        "first_name": "Peters",
+        "height": 202,
+        "last_name": "Marquez",
+        "image": "player_photos/default.jpg",
+        "team": 8
+    },
+    "model": "Players.player"
+},
+{
+    "pk": 19,
+    "fields": {
+        "weight": 105,
+        "number": 55,
+        "position": "PF/C",
+        "birth_date": "1991-01-22",
+        "first_name": "Pruitt",
+        "height": 190,
+        "last_name": "Ryan",
+        "image": "player_photos/default.jpg",
+        "team": 9
+    },
+    "model": "Players.player"
+},
+{
+    "pk": 20,
+    "fields": {
+        "weight": 117,
+        "number": 74,
+        "position": "SF/PF",
+        "birth_date": "1987-05-21",
+        "first_name": "Georgia",
+        "height": 170,
+        "last_name": "Ware",
+        "image": "player_photos/default.jpg",
+        "team": 0
+    },
+    "model": "Players.player"
+},
+{
+    "pk": 21,
+    "fields": {
+        "weight": 90,
+        "number": 2,
+        "position": "PF",
+        "birth_date": "1980-11-29",
+        "first_name": "Louella",
+        "height": 180,
+        "last_name": "Goodman",
+        "image": "player_photos/default.jpg",
+        "team": 1
+    },
+    "model": "Players.player"
+},
+{
+    "pk": 22,
+    "fields": {
+        "weight": 112,
+        "number": 60,
+        "position": "C",
+        "birth_date": "1973-04-08",
+        "first_name": "Nunez",
+        "height": 189,
+        "last_name": "Jones",
+        "image": "player_photos/default.jpg",
+        "team": 2
+    },
+    "model": "Players.player"
+},
+{
+    "pk": 23,
+    "fields": {
+        "weight": 84,
+        "number": 98,
+        "position": "SG",
+        "birth_date": "1976-05-13",
+        "first_name": "Walsh",
+        "height": 182,
+        "last_name": "Schmidt",
+        "image": "player_photos/default.jpg",
+        "team": 3
+    },
+    "model": "Players.player"
+},
+{
+    "pk": 24,
+    "fields": {
+        "weight": 79,
+        "number": 18,
+        "position": "PG",
+        "birth_date": "1986-03-17",
+        "first_name": "Pearlie",
+        "height": 185,
+        "last_name": "Hogan",
+        "image": "player_photos/default.jpg",
+        "team": 4
+    },
+    "model": "Players.player"
+},
+{
+    "pk": 25,
+    "fields": {
+        "weight": 73,
+        "number": 6,
+        "position": "SG/SF",
+        "birth_date": "1989-04-22",
+        "first_name": "Joyce",
+        "height": 210,
+        "last_name": "William",
+        "image": "player_photos/default.jpg",
+        "team": 5
+    },
+    "model": "Players.player"
+},
+{
+    "pk": 26,
+    "fields": {
+        "weight": 97,
+        "number": 51,
+        "position": "C",
+        "birth_date": "1987-01-22",
+        "first_name": "Mclean",
+        "height": 193,
+        "last_name": "Chambers",
+        "image": "player_photos/default.jpg",
+        "team": 6
+    },
+    "model": "Players.player"
+},
+{
+    "pk": 27,
+    "fields": {
+        "weight": 95,
+        "number": 0,
+        "position": "PG",
+        "birth_date": "1979-09-06",
+        "first_name": "Santana",
+        "height": 206,
+        "last_name": "Hyde",
+        "image": "player_photos/default.jpg",
+        "team": 7
+    },
+    "model": "Players.player"
+},
+{
+    "pk": 28,
+    "fields": {
+        "weight": 83,
+        "number": 49,
+        "position": "C",
+        "birth_date": "1991-07-10",
+        "first_name": "Kayla",
+        "height": 179,
+        "last_name": "Tyson",
+        "image": "player_photos/default.jpg",
+        "team": 8
+    },
+    "model": "Players.player"
+},
+{
+    "pk": 29,
+    "fields": {
+        "weight": 99,
+        "number": 22,
+        "position": "SF/PF",
+        "birth_date": "1985-03-29",
+        "first_name": "Hardin",
+        "height": 191,
+        "last_name": "Craft",
+        "image": "player_photos/default.jpg",
+        "team": 9
+    },
+    "model": "Players.player"
+},
+{
+    "pk": 30,
+    "fields": {
+        "weight": 89,
+        "number": 41,
+        "position": "SG",
+        "birth_date": "1974-06-27",
+        "first_name": "Minnie",
+        "height": 220,
+        "last_name": "Chang",
+        "image": "player_photos/default.jpg",
+        "team": 0
+    },
+    "model": "Players.player"
+},
+{
+    "pk": 31,
+    "fields": {
+        "weight": 98,
+        "number": 2,
+        "position": "SG",
+        "birth_date": "1976-01-03",
+        "first_name": "Cochran",
+        "height": 188,
+        "last_name": "Cardenas",
+        "image": "player_photos/default.jpg",
+        "team": 1
+    },
+    "model": "Players.player"
+},
+{
+    "pk": 32,
+    "fields": {
+        "weight": 74,
+        "number": 47,
+        "position": "PF",
+        "birth_date": "1994-08-16",
+        "first_name": "West",
+        "height": 196,
+        "last_name": "Collier",
+        "image": "player_photos/default.jpg",
+        "team": 2
+    },
+    "model": "Players.player"
+},
+{
+    "pk": 33,
+    "fields": {
+        "weight": 114,
+        "number": 13,
+        "position": "PF",
+        "birth_date": "1985-01-04",
+        "first_name": "Hickman",
+        "height": 188,
+        "last_name": "Morton",
+        "image": "player_photos/default.jpg",
+        "team": 3
+    },
+    "model": "Players.player"
+},
+{
+    "pk": 34,
+    "fields": {
+        "weight": 79,
+        "number": 76,
+        "position": "PF",
+        "birth_date": "1994-06-29",
+        "first_name": "Katy",
+        "height": 192,
+        "last_name": "Bartlett",
+        "image": "player_photos/default.jpg",
+        "team": 4
+    },
+    "model": "Players.player"
+},
+{
+    "pk": 35,
+    "fields": {
+        "weight": 88,
+        "number": 75,
+        "position": "SG",
+        "birth_date": "1987-09-08",
+        "first_name": "Cheri",
+        "height": 202,
+        "last_name": "Steele",
+        "image": "player_photos/default.jpg",
+        "team": 5
+    },
+    "model": "Players.player"
+},
+{
+    "pk": 36,
+    "fields": {
+        "weight": 102,
+        "number": 24,
+        "position": "SF",
+        "birth_date": "1977-09-25",
+        "first_name": "Becker",
+        "height": 203,
+        "last_name": "Stein",
+        "image": "player_photos/default.jpg",
+        "team": 6
+    },
+    "model": "Players.player"
+},
+{
+    "pk": 37,
+    "fields": {
+        "weight": 115,
+        "number": 95,
+        "position": "PF",
+        "birth_date": "1989-07-09",
+        "first_name": "Barlow",
+        "height": 174,
+        "last_name": "Mccray",
+        "image": "player_photos/default.jpg",
+        "team": 7
+    },
+    "model": "Players.player"
+},
+{
+    "pk": 38,
+    "fields": {
+        "weight": 87,
+        "number": 4,
+        "position": "SF",
+        "birth_date": "1974-06-14",
+        "first_name": "Emily",
+        "height": 171,
+        "last_name": "Fleming",
+        "image": "player_photos/default.jpg",
+        "team": 8
+    },
+    "model": "Players.player"
+},
+{
+    "pk": 39,
+    "fields": {
+        "weight": 104,
+        "number": 68,
+        "position": "PF",
+        "birth_date": "1975-02-19",
+        "first_name": "Ward",
+        "height": 173,
+        "last_name": "Summers",
+        "image": "player_photos/default.jpg",
+        "team": 9
+    },
+    "model": "Players.player"
+},
+{
+    "pk": 40,
+    "fields": {
+        "weight": 100,
+        "number": 99,
+        "position": "PG",
+        "birth_date": "1994-07-18",
+        "first_name": "Lizzie",
+        "height": 201,
+        "last_name": "Copeland",
+        "image": "player_photos/default.jpg",
+        "team": 0
+    },
+    "model": "Players.player"
+},
+{
+    "pk": 41,
+    "fields": {
+        "weight": 87,
+        "number": 95,
+        "position": "PG",
+        "birth_date": "1994-03-13",
+        "first_name": "Koch",
+        "height": 193,
+        "last_name": "Yang",
+        "image": "player_photos/default.jpg",
+        "team": 1
+    },
+    "model": "Players.player"
+},
+{
+    "pk": 42,
+    "fields": {
+        "weight": 118,
+        "number": 31,
+        "position": "C",
+        "birth_date": "1970-06-07",
+        "first_name": "Luna",
+        "height": 214,
+        "last_name": "Justice",
+        "image": "player_photos/default.jpg",
+        "team": 2
+    },
+    "model": "Players.player"
+},
+{
+    "pk": 43,
+    "fields": {
+        "weight": 79,
+        "number": 80,
+        "position": "SG/SF",
+        "birth_date": "1977-11-04",
+        "first_name": "Cox",
+        "height": 187,
+        "last_name": "Farrell",
+        "image": "player_photos/default.jpg",
+        "team": 3
+    },
+    "model": "Players.player"
+},
+{
+    "pk": 44,
+    "fields": {
+        "weight": 95,
+        "number": 15,
+        "position": "SF/PF",
+        "birth_date": "1993-04-30",
+        "first_name": "Sophie",
+        "height": 204,
+        "last_name": "Cain",
+        "image": "player_photos/default.jpg",
+        "team": 4
+    },
+    "model": "Players.player"
+},
+{
+    "pk": 45,
+    "fields": {
+        "weight": 78,
+        "number": 89,
+        "position": "C",
+        "birth_date": "1993-02-14",
+        "first_name": "Ballard",
+        "height": 171,
+        "last_name": "Vincent",
+        "image": "player_photos/default.jpg",
+        "team": 5
+    },
+    "model": "Players.player"
+},
+{
+    "pk": 46,
+    "fields": {
+        "weight": 96,
+        "number": 56,
+        "position": "SF",
+        "birth_date": "1980-01-04",
+        "first_name": "Logan",
+        "height": 189,
+        "last_name": "Cochran",
+        "image": "player_photos/default.jpg",
+        "team": 6
+    },
+    "model": "Players.player"
+},
+{
+    "pk": 47,
+    "fields": {
+        "weight": 103,
+        "number": 60,
+        "position": "PG",
+        "birth_date": "1992-07-30",
+        "first_name": "Oconnor",
+        "height": 208,
+        "last_name": "Roy",
+        "image": "player_photos/default.jpg",
+        "team": 7
+    },
+    "model": "Players.player"
+},
+{
+    "pk": 48,
+    "fields": {
+        "weight": 83,
+        "number": 14,
+        "position": "PG",
+        "birth_date": "1970-07-30",
+        "first_name": "Shepard",
+        "height": 219,
+        "last_name": "Herrera",
+        "image": "player_photos/default.jpg",
+        "team": 8
+    },
+    "model": "Players.player"
+},
+{
+    "pk": 49,
+    "fields": {
+        "weight": 100,
+        "number": 39,
+        "position": "PF/C",
+        "birth_date": "1992-08-23",
+        "first_name": "Roseann",
+        "height": 206,
+        "last_name": "Ramsey",
+        "image": "player_photos/default.jpg",
+        "team": 9
+    },
+    "model": "Players.player"
+},
+{
+    "pk": 50,
+    "fields": {
+        "weight": 89,
+        "number": 18,
+        "position": "PG/SG",
+        "birth_date": "1973-10-31",
+        "first_name": "Waller",
+        "height": 171,
+        "last_name": "Decker",
+        "image": "player_photos/default.jpg",
+        "team": 0
+    },
+    "model": "Players.player"
+},
+{
+    "pk": 51,
+    "fields": {
+        "weight": 112,
+        "number": 8,
+        "position": "SF",
+        "birth_date": "1977-12-22",
+        "first_name": "Randolph",
+        "height": 178,
+        "last_name": "Jefferson",
+        "image": "player_photos/default.jpg",
+        "team": 1
+    },
+    "model": "Players.player"
+},
+{
+    "pk": 52,
+    "fields": {
+        "weight": 74,
+        "number": 22,
+        "position": "SG",
+        "birth_date": "1985-02-02",
+        "first_name": "Armstrong",
+        "height": 213,
+        "last_name": "House",
+        "image": "player_photos/default.jpg",
+        "team": 2
+    },
+    "model": "Players.player"
+},
+{
+    "pk": 53,
+    "fields": {
+        "weight": 86,
+        "number": 65,
+        "position": "SG/SF",
+        "birth_date": "1981-04-11",
+        "first_name": "Lowe",
+        "height": 187,
+        "last_name": "Knox",
+        "image": "player_photos/default.jpg",
+        "team": 3
+    },
+    "model": "Players.player"
+},
+{
+    "pk": 54,
+    "fields": {
+        "weight": 83,
+        "number": 83,
+        "position": "SG",
+        "birth_date": "1975-01-12",
+        "first_name": "Willie",
+        "height": 173,
+        "last_name": "Dodson",
+        "image": "player_photos/default.jpg",
+        "team": 4
+    },
+    "model": "Players.player"
+},
+{
+    "pk": 55,
+    "fields": {
+        "weight": 86,
+        "number": 44,
+        "position": "C",
+        "birth_date": "1988-09-27",
+        "first_name": "Josefina",
+        "height": 190,
+        "last_name": "Silva",
+        "image": "player_photos/default.jpg",
+        "team": 5
+    },
+    "model": "Players.player"
+},
+{
+    "pk": 56,
+    "fields": {
+        "weight": 78,
+        "number": 37,
+        "position": "PF",
+        "birth_date": "1991-03-09",
+        "first_name": "Amanda",
+        "height": 189,
+        "last_name": "Rutledge",
+        "image": "player_photos/default.jpg",
+        "team": 6
+    },
+    "model": "Players.player"
+},
+{
+    "pk": 57,
+    "fields": {
+        "weight": 72,
+        "number": 23,
+        "position": "C",
+        "birth_date": "1991-11-14",
+        "first_name": "Imogene",
+        "height": 200,
+        "last_name": "Weber",
+        "image": "player_photos/default.jpg",
+        "team": 7
+    },
+    "model": "Players.player"
+},
+{
+    "pk": 58,
+    "fields": {
+        "weight": 74,
+        "number": 27,
+        "position": "PG",
+        "birth_date": "1994-11-07",
+        "first_name": "Haney",
+        "height": 178,
+        "last_name": "Hall",
+        "image": "player_photos/default.jpg",
+        "team": 8
+    },
+    "model": "Players.player"
+},
+{
+    "pk": 59,
+    "fields": {
+        "weight": 73,
+        "number": 76,
+        "position": "PG/SG",
+        "birth_date": "1982-07-29",
+        "first_name": "Gena",
+        "height": 182,
+        "last_name": "Carroll",
+        "image": "player_photos/default.jpg",
+        "team": 9
+    },
+    "model": "Players.player"
+},
+{
+    "pk": 60,
+    "fields": {
+        "weight": 90,
+        "number": 23,
+        "position": "PF/C",
+        "birth_date": "1991-08-01",
+        "first_name": "Sullivan",
+        "height": 205,
+        "last_name": "Stuart",
+        "image": "player_photos/default.jpg",
+        "team": 0
+    },
+    "model": "Players.player"
+},
+{
+    "pk": 61,
+    "fields": {
+        "weight": 106,
+        "number": 15,
+        "position": "PF",
+        "birth_date": "1991-03-28",
+        "first_name": "Bryant",
+        "height": 203,
+        "last_name": "Rollins",
+        "image": "player_photos/default.jpg",
+        "team": 1
+    },
+    "model": "Players.player"
+},
+{
+    "pk": 62,
+    "fields": {
+        "weight": 109,
+        "number": 68,
+        "position": "PF/C",
+        "birth_date": "1993-05-10",
+        "first_name": "Martinez",
+        "height": 180,
+        "last_name": "Vega",
+        "image": "player_photos/default.jpg",
+        "team": 2
+    },
+    "model": "Players.player"
+},
+{
+    "pk": 63,
+    "fields": {
+        "weight": 101,
+        "number": 33,
+        "position": "SF",
+        "birth_date": "1994-01-24",
+        "first_name": "Corine",
+        "height": 220,
+        "last_name": "Mcknight",
+        "image": "player_photos/default.jpg",
+        "team": 3
+    },
+    "model": "Players.player"
+},
+{
+    "pk": 64,
+    "fields": {
+        "weight": 93,
+        "number": 40,
+        "position": "PF/C",
+        "birth_date": "1987-03-16",
+        "first_name": "Holly",
+        "height": 215,
+        "last_name": "Casey",
+        "image": "player_photos/default.jpg",
+        "team": 4
+    },
+    "model": "Players.player"
+},
+{
+    "pk": 65,
+    "fields": {
+        "weight": 81,
+        "number": 61,
+        "position": "PG/SG",
+        "birth_date": "1986-09-03",
+        "first_name": "Harriett",
+        "height": 200,
+        "last_name": "Duffy",
+        "image": "player_photos/default.jpg",
+        "team": 5
+    },
+    "model": "Players.player"
+},
+{
+    "pk": 66,
+    "fields": {
+        "weight": 87,
+        "number": 87,
+        "position": "C",
+        "birth_date": "1983-12-26",
+        "first_name": "Reyes",
+        "height": 210,
+        "last_name": "Puckett",
+        "image": "player_photos/default.jpg",
+        "team": 6
+    },
+    "model": "Players.player"
+},
+{
+    "pk": 67,
+    "fields": {
+        "weight": 103,
+        "number": 23,
+        "position": "PF/C",
+        "birth_date": "1975-12-23",
+        "first_name": "Erna",
+        "height": 183,
+        "last_name": "Reyes",
+        "image": "player_photos/default.jpg",
+        "team": 7
+    },
+    "model": "Players.player"
+},
+{
+    "pk": 68,
+    "fields": {
+        "weight": 108,
+        "number": 47,
+        "position": "PG",
+        "birth_date": "1994-09-01",
+        "first_name": "Neva",
+        "height": 192,
+        "last_name": "Salas",
+        "image": "player_photos/default.jpg",
+        "team": 8
+    },
+    "model": "Players.player"
+},
+{
+    "pk": 69,
+    "fields": {
+        "weight": 99,
+        "number": 15,
+        "position": "C",
+        "birth_date": "1987-05-14",
+        "first_name": "Ortiz",
+        "height": 193,
+        "last_name": "May",
+        "image": "player_photos/default.jpg",
+        "team": 9
+    },
+    "model": "Players.player"
+},
+{
+    "pk": 70,
+    "fields": {
+        "weight": 74,
+        "number": 8,
+        "position": "PG",
+        "birth_date": "1990-05-17",
+        "first_name": "Trina",
+        "height": 205,
+        "last_name": "Welch",
+        "image": "player_photos/default.jpg",
+        "team": 0
+    },
+    "model": "Players.player"
+},
+{
+    "pk": 71,
+    "fields": {
+        "weight": 96,
+        "number": 65,
+        "position": "SG",
+        "birth_date": "1981-11-29",
+        "first_name": "Delacruz",
+        "height": 213,
+        "last_name": "Morgan",
+        "image": "player_photos/default.jpg",
+        "team": 1
+    },
+    "model": "Players.player"
+},
+{
+    "pk": 72,
+    "fields": {
+        "weight": 78,
+        "number": 11,
+        "position": "PF",
+        "birth_date": "1985-05-12",
+        "first_name": "Black",
+        "height": 174,
+        "last_name": "Marshall",
+        "image": "player_photos/default.jpg",
+        "team": 2
+    },
+    "model": "Players.player"
+},
+{
+    "pk": 73,
+    "fields": {
+        "weight": 83,
+        "number": 16,
+        "position": "SF/PF",
+        "birth_date": "1971-08-29",
+        "first_name": "Deloris",
+        "height": 175,
+        "last_name": "Shepard",
+        "image": "player_photos/default.jpg",
+        "team": 3
+    },
+    "model": "Players.player"
+},
+{
+    "pk": 74,
+    "fields": {
+        "weight": 115,
+        "number": 79,
+        "position": "PF",
+        "birth_date": "1989-12-20",
+        "first_name": "Humphrey",
+        "height": 196,
+        "last_name": "Finley",
+        "image": "player_photos/default.jpg",
+        "team": 4
+    },
+    "model": "Players.player"
+},
+{
+    "pk": 75,
+    "fields": {
+        "weight": 80,
+        "number": 29,
+        "position": "SF/PF",
+        "birth_date": "1983-04-01",
+        "first_name": "Daphne",
+        "height": 208,
+        "last_name": "Weiss",
+        "image": "player_photos/default.jpg",
+        "team": 5
+    },
+    "model": "Players.player"
+},
+{
+    "pk": 76,
+    "fields": {
+        "weight": 77,
+        "number": 60,
+        "position": "SG",
+        "birth_date": "1990-11-16",
+        "first_name": "Burton",
+        "height": 183,
+        "last_name": "Roth",
+        "image": "player_photos/default.jpg",
+        "team": 6
+    },
+    "model": "Players.player"
+},
+{
+    "pk": 77,
+    "fields": {
+        "weight": 100,
+        "number": 78,
+        "position": "PG/SG",
+        "birth_date": "1991-07-23",
+        "first_name": "Kristen",
+        "height": 188,
+        "last_name": "Talley",
+        "image": "player_photos/default.jpg",
+        "team": 7
+    },
+    "model": "Players.player"
+},
+{
+    "pk": 78,
+    "fields": {
+        "weight": 120,
+        "number": 35,
+        "position": "SF/PF",
+        "birth_date": "1981-11-24",
+        "first_name": "Jeanine",
+        "height": 203,
+        "last_name": "Perry",
+        "image": "player_photos/default.jpg",
+        "team": 8
+    },
+    "model": "Players.player"
+},
+{
+    "pk": 79,
+    "fields": {
+        "weight": 117,
+        "number": 10,
+        "position": "C",
+        "birth_date": "1974-07-08",
+        "first_name": "Pearl",
+        "height": 171,
+        "last_name": "Rice",
+        "image": "player_photos/default.jpg",
+        "team": 9
+    },
+    "model": "Players.player"
+},
+{
+    "pk": 80,
+    "fields": {
+        "weight": 74,
+        "number": 16,
+        "position": "PF/C",
+        "birth_date": "1982-04-27",
+        "first_name": "Kenya",
+        "height": 180,
+        "last_name": "Smith",
+        "image": "player_photos/default.jpg",
+        "team": 0
+    },
+    "model": "Players.player"
+},
+{
+    "pk": 81,
+    "fields": {
+        "weight": 92,
+        "number": 90,
+        "position": "SG/SF",
+        "birth_date": "1985-02-21",
+        "first_name": "Wynn",
+        "height": 189,
+        "last_name": "Robinson",
+        "image": "player_photos/default.jpg",
+        "team": 1
+    },
+    "model": "Players.player"
+},
+{
+    "pk": 82,
+    "fields": {
+        "weight": 74,
+        "number": 28,
+        "position": "SG",
+        "birth_date": "1985-09-06",
+        "first_name": "Patty",
+        "height": 174,
+        "last_name": "Clarke",
+        "image": "player_photos/default.jpg",
+        "team": 2
+    },
+    "model": "Players.player"
+},
+{
+    "pk": 83,
+    "fields": {
+        "weight": 74,
+        "number": 23,
+        "position": "C",
+        "birth_date": "1976-01-14",
+        "first_name": "Deirdre",
+        "height": 210,
+        "last_name": "Perez",
+        "image": "player_photos/default.jpg",
+        "team": 3
+    },
+    "model": "Players.player"
+},
+{
+    "pk": 84,
+    "fields": {
+        "weight": 78,
+        "number": 26,
+        "position": "C",
+        "birth_date": "1976-11-28",
+        "first_name": "Barnett",
+        "height": 181,
+        "last_name": "Winters",
+        "image": "player_photos/default.jpg",
+        "team": 4
+    },
+    "model": "Players.player"
+},
+{
+    "pk": 85,
+    "fields": {
+        "weight": 111,
+        "number": 75,
+        "position": "SF/PF",
+        "birth_date": "1994-03-03",
+        "first_name": "Shelby",
+        "height": 174,
+        "last_name": "Weaver",
+        "image": "player_photos/default.jpg",
+        "team": 5
+    },
+    "model": "Players.player"
+},
+{
+    "pk": 86,
+    "fields": {
+        "weight": 87,
+        "number": 56,
+        "position": "PF",
+        "birth_date": "1972-09-05",
+        "first_name": "Chase",
+        "height": 175,
+        "last_name": "Lyons",
+        "image": "player_photos/default.jpg",
+        "team": 6
+    },
+    "model": "Players.player"
+},
+{
+    "pk": 87,
+    "fields": {
+        "weight": 105,
+        "number": 57,
+        "position": "PG",
+        "birth_date": "1976-10-28",
+        "first_name": "Terrell",
+        "height": 197,
+        "last_name": "Martinez",
+        "image": "player_photos/default.jpg",
+        "team": 7
+    },
+    "model": "Players.player"
+},
+{
+    "pk": 88,
+    "fields": {
+        "weight": 89,
+        "number": 48,
+        "position": "SG/SF",
+        "birth_date": "1992-06-11",
+        "first_name": "Donovan",
+        "height": 216,
+        "last_name": "Mclean",
+        "image": "player_photos/default.jpg",
+        "team": 8
+    },
+    "model": "Players.player"
+},
+{
+    "pk": 89,
+    "fields": {
+        "weight": 96,
+        "number": 5,
+        "position": "PF/C",
+        "birth_date": "1973-05-31",
+        "first_name": "Matthews",
+        "height": 174,
+        "last_name": "Odonnell",
+        "image": "player_photos/default.jpg",
+        "team": 9
+    },
+    "model": "Players.player"
+},
+{
+    "pk": 90,
+    "fields": {
+        "weight": 100,
+        "number": 36,
+        "position": "PG/SG",
+        "birth_date": "1977-05-19",
+        "first_name": "Briggs",
+        "height": 219,
+        "last_name": "Robertson",
+        "image": "player_photos/default.jpg",
+        "team": 0
+    },
+    "model": "Players.player"
+},
+{
+    "pk": 91,
+    "fields": {
+        "weight": 114,
+        "number": 92,
+        "position": "SG",
+        "birth_date": "1978-07-22",
+        "first_name": "Anita",
+        "height": 185,
+        "last_name": "Wolfe",
+        "image": "player_photos/default.jpg",
+        "team": 1
+    },
+    "model": "Players.player"
+},
+{
+    "pk": 92,
+    "fields": {
+        "weight": 78,
+        "number": 28,
+        "position": "SF",
+        "birth_date": "1994-04-09",
+        "first_name": "Colette",
+        "height": 213,
+        "last_name": "Vaughn",
+        "image": "player_photos/default.jpg",
+        "team": 2
+    },
+    "model": "Players.player"
+},
+{
+    "pk": 93,
+    "fields": {
+        "weight": 113,
+        "number": 59,
+        "position": "PG/SG",
+        "birth_date": "1993-02-20",
+        "first_name": "Velazquez",
+        "height": 182,
+        "last_name": "Love",
+        "image": "player_photos/default.jpg",
+        "team": 3
+    },
+    "model": "Players.player"
+},
+{
+    "pk": 94,
+    "fields": {
+        "weight": 77,
+        "number": 19,
+        "position": "SF/PF",
+        "birth_date": "1991-04-30",
+        "first_name": "Kate",
+        "height": 179,
+        "last_name": "Calderon",
+        "image": "player_photos/default.jpg",
+        "team": 4
+    },
+    "model": "Players.player"
+},
+{
+    "pk": 95,
+    "fields": {
+        "weight": 76,
+        "number": 88,
+        "position": "PG",
+        "birth_date": "1974-12-08",
+        "first_name": "Sloan",
+        "height": 199,
+        "last_name": "Fischer",
+        "image": "player_photos/default.jpg",
+        "team": 5
+    },
+    "model": "Players.player"
+},
+{
+    "pk": 96,
+    "fields": {
+        "weight": 108,
+        "number": 43,
+        "position": "PG/SG",
+        "birth_date": "1993-02-07",
+        "first_name": "Fuller",
+        "height": 183,
+        "last_name": "Chen",
+        "image": "player_photos/default.jpg",
+        "team": 6
+    },
+    "model": "Players.player"
+},
+{
+    "pk": 97,
+    "fields": {
+        "weight": 116,
+        "number": 52,
+        "position": "PG/SG",
+        "birth_date": "1972-05-13",
+        "first_name": "Brianna",
+        "height": 211,
+        "last_name": "Hopper",
+        "image": "player_photos/default.jpg",
+        "team": 7
+    },
+    "model": "Players.player"
+},
+{
+    "pk": 98,
+    "fields": {
+        "weight": 82,
+        "number": 80,
+        "position": "SF",
+        "birth_date": "1983-11-26",
+        "first_name": "Rasmussen",
+        "height": 216,
+        "last_name": "Branch",
+        "image": "player_photos/default.jpg",
+        "team": 8
+    },
+    "model": "Players.player"
+},
+{
+    "pk": 99,
+    "fields": {
+        "weight": 105,
+        "number": 92,
+        "position": "PG",
+        "birth_date": "1980-04-12",
+        "first_name": "Araceli",
+        "height": 218,
+        "last_name": "Wynn",
+        "image": "player_photos/default.jpg",
+        "team": 9
+    },
+    "model": "Players.player"
+}
+]

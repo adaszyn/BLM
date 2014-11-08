@@ -19,42 +19,47 @@
                     <div class="panel-body">
                         <div class="tab-content">
                             <div class="tab-pane fade in active" id="tabProfile">
-                                <h1>
-                                   &#35;{{ player.number }} | {{ player.first_name }} {{ player.last_name }}
-                                    <span class="pull-right label label-default">
-                                        <img title="Player image"
+                                <div class="col-lg-12">
+                                    <div class="col-lg-8">
+                                        <h1>
+                                            &#35;{{ player.number }} | {{ player.first_name }} {{ player.last_name }}
+                                        </h1>
+                                        <hr>
+                                        <table class="table table-user-information">
+                                            <tbody>
+                                            <tr>
+                                                <td>Team:</td>
+                                                <td><a href="{{ player.team.get_absolute_url }}">{{ player.team }}</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Position:</td>
+                                                <td>{{ player.position }}</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Date of Birth:</td>
+                                                <td>{{ birth_date }} (age {{ player.age }})</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Height:</td>
+                                                <td>{{ player.height }} cm</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Weight:</td>
+                                                <td>{{ player.weight }} kg</td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <h1>
+                                            <span class="pull-right label label-default">
+                                            <img title="Player image"
                                              class="img-rounded img-responsive"
                                              width="250px"
                                              src="{{ MEDIA_URL }}{{ player.image }}">
-                                    </span>
-                                </h1>
-
-                                <hr>
-                                <div class="col-lg-8">
-                                    <table class="table table-user-information">
-                                        <tbody>
-                                        <tr>
-                                            <td>Team:</td>
-                                            <td><a href="{{ player.team.get_absolute_url }}">{{ player.team }}</a></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Position:</td>
-                                            <td>{{ player.position }}</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Date of Birth:</td>
-                                            <td>{{ birth_date }} (age {{ player.age }})</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Height:</td>
-                                            <td>{{ player.height }} cm</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Weight:</td>
-                                            <td>{{ player.weight }} kg</td>
-                                        </tr>
-                                        </tbody>
-                                    </table>
+                                            </span>
+                                        </h1>
+                                    </div>
                                 </div>
                             </div>
 

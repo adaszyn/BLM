@@ -9,10 +9,8 @@
                 <li class="dropdown{% if link.url in path %} active{% endif %}">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Teams <b class="caret"></b></a>
                     <ul class="dropdown-menu">
-                        <li{% ifequal path link.url %} class="active"{% endifequal %}><a href="{{ link.url }}">All</a></li>
-                        <li class="divider"></li>
-                        {% for team in teams %}
-                            <li{% ifequal path team.url %} class="active"{% endifequal %}><a href="{{ team.url }}">{{ team.name }}</a></li>
+                        {% for team in all_teams %}
+                            <li{% ifequal path team.get_absolute_url %} class="active"{% endifequal %}><a href="{{ team.get_absolute_url }}">{{ team.full_name }}</a></li>
                         {% endfor %}
                     </ul>
                 </li>

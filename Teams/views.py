@@ -5,12 +5,6 @@ from Teams.models import Team
 from Players.models import Player
 
 
-def team_index(request):
-    # TODO /team/
-
-    return render(request, 'Teams/team_index.html')
-
-
 def team_page(request, team_name):
     try:
         team = Team.objects.get(full_name=team_name.replace("_", " ").title)
