@@ -1,11 +1,11 @@
 from django.http import Http404
 from django.shortcuts import render
-
+from Games import models
 
 def game_index(request):
     # TODO /game/
 
-    return render(request, 'Games/game_index.html')
+    return render(request, 'Games/game_index.html', {'games': models.Game.objects.all()})
 
 
 def game_on_date(request, game_date):

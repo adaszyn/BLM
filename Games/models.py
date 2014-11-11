@@ -26,7 +26,12 @@ class Game(models.Model):
 
     def __str__(self):
         return str(self.away_team) + ' @ ' + str(self.home_team) + ' (' + self.date.strftime("%d.%m.%Y") + ')'
-
+    def save(self, *args, **kwargs):
+        super(Game, self).save(*args, **kwargs)
+        home_teamboxscore = TeamBoxscore(game=self,team=self.home_team, is_home=True)
+        away_teamboxscore = TeamBoxscore(game=self,team=self.away_team,is_home=False)
+        away_teamboxscore.save()
+        home_teamboxscore.save()
 
 class TeamBoxscore(models.Model):
     game = models.ForeignKey(Game)
@@ -52,6 +57,7 @@ class TeamBoxscore(models.Model):
     fta = models.PositiveIntegerField(default=0)
     ft_perc = models.FloatField(default=0, editable=False)
     personal_fouls = models.PositiveIntegerField(default=0)
+
 
     def save(self, *args, **kwargs):
         if self.game.home_team == self.team:

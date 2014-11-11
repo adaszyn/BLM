@@ -8,6 +8,20 @@
         <h1>TODO</h1>
          <!-- TODO /game/ -->
         <p>/game/</p>
+        {%  for game in games %}
+
+            <div class="panel panel-default">
+                <div class="panel-heading" style="text-align: center">{{ game.home_team }} vs {{ game.away_team }}</div>
+                <div class="panel-body">
+                    <div style="width: 50%; background-image: '{{ MEDIA_URL }}{{ game.home_team.logo }}'">{{ game.home_team }}</div>
+
+
+
+                    <br/>{{ game.away_team }}
+                </div>
+            </div>
+
+        {% endfor %}
     </div>
 </div>
 
