@@ -76,26 +76,26 @@ class PlayerBoxscore(models.Model):
     player = models.ForeignKey(Player)
     team_boxscore = models.ForeignKey(TeamBoxscore)
     is_starter = models.BooleanField(default=False)
-    minutes = models.PositiveIntegerField(verbose_name='MIN')
-    points = models.PositiveIntegerField(verbose_name='PTS')
-    rebounds_def = models.PositiveIntegerField(verbose_name='DEF')
-    rebounds_off = models.PositiveIntegerField(verbose_name='OFF')
-    rebounds_all = models.PositiveIntegerField(verbose_name='REB', editable=False)
-    assists = models.PositiveIntegerField(verbose_name='AST')
-    steals = models.PositiveIntegerField(verbose_name='STL')
-    blocks = models.PositiveIntegerField(verbose_name='BLK')
-    blocks_against = models.PositiveIntegerField(verbose_name='BA')
-    turnovers = models.PositiveIntegerField(verbose_name='TO')
-    fgm = models.PositiveIntegerField(verbose_name='FGM')
-    fga = models.PositiveIntegerField(verbose_name='FGA')
-    fg_perc = models.FloatField(verbose_name='FG%', editable=False)
-    three_pm = models.PositiveIntegerField(verbose_name='3PM')
-    three_pa = models.PositiveIntegerField(verbose_name='3PA')
-    three_perc = models.FloatField(verbose_name='3P%', editable=False)
-    ftm = models.PositiveIntegerField(verbose_name='FTM')
-    fta = models.PositiveIntegerField(verbose_name='FTA')
-    ft_perc = models.FloatField(verbose_name='FT%', editable=False)
-    personal_fouls = models.PositiveIntegerField(verbose_name='PF')
+    minutes = models.PositiveIntegerField(verbose_name='MIN', default=0)
+    points = models.PositiveIntegerField(verbose_name='PTS', default=0)
+    rebounds_def = models.PositiveIntegerField(verbose_name='DEF', default=0)
+    rebounds_off = models.PositiveIntegerField(verbose_name='OFF', default=0)
+    rebounds_all = models.PositiveIntegerField(verbose_name='REB', editable=False, default=0)
+    assists = models.PositiveIntegerField(verbose_name='AST', default=0)
+    steals = models.PositiveIntegerField(verbose_name='STL', default=0)
+    blocks = models.PositiveIntegerField(verbose_name='BLK', default=0)
+    blocks_against = models.PositiveIntegerField(verbose_name='BA', default=0)
+    turnovers = models.PositiveIntegerField(verbose_name='TO', default=0)
+    fgm = models.PositiveIntegerField(verbose_name='FGM', default=0)
+    fga = models.PositiveIntegerField(verbose_name='FGA', default=0)
+    fg_perc = models.FloatField(verbose_name='FG%', editable=False, default=0)
+    three_pm = models.PositiveIntegerField(verbose_name='3PM', default=0)
+    three_pa = models.PositiveIntegerField(verbose_name='3PA', default=0)
+    three_perc = models.FloatField(verbose_name='3P%', editable=False, default=0)
+    ftm = models.PositiveIntegerField(verbose_name='FTM', default=0)
+    fta = models.PositiveIntegerField(verbose_name='FTA', default=0)
+    ft_perc = models.FloatField(verbose_name='FT%', editable=False, default=0)
+    personal_fouls = models.PositiveIntegerField(verbose_name='PF', default=0)
 
     def save(self, *args, **kwargs):
         self.rebounds_all = self.rebounds_def + self.rebounds_off
@@ -123,8 +123,38 @@ class PlayerBoxscore(models.Model):
         self.team_boxscore.fg_perc = 100 * self.team_boxscore.fgm / self.team_boxscore.fga
         self.team_boxscore.three_perc = 100 * self.team_boxscore.three_pm / self.team_boxscore.three_pa
         self.team_boxscore.ft_perc = 100 * self.team_boxscore.ftm / self.team_boxscore.fta
-
+        self.team_boxscore.save()
         super(PlayerBoxscore, self).save(*args, **kwargs)
+    def delete(self, using=None):
+
+        super(PlayerBoxscore, self).delete()
+        self.rebounds_all = self.rebounds_def + self.rebounds_off
+        self.fg_perc = 100 * self.fgm / self.fga
+        self.three_perc = 100 * self.three_pm / self.three_pa
+        self.ft_perc = 100 * self.ftm / self.fta
+
+        # Updating TeamBoxscore
+        # Aggregate returns dict; Why?
+        self.team_boxscore.rebounds_def = PlayerBoxscore.objects.filter(team_boxscore=self.team_boxscore).aggregate(Sum('rebounds_def'))['rebounds_def__sum']
+        self.team_boxscore.rebounds_off = PlayerBoxscore.objects.filter(team_boxscore=self.team_boxscore).aggregate(Sum('rebounds_off'))['rebounds_off__sum']
+        self.team_boxscore.assists = PlayerBoxscore.objects.filter(team_boxscore=self.team_boxscore).aggregate(Sum('assists'))['assists__sum']
+        self.team_boxscore.steals = PlayerBoxscore.objects.filter(team_boxscore=self.team_boxscore).aggregate(Sum('steals'))['steals__sum']
+        self.team_boxscore.blocks = PlayerBoxscore.objects.filter(team_boxscore=self.team_boxscore).aggregate(Sum('blocks'))['blocks__sum']
+        self.team_boxscore.blocks_against = PlayerBoxscore.objects.filter(team_boxscore=self.team_boxscore).aggregate(Sum('blocks_against'))['blocks_against__sum']
+        self.team_boxscore.fgm = PlayerBoxscore.objects.filter(team_boxscore=self.team_boxscore).aggregate(Sum('fgm'))['fgm__sum']
+        self.team_boxscore.fga = PlayerBoxscore.objects.filter(team_boxscore=self.team_boxscore).aggregate(Sum('fga'))['fga__sum']
+        self.team_boxscore.three_pm = PlayerBoxscore.objects.filter(team_boxscore=self.team_boxscore).aggregate(Sum('three_pm'))['three_pm__sum']
+        self.team_boxscore.three_pa = PlayerBoxscore.objects.filter(team_boxscore=self.team_boxscore).aggregate(Sum('three_pa'))['three_pa__sum']
+        self.team_boxscore.three_perc = PlayerBoxscore.objects.filter(team_boxscore=self.team_boxscore).aggregate(Sum('three_perc'))['three_perc__sum']
+        self.team_boxscore.ftm = PlayerBoxscore.objects.filter(team_boxscore=self.team_boxscore).aggregate(Sum('ftm'))['ftm__sum']
+        self.team_boxscore.fta = PlayerBoxscore.objects.filter(team_boxscore=self.team_boxscore).aggregate(Sum('fta'))['fta__sum']
+        self.team_boxscore.personal_fouls = PlayerBoxscore.objects.filter(team_boxscore=self.team_boxscore).aggregate(Sum('personal_fouls'))['personal_fouls__sum']
+        self.team_boxscore.rebounds_all = self.team_boxscore.rebounds_def + self.team_boxscore.rebounds_off
+        self.team_boxscore.fg_perc = 100 * self.team_boxscore.fgm / self.team_boxscore.fga
+        self.team_boxscore.three_perc = 100 * self.team_boxscore.three_pm / self.team_boxscore.three_pa
+        self.team_boxscore.ft_perc = 100 * self.team_boxscore.ftm / self.team_boxscore.fta
+        self.team_boxscore.save()
+
 
     def __str__(self):
         return str(self.player) + ' (' + str(self.team_boxscore.game.away_team) + ' @ ' + str(

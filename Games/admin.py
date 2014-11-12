@@ -22,7 +22,7 @@ class PeriodScoreInline(admin.TabularInline):
 
 class PlayerBoxscoreInline(admin.TabularInline):
     model = PlayerBoxscore
-    extra = 5
+    extra = 1
     def formfield_for_foreignkey(self, db_field, request=None, **kwargs):
 
         field = super(PlayerBoxscoreInline, self).formfield_for_foreignkey(db_field, request, **kwargs)
@@ -60,7 +60,7 @@ class TeamBoxscoreAdmin(admin.ModelAdmin):
     list_filter = ['game', 'team']
     view_on_site = False
 
-    exclude = ['game', 'team', 'rebounds_def','rebounds_off','assists','points','steals','blocks','fgm','fga','three_pm', 'ftm', 'fta','three_pa','blocks_against','turnovers','personal_fouls']
+    # exclude = ['game', 'team', 'rebounds_def','rebounds_off','assists','points','steals','blocks','fgm','fga','three_pm', 'ftm', 'fta','three_pa','blocks_against','turnovers','personal_fouls']
     inlines = [PeriodScoreInline, PlayerBoxscoreInline]
 
 
