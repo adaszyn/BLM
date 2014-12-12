@@ -1,21 +1,56 @@
 {% extends 'base.html' %}
 
+{% load staticfiles %}
 
 {% block page_content %}
 
-<div class="jumbotron">
+<div class="jumbotron" xmlns="http://www.w3.org/1999/html">
     <div class="container">
-        <h1>TODO</h1>
-         <!-- TODO /game/ -->
-        <p>/game/</p>
-        {%  for game in games %}
+        <p>Mecze z ostatniego tygodnia:</p>
+        {%  for game in context %}
 
             <div class="panel panel-default">
-                <div class="panel-heading" style="text-align: center">{{ game.home_team }} vs {{ game.away_team }}</div>
+                <div class="panel-heading" style="text-align: center; letter-spacing: 2px">
+                    <b>{{ game.home.full_name }} vs {{ game.away.full_name }}</b>
+                    <h3>{{ game.home_points.0 }} : {{ game.away_points.0 }}</h3>
+                    <div class="progress" style="background-color: #ff0000">
+                            <div id="game-bar-{{ game.id }}" class="progress-bar" style="width:0px; background-color: mediumseagreen"></div>
+                    </div>
+
+
+{#                    <h3 style="color: cornsilk">{{ game.home_points.0}} : {{ game.away_points.0 }}</h3>#}
+
+                </div>
                 <div class="panel-body">
-                    <div style="width: 50%; background-image: '{{ MEDIA_URL }}{{ game.home_team.logo }}'">{{ game.home_team }}</div>
+                    <div style="width: 100%; text-align: center'"></div>
+{#                    <img src="{{ MEDIA_URL }}{{ game.home.logo }}">#}
 
 
+
+                       <div class="col-md-6" style="border-right: 1px dotted floralwhite;">
+                           <span class="pull-left label label-default"style="border-bottom: thick solid mediumseagreen;">
+                           <img src="{{ MEDIA_URL }}{{ game.home.logo }}" width="150px">
+                            </span>
+                             <div class="well" style="background-color: #464545; text-align:right">
+                                    {% for partial_score in game.home_points %}
+                                             <a class="btn btn-warning">{{ partial_score }}</a>
+
+                                     {% endfor %}
+                            </div>
+                       </div>
+                        <div class="col-md-6">
+
+                            <span class="pull-right label label-default" style="border-bottom: thick solid #ff0000;">
+
+                               <img src="{{ MEDIA_URL }}{{ game.away.logo }}"width="150px">
+                            </span>
+                            <div class="well" style="background-color: #464545; text-align: left">
+                                    {% for partial_score in game.away_points %}
+                                             <a class="btn btn-warning">{{ partial_score }}</a>
+
+                                     {% endfor %}
+                            </div>
+                        </div>
 
                     <br/>{{ game.away_team }}
                 </div>
@@ -24,7 +59,16 @@
         {% endfor %}
     </div>
 </div>
+<script>
+$(document).ready(function() {
 
-<div class="container">
+    $('.progress-bar').each(function () {
+        {% for game in context %}
+           $("#game-bar-{{ game.id }}").animate({"width": "{{ game.ratio }}%" }, 'fast');
+        {% endfor %}
+
+    });
+});
+</script>
 
 {% endblock %}

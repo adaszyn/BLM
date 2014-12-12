@@ -60,7 +60,7 @@ class TeamBoxscoreAdmin(admin.ModelAdmin):
     list_filter = ['game', 'team']
     view_on_site = False
 
-    # exclude = ['game', 'team', 'rebounds_def','rebounds_off','assists','points','steals','blocks','fgm','fga','three_pm', 'ftm', 'fta','three_pa','blocks_against','turnovers','personal_fouls']
+    exclude = ['game', 'team', 'rebounds_def','rebounds_off','assists','points','steals','blocks','fgm','fga','three_pm', 'ftm', 'fta','three_pa','blocks_against','turnovers','personal_fouls']
     inlines = [PeriodScoreInline, PlayerBoxscoreInline]
 
 

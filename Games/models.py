@@ -98,6 +98,8 @@ class PlayerBoxscore(models.Model):
     personal_fouls = models.PositiveIntegerField(verbose_name='PF', default=0)
 
     def save(self, *args, **kwargs):
+
+        super(PlayerBoxscore, self).save(*args, **kwargs)
         self.rebounds_all = self.rebounds_def + self.rebounds_off
         self.fg_perc = 100 * self.fgm / self.fga
         self.three_perc = 100 * self.three_pm / self.three_pa
@@ -124,7 +126,6 @@ class PlayerBoxscore(models.Model):
         self.team_boxscore.three_perc = 100 * self.team_boxscore.three_pm / self.team_boxscore.three_pa
         self.team_boxscore.ft_perc = 100 * self.team_boxscore.ftm / self.team_boxscore.fta
         self.team_boxscore.save()
-        super(PlayerBoxscore, self).save(*args, **kwargs)
     def delete(self, using=None):
 
         super(PlayerBoxscore, self).delete()
@@ -169,3 +170,5 @@ class PeriodScore(models.Model):
 
     def is_additional(self):
         return self.quarter > 4
+    def __str__(self):
+        return str(self.team_boxscore.team) + " : " +  str(self.points)
