@@ -1,3 +1,4 @@
+'''
 from django.contrib import admin
 from django import forms
 from django.forms import ModelForm, BaseInlineFormSet
@@ -69,3 +70,4 @@ class PlayerBoxscoreAdmin(admin.ModelAdmin):
     fieldsets = [
         ('Team info', {'fields':['team_boxscore']}),
     ]
+'''

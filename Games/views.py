@@ -4,12 +4,15 @@ from Games.models import *
 from Teams.models import *
 from datetime import datetime, timedelta
 
+
 def game_index(request):
+    # TODO: Do przepisania
+    '''
     context_dict = []
     home_points = []
     away_points = []
     #filter games from this week
-    for game in Game.objects.filter(date__range = [datetime.now()-timedelta(days=600),datetime.now()]):
+    for game in Game.objects.filter(date__range = [datetime.now()-timedelta(days=600), datetime.now()]):
         for tbs in TeamBoxscore.objects.filter(game = game):
             for ps in PeriodScore.objects.filter(team_boxscore = tbs):
                 #zajebista zlozonosc kurwo
@@ -21,18 +24,20 @@ def game_index(request):
         away_points = [sum(away_points)] + away_points
         # home_points = TeamBoxscore.objects.get(game=game, is_home=True).points
         # away_points = TeamBoxscore.objects.get(game=game, is_home = False).points
-        print(away_points)
+        # print(away_points)
         context_dict.append(
             {'home':game.home_team,
              'away': game.away_team,
              'home_points':home_points,
              'away_points': away_points,
-             'ratio' : int(home_points[0]*100/ away_points[0]),
+             'ratio' : 20,
              'id' : game.pk
             }
         )
 
     return render(request, 'Games/game_index.html', {'context': context_dict})
+    '''
+    return render(request, 'Games/game_index.html')
 
 
 def game_on_date(request, game_date):

@@ -1,5 +1,7 @@
 from django.db import models
+from django.core.exceptions import ValidationError
 from django.utils.datetime_safe import date
+from django.db.models import Q
 
 from Teams.models import Team
 
@@ -20,6 +22,7 @@ class Player(models.Model):
     first_name = models.CharField(max_length=64)
     last_name = models.CharField(max_length=64)
     team = models.ForeignKey(Team)
+    is_captain = models.BooleanField(default=False)
     position = models.CharField(max_length=5, choices=position_choices)
     birth_date = models.DateField()
     height = models.PositiveIntegerField(verbose_name='Height [cm]')
@@ -34,7 +37,7 @@ class Player(models.Model):
         try:
             birthday = born.replace(year=today.year)
         except ValueError:  # raised when birth date is February 29 and the current year is not a leap year
-            birthday = born.replace(year=today.year, month=born.month+1, day=1)
+            birthday = born.replace(year=today.year, month=born.month + 1, day=1)
         if birthday > today:
             return today.year - born.year - 1
         else:
@@ -42,7 +45,15 @@ class Player(models.Model):
 
     def get_absolute_url(self):
         from django.core.urlresolvers import reverse
+
         return reverse('player_page', args=[str(self.first_name) + '_' + str(self.last_name)])
 
     def __str__(self):
         return self.first_name + ' ' + self.last_name
+
+    def clean(self):
+        try:
+            Player.objects.get(Q(team=self.team), Q(is_captain=True))
+            raise ValidationError('The team already has a captain.')
+        except Player.DoesNotExist:
+            pass

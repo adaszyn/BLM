@@ -1,4 +1,5 @@
 from django.db import models
+from django.db.models import Q
 
 
 class Team(models.Model):
@@ -10,7 +11,13 @@ class Team(models.Model):
     def count_players(self):
         from Players.models import Player
         return Player.objects.filter(team__exact=self).count()
-    count_players.short_description = 'Number of players'
+
+    def captain(self):
+        from Players.models import Player
+        try:
+            return Player.objects.get(Q(team=self), Q(is_captain=True))
+        except Player.DoesNotExist:
+            return "-"
 
     def get_absolute_url(self):
         from django.core.urlresolvers import reverse

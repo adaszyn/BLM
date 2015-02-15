@@ -1,0 +1,42 @@
+[
+{
+    "pk": 0,
+    "fields": {
+        "full_name": "Chicago Bulls",
+        "description": "Officia pariatur voluptate aliqua do dolore velit. Labore et esse proident ut dolor Lorem nulla. Consectetur eu tempor pariatur et culpa labore eu deserunt dolore. Amet sunt aute cillum Lorem cupidatat nulla dolore adipisicing labore laboris id ut irure nostrud. Proident exercitation dolor labore sint laborum consectetur veniam labore consectetur Lorem aute ullamco dolor. Labore cillum quis culpa enim cillum. Sunt proident reprehenderit Lorem eu officia aliqua veniam amet proident.\r\n",
+        "short_name": "CHI",
+        "logo": "team_logos/bulls_logo.png"
+    },
+    "model": "Teams.team"
+},
+{
+    "pk": 1,
+    "fields": {
+        "full_name": "New York Knicks",
+        "description": "Reprehenderit anim eiusmod occaecat enim sit. Sint magna incididunt enim labore laborum. Lorem consectetur aliquip elit enim do ex culpa Lorem aliquip qui ad anim nostrud enim. Lorem ex ex excepteur velit culpa ut sint et Lorem est Lorem.\r\n",
+        "short_name": "NYK",
+        "logo": "team_logos/knicks_logo.png"
+    },
+    "model": "Teams.team"
+},
+{
+    "pk": 2,
+    "fields": {
+        "full_name": "Oklahoma City Thunder",
+        "description": "Velit pariatur nostrud quis nisi adipisicing ea. Sint magna esse duis eu nostrud eu minim ex eiusmod sunt ea exercitation cillum commodo. Culpa irure tempor fugiat eu. Dolore enim sint ex occaecat labore ipsum consectetur commodo occaecat reprehenderit elit eiusmod. Qui cupidatat labore et amet tempor pariatur do ad tempor eu occaecat.\r\n",
+        "short_name": "OKC",
+        "logo": "team_logos/default.png"
+    },
+    "model": "Teams.team"
+},
+{
+    "pk": 3,
+    "fields": {
+        "full_name": "San Antonio Spurs",
+        "description": "Excepteur id do fugiat fugiat excepteur qui commodo consectetur laboris qui et esse. Sint et pariatur reprehenderit est quis deserunt aliquip. Proident magna enim non proident duis sunt est Lorem et adipisicing incididunt minim aute ipsum. Duis tempor deserunt nisi amet dolor. Deserunt reprehenderit proident enim nisi ipsum culpa aliquip labore commodo exercitation do eiusmod. Deserunt proident enim cillum voluptate voluptate labore labore aliqua.\r\n",
+        "short_name": "SAS",
+        "logo": "team_logos/default.png"
+    },
+    "model": "Teams.team"
+}
+]
