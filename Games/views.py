@@ -4,8 +4,10 @@ from django.shortcuts import render
 from Games.models import *
 from Teams.models import *
 from datetime import datetime, timedelta
-
-
+from django.core import serializers
+from django.shortcuts import HttpResponse
+import json
+import itertools
 def game_index(request):
     # TODO: Do przepisania
     '''
@@ -81,3 +83,40 @@ def game_page(request, game_date, away_team_short, home_team_short):
                    'home_team_leaders': home_team_leaders, 'away_team_leaders': away_team_leaders,
                    'home_players_boxscores': home_players_boxscores, 'home_team_boxscore': home_team_boxscore,
                    'away_players_boxscores': away_players_boxscores, 'away_team_boxscore': away_team_boxscore})
+
+def get_game_by_date(request, game_date):
+    try:
+        game = Game.objects.filter(date=game_date)[:1].get()
+    except(Game.DoesNotExist):
+        raise Http404
+    jsonObj = {
+        "date" : str(game.date),
+        'away_team' : game.away_team.full_name,
+        'home_team' : game.home_team.full_name,
+        'home_score' : TeamBoxscore.objects.filter(game=game, team=game.home_team).get().pts,
+        'away_score' : TeamBoxscore.objects.filter(game=game, team=game.away_team).get().pts,
+    }
+    return HttpResponse(json.dumps(jsonObj))
+def get_games_after_date(request, game_date, quantity):
+    games = Game.objects.filter(date__gte=game_date).order_by('date')
+    games_in_days = {}
+    jsonObj = {}
+    for game in list(games):
+        date_string = str(game.date)
+        if date_string not in games_in_days:
+            if len(games_in_days.keys()) == int(quantity):
+                break
+            else:
+                games_in_days[date_string] = [game]
+        else:
+            games_in_days[date_string].append(game)
+    for key, val in games_in_days.items():
+        jsonObj[key] = []
+        for game in val:
+            jsonObj[key].append({
+                'home_team' : game.home_team.full_name,
+                'away_team' : game.away_team.full_name,
+                'home_score' : TeamBoxscore.objects.filter(game=game, team=game.home_team).get().pts,
+                'away_score' : TeamBoxscore.objects.filter(game=game, team=game.away_team).get().pts,
+            })
+    return HttpResponse(json.dumps(jsonObj))
