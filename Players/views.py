@@ -30,7 +30,4 @@ def player_page(request, player_fullname):
     except Player.DoesNotExist:
         raise Http404
 
-    birth_date = player.birth_date.strftime("%d.%m.%Y")
-
-    return render(request, 'Players/player_page.html',
-                  {'player': player, 'birth_date': birth_date})
+    return render(request, 'Players/player_page.html', {'player': player})

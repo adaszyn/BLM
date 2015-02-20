@@ -2,6 +2,7 @@ from django.db import models
 from django.core.exceptions import ValidationError
 from django.utils.datetime_safe import date
 from django.db.models import Q
+from django.utils.functional import cached_property
 
 from Teams.models import Team
 
@@ -31,6 +32,11 @@ class Player(models.Model):
     image = models.ImageField(verbose_name='Player photo', default='player_photos/default.jpg',
                               upload_to='player_photos')
 
+    @cached_property
+    def full_name(self):
+        return self.first_name + ' ' + self.last_name
+
+    @cached_property
     def age(self):
         born = self.birth_date
         today = date.today()
@@ -52,6 +58,7 @@ class Player(models.Model):
         return self.first_name + ' ' + self.last_name
 
     def clean(self):
+        # Validate if team already has a captain
         try:
             Player.objects.get(Q(team=self.team), Q(is_captain=True))
             raise ValidationError('The team already has a captain.')

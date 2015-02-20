@@ -11,7 +11,7 @@ def team_page(request, team_name):
     except Team.DoesNotExist:
         raise Http404
 
-    team_players = []
+    team_players = list()
 
     for player in Player.objects.filter(team=team).order_by('last_name', 'first_name'):
         team_players.append(player)

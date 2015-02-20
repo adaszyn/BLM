@@ -37,7 +37,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'bootstrap3',
-    'Navigation',
+    'Common',
     'Players',
     'Teams',
     'Games',
