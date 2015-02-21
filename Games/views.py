@@ -41,43 +41,77 @@ def game_index(request):
     return render(request, 'Games/game_index.html')
 
 
-def game_on_date(request, game_date):
-    # TODO /game/date/
-
-    return render(request, 'Games/game_on_date.html')
-
-
 def game_page(request, game_date, away_team_short, home_team_short):
+    game_date = datetime.strptime(game_date, '%Y-%m-%d').date()
+
     try:
         home_team = Team.objects.get(short_name=home_team_short)
         away_team = Team.objects.get(short_name=away_team_short)
-        game_date = datetime.strptime(game_date, '%Y-%m-%d').date()
         game = Game.objects.get(Q(home_team=home_team), Q(away_team=away_team), Q(date=game_date))
     except (Team.DoesNotExist, Game.DoesNotExist):
         raise Http404
 
-    period_score = list()
-    for item in PeriodScore.objects.filter(game=game).order_by('quarter'):
-        period_score.append(item)
+    if game.happened:
+        period_score = list()
+        for item in PeriodScore.objects.filter(game=game).order_by('quarter'):
+            period_score.append(item)
 
-    final_score = {'home_team': TeamBoxscore.objects.get(Q(game=game), Q(team=home_team)).pts,
-                   'away_team': TeamBoxscore.objects.get(Q(game=game), Q(team=away_team)).pts}
+        final_score = game.final_score
 
-    home_team_leaders = TeamBoxscore.objects.get(Q(game=game), Q(team=home_team)).team_game_leaders
-    away_team_leaders = TeamBoxscore.objects.get(Q(game=game), Q(team=away_team)).team_game_leaders
+        boxscore_fields = [
+            ['#', 'Name', 'MIN', 'PTS', 'FGM', 'FGA', 'FG%', '3PM', '3PA', '3P%', 'FTM', 'FTA', 'FT%',
+             'ORB', 'DRG', 'TRB', 'AST', 'STL', 'BLK', 'BA', 'TO', 'PF'],
+            ['min', 'pts', 'fgm', 'fga', 'fg_perc', 'three_pm', 'three_pa', 'three_perc', 'ftm', 'fta', 'ft_perc',
+             'reb_off', 'reb_def', 'reb_all', 'ast', 'stl', 'blk', 'ba', 'to', 'pf']
+        ]
+        leaders_fields = [
+            ['PTS', 'REB', 'AST', 'STL', 'BLK'],
+            ['pts', 'reb_all', 'ast', 'stl', 'blk']
+        ]
 
-    boxscore_fields = ['#', 'Name', 'MIN', 'PTS', 'FGM-A', 'FG%', '3PM-A', '3P%', 'FTM-A', 'FT%', 'ORB', 'DRG', 'TRB',
-                       'AST', 'STL', 'BLK', 'BA', 'TO', 'PF']
+        home_team_box = TeamBoxscore.objects.get(Q(game=game), Q(team=home_team))
+        away_team_box = TeamBoxscore.objects.get(Q(game=game), Q(team=away_team))
 
-    home_players_boxscores = TeamBoxscore.objects.get(Q(game=game), Q(team=home_team)).team_players_boxscores
-    away_players_boxscores = TeamBoxscore.objects.get(Q(game=game), Q(team=away_team)).team_players_boxscores
+        home_game_leaders = list()
+        away_game_leaders = list()
+        for team in [[home_team_box, home_game_leaders], [away_team_box, away_game_leaders]]:
+            for stat, item in zip(leaders_fields[0], leaders_fields[1]):
+                player, value = team[0].team_game_leader(item)
+                if isinstance(player, Player):
+                    # Example: ['PTS', 'Michael Jordan', '/player/Michael_Jordan/', 55]
+                    team[1].append([stat, player.full_name, player.get_absolute_url(), value])
+                else:
+                    # Example: ['PTS', '2 players', '#', 55]
+                    team[1].append([stat, player, '#', value])
 
-    home_team_boxscore = TeamBoxscore.objects.get(Q(game=game), Q(team=home_team)).team_boxscore
-    away_team_boxscore = TeamBoxscore.objects.get(Q(game=game), Q(team=away_team)).team_boxscore
+        home_players_boxscores = home_team_box.team_players_boxscores(boxscore_fields[1])
+        away_players_boxscores = away_team_box.team_players_boxscores(boxscore_fields[1])
 
-    return render(request, 'Games/game_page.html',
-                  {'home_team': home_team, 'away_team': away_team, 'game_date': game_date,
-                   'period_score': period_score, 'final_score': final_score, 'boxscore_fields': boxscore_fields,
-                   'home_team_leaders': home_team_leaders, 'away_team_leaders': away_team_leaders,
-                   'home_players_boxscores': home_players_boxscores, 'home_team_boxscore': home_team_boxscore,
-                   'away_players_boxscores': away_players_boxscores, 'away_team_boxscore': away_team_boxscore})
+        home_team_boxscore = home_team_box.team_boxscore(boxscore_fields[1])
+        away_team_boxscore = away_team_box.team_boxscore(boxscore_fields[1])
+
+        return render(request, 'Games/game_page.html',
+                      {'home_team': home_team, 'away_team': away_team, 'game_date': game_date,
+                       'period_score': period_score, 'final_score': final_score,
+                       'boxscore_fields': boxscore_fields[0], 'leaders_fields': leaders_fields[0],
+                       'home_game_leaders': home_game_leaders, 'away_game_leaders': away_game_leaders,
+                       'home_players_boxscores': home_players_boxscores, 'home_team_boxscore': home_team_boxscore,
+                       'away_players_boxscores': away_players_boxscores, 'away_team_boxscore': away_team_boxscore})
+
+    else:
+        leaders_fields = [
+            ['PPG', 'RPG', 'APG', 'SPG', 'BPG'],
+            ['pts', 'reb_all', 'ast', 'stl', 'blk']
+        ]
+
+        home_team_leaders = list()
+        away_team_leaders = list()
+        for team in [[home_team, home_team_leaders], [away_team, away_team_leaders]]:
+            for stat, item in zip(leaders_fields[0], leaders_fields[1]):
+                player, value = team[0].team_average_leader(item)
+                # Example: ['PPG', 'Michael Jordan', '/player/Michael_Jordan/', 55]
+                team[1].append([stat, player.full_name, player.get_absolute_url(), value])
+
+        return render(request, 'Games/game_page_future.html',
+                      {'home_team': home_team, 'away_team': away_team, 'game_date': game_date,
+                       'home_team_leaders': home_team_leaders, 'away_team_leaders': away_team_leaders})

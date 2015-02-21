@@ -135,12 +135,12 @@
                                 <div class="col-lg-12">
                                     {# Away Team Leaders #}
                                     <div class="col-lg-4">
-                                        <h2>Away Team Leaders</h2>
+                                        <h2>{{ away_team.short_name }} Leaders</h2>
                                         <ul class="list-group">
-                                            {% for key, value in away_team_leaders.items %}
+                                            {% for item in away_game_leaders %}
                                             <li class="list-group-item">
-                                                <span class="badge">{{ value.2 }} {{ key }}</span>
-                                                <a href="{{ value.1 }}">{{ value.0 }}</a>
+                                                <span class="badge">{{ item.3 }} {{ item.0 }}</span>
+                                                <a href="{{ item.2 }}">{{ item.1 }}</a>
                                             </li>
                                             {% endfor %}
                                         </ul>
@@ -163,12 +163,12 @@
                                     </div>
                                     {# Home Team Leaders #}
                                     <div class="col-lg-4">
-                                        <h2>Home Team Leaders</h2>
+                                        <h2>{{ home_team.short_name }} Leaders</h2>
                                         <ul class="list-group">
-                                            {% for key, value in home_team_leaders.items %}
+                                            {% for item in home_game_leaders %}
                                             <li class="list-group-item">
-                                                <span class="badge">{{ value.2 }} {{ key }}</span>
-                                                <a href="{{ value.1 }}">{{ value.0 }}</a>
+                                                <span class="badge">{{ item.3 }} {{ item.0 }}</span>
+                                                <a href="{{ item.2 }}">{{ item.1 }}</a>
                                             </li>
                                             {% endfor %}
                                         </ul>
@@ -177,7 +177,7 @@
                             </div>
                             {# Second tab #}
                             <div class="tab-pane fade" id="tabAwayTeam">
-                                <table class="table table-hover table-condensed">
+                                <table class="table table-hover table-condensed table-bordered">
                                     <thead>
                                     <tr>
                                         {% for field in boxscore_fields %}
@@ -213,7 +213,7 @@
                             </div>
                             {# Third tab #}
                             <div class="tab-pane fade" id="tabHomeTeam">
-                                <table class="table table-hover table-condensed">
+                                <table class="table table-hover table-condensed table-bordered">
                                     <thead>
                                     <tr>
                                         {% for field in boxscore_fields %}

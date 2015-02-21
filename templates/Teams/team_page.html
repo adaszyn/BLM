@@ -68,54 +68,36 @@
                                     <div class="col-lg-4">
                                         <h2>Leaders</h2>
                                         <ul class="list-group">
+                                            {% for item in team_leaders %}
                                             <li class="list-group-item">
-                                                <span class="badge">34.2 PPG</span>
-                                                <a href="#">Michael Jordan</a>
+                                                <span class="badge">{{ item.3 }} {{ item.0 }}</span>
+                                                <a href="{{ item.2 }}">{{ item.1 }}</a>
                                             </li>
-                                            <li class="list-group-item">
-                                                <span class="badge">8.9 RPG</span>
-                                                <a href="#">Michael Jordan</a>
-                                            </li>
-                                            <li class="list-group-item">
-                                                <span class="badge">11.2 APG</span>
-                                                <a href="#">Michael Jordan</a>
-                                            </li>
+                                            {% endfor %}
                                         </ul>
                                     </div>
                                     {# Previous games #}
                                     <div class="col-lg-4">
                                         <h2>Previous games</h2>
                                         <ul class="list-group">
+                                            {% for item in previous_games %}
                                             <li class="list-group-item">
-                                                <span class="badge">8 Nov</span>
-                                                <a href="#">CHI 89 vs <b>NYK 96</b></a>
+                                                <span class="badge">{{ item.2 }}</span>
+                                                <a href="{{ item.1 }}" class="{{ item.3 }}">{{ item.0 }}</a>
                                             </li>
-                                            <li class="list-group-item">
-                                                <span class="badge">10 Nov</span>
-                                                <a href="#">CHI 80 @ <b>UTA 106</b></a>
-                                            </li>
-                                            <li class="list-group-item">
-                                                <span class="badge">11 Nov</span>
-                                                <a href="#"><b>CHI 116</b> vs UTA 98</a>
-                                            </li>
+                                            {% endfor %}
                                         </ul>
                                     </div>
                                     {# Next games #}
                                     <div class="col-lg-4">
                                         <h2>Next games</h2>
                                         <ul class="list-group">
+                                            {% for item in next_games %}
                                             <li class="list-group-item">
-                                                <span class="badge">14 Nov</span>
-                                                <a href="#">CHI @ NYK</a>
+                                                <span class="badge">{{ item.2 }}</span>
+                                                <a href="{{ item.1 }}">{{ item.0 }}</a>
                                             </li>
-                                            <li class="list-group-item">
-                                                <span class="badge">16 Nov</span>
-                                                <a href="#">CHI vs UTA</a>
-                                            </li>
-                                            <li class="list-group-item">
-                                                <span class="badge">20 Nov</span>
-                                                <a href="#">CHI @ UTA</a>
-                                            </li>
+                                            {% endfor %}
                                         </ul>
                                     </div>
                                 </div>

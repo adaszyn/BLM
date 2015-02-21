@@ -38,5 +38,45 @@
         "logo": "team_logos/default.png"
     },
     "model": "Teams.team"
+},
+{
+    "pk": 4,
+    "fields": {
+        "full_name": "Atlanta Hawks",
+        "description": "Est ex sunt enim commodo enim incididunt. Deserunt ad veniam laborum sunt incididunt nostrud anim consectetur sit consectetur ad. Consequat fugiat aliquip deserunt pariatur do consequat eiusmod. Sint reprehenderit pariatur non quis sit adipisicing sint occaecat ad. Incididunt est commodo aliqua sint occaecat. Cillum ut nostrud magna ea reprehenderit proident aliqua cupidatat ipsum esse commodo proident. Ullamco anim id mollit aute irure cupidatat est ea magna elit pariatur aliquip sunt.\r\n",
+        "short_name": "ATL",
+        "logo": "team_logos/default.png"
+    },
+    "model": "Teams.team"
+},
+{
+    "pk": 5,
+    "fields": {
+        "full_name": "Dallas Mavericks",
+        "description": "Id officia voluptate quis consequat ut labore id voluptate enim. Ea proident aliquip aliquip in adipisicing tempor magna commodo sunt ad quis laboris. Est eiusmod nisi aliqua nisi ullamco dolore elit nostrud quis velit cillum culpa irure. Anim voluptate ut tempor eiusmod anim magna. Sit culpa commodo amet voluptate cupidatat dolore in elit irure dolor consectetur deserunt. Excepteur eiusmod pariatur est nostrud mollit ut culpa do ipsum dolore labore ullamco nulla. Occaecat pariatur magna ut exercitation magna et duis non nulla tempor veniam sint ipsum.\r\n",
+        "short_name": "DAL",
+        "logo": "team_logos/default.png"
+    },
+    "model": "Teams.team"
+},
+{
+    "pk": 6,
+    "fields": {
+        "full_name": "Boston Celtics",
+        "description": "Do ut qui esse ea aliquip sit reprehenderit velit et consectetur incididunt. Officia velit adipisicing commodo est culpa ad cillum. Commodo amet ipsum est ut consequat dolor cupidatat minim consequat adipisicing ad. Aliquip minim officia sint do consectetur proident deserunt et eu excepteur excepteur.\r\n",
+        "short_name": "BOS",
+        "logo": "team_logos/default.png"
+    },
+    "model": "Teams.team"
+},
+{
+    "pk": 7,
+    "fields": {
+        "full_name": "Memphis Grizzlies",
+        "description": "Consequat minim aute do tempor commodo. Ex aliqua irure consequat et commodo reprehenderit ullamco sint do eiusmod. Amet duis qui pariatur culpa.\r\n",
+        "short_name": "MEM",
+        "logo": "team_logos/default.png"
+    },
+    "model": "Teams.team"
 }
 ]

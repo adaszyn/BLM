@@ -1,7 +1,7 @@
 from django.db import models
 from django.db.models import Q, Sum
 from django.utils.functional import cached_property
-from collections import OrderedDict
+from datetime import datetime
 
 from Players.models import Player
 from Teams.models import Team
@@ -13,26 +13,50 @@ class Game(models.Model):
     date = models.DateField()
 
     @cached_property
-    def winner(self):
-        home_team_box = TeamBoxscore.objects.get(Q(game=self), Q(team=self.home_team))
-        away_team_box = TeamBoxscore.objects.get(Q(game=self), Q(team=self.away_team))
-        if home_team_box.pts > away_team_box.pts:
-            return home_team_box.team
+    def happened(self):
+        """Returns True if the game happened"""
+        if self.date < datetime.today().date() and TeamBoxscore.objects.filter(game=self).count() == 2:
+            return True
         else:
-            return away_team_box.team
+            return False
+
+    @cached_property
+    def final_score(self):
+        """Returns a dict with teams final score"""
+        final_score = {'home_team': TeamBoxscore.objects.get(Q(game=self), Q(team=self.home_team)).pts,
+                       'away_team': TeamBoxscore.objects.get(Q(game=self), Q(team=self.away_team)).pts}
+
+        return final_score
+
+    @cached_property
+    def winner(self):
+        """Returns the team that won"""
+        if self.final_score['home_team'] > self.final_score['away_team']:
+            return self.home_team
+        else:
+            return self.away_team
 
     @cached_property
     def overtime(self):
+        """Returns number of overtimes; 0 if none"""
         return PeriodScore.objects.filter(game=self).count - 4
+
+    @cached_property
+    def short_name(self):
+        """Example: CHI at NYK (01.01.2000)"""
+        return str(self.away_team.short_name) + ' at ' + str(self.home_team.short_name) + ' (' + self.date.strftime(
+            "%d.%m.%Y") + ')'
 
     def get_absolute_url(self):
         from django.core.urlresolvers import reverse
 
         return reverse('game_page',
-                       args=[self.date.strftime("%d.%m.%Y"), self.away_team.short_name, self.home_team.short_name])
+                       args=[self.date.strftime("%Y-%m-%d"), self.away_team.short_name, self.home_team.short_name])
 
     def __str__(self):
-        return str(self.away_team) + ' @ ' + str(self.home_team) + ' (' + self.date.strftime("%d.%m.%Y") + ')'
+        """Example: Chicago Bulls at New York Knicks (01.01.2000)"""
+        return str(self.away_team.full_name) + ' at ' + str(self.home_team.full_name) + ' (' + self.date.strftime(
+            "%d.%m.%Y") + ')'
 
 
 class PlayerBoxscore(models.Model):
@@ -62,15 +86,16 @@ class PlayerBoxscore(models.Model):
     pf = models.PositiveIntegerField(verbose_name='PF', default=0)
 
     def __str__(self):
-        return str(self.player) + ' (' + str(self.game.away_team) + ' @ ' + str(
+        """Example: Michael Jordan (CHI at NYK, 01.01.2000)"""
+        return str(self.player) + ' (' + str(self.game.away_team) + ' at ' + str(
             self.game.home_team) + ', ' + self.game.date.strftime("%d.%m.%Y") + ')'
 
     def save(self, *args, **kwargs):
         self.pts = self.ftm + (self.fgm - self.three_pm) * 2 + self.three_pm * 3
         self.reb_all = self.rebounds_def + self.rebounds_off
-        self.fg_perc = "{0:.2f}".format(self.fgm / self.fga) * 100 if self.fga > 0 else "-"
-        self.three_perc = "{0:.2f}".format(self.three_pm / self.three_pa) * 100 if self.three_pa > 0 else "-"
-        self.ft_perc = "{0:.2f}".format(self.ftm / self.fta) * 100 if self.fta > 0 else "-"
+        self.fg_perc = '{0:.3f}'.format(self.fgm / self.fga) if self.fga > 0 else '-'
+        self.three_perc = '{0:.3f}'.format(self.three_pm / self.three_pa) if self.three_pa > 0 else '-'
+        self.ft_perc = '{0:.3f}'.format(self.ftm / self.fta) if self.fta > 0 else '-'
         super(PlayerBoxscore, self).save(*args, **kwargs)
 
 
@@ -97,97 +122,66 @@ class TeamBoxscore(models.Model):
     ft_perc = models.TextField(default=0, editable=False)
     pf = models.PositiveIntegerField(default=0, editable=False)
 
-    @cached_property
-    def team_game_leaders(self):
-        # TODO: Wszystko w jedną pętle?
+    def team_game_leader(self, stat):
         """
-        Creates an OrderedDict of team leaders in statistics (PTS, REB, AST, STL, BLK) of given game (TeamBoxscore).
-
-        Dict consists of lists, where the key is the short name of the statistic.
-        The list has a format: [String shown on the page, link address, statistic value]
-        When there's one leader, the link points to the player page, otherwise to "#".
+        Returns the player (and value) with team high value of given statistic in a game.
+        If there's more then one player, it returns the number of players (and value).
         """
-        leaders = OrderedDict()
-        # PTS
-        box = PlayerBoxscore.objects.filter(game=self.game).filter(team=self.team).order_by('-pts')[0]
-        n = PlayerBoxscore.objects.filter(game=self.game).filter(team=self.team).filter(pts=box.pts).count()
-        if n > 1:
-            leaders['PTS'] = [str(n) + ' players', '#', box.pts]
-        elif n == 1:
-            leaders['PTS'] = [box.player.full_name, box.player.get_absolute_url(), box.pts]
-        # REB
-        box = PlayerBoxscore.objects.filter(game=self.game).filter(team=self.team).order_by('-reb_all')[0]
-        n = PlayerBoxscore.objects.filter(game=self.game).filter(team=self.team).filter(reb_all=box.reb_all).count()
-        if n > 1:
-            leaders['REB'] = [str(n) + ' players', '#', box.reb_all]
-        elif n == 1:
-            leaders['REB'] = [box.player.full_name, box.player.get_absolute_url(), box.reb_all]
-        # AST
-        box = PlayerBoxscore.objects.filter(game=self.game).filter(team=self.team).order_by('-ast')[0]
-        n = PlayerBoxscore.objects.filter(game=self.game).filter(team=self.team).filter(ast=box.ast).count()
-        if n > 1:
-            leaders['AST'] = [str(n) + ' players', '#', box.ast]
-        elif n == 1:
-            leaders['AST'] = [box.player.full_name, box.player.get_absolute_url(), box.ast]
-        # STL
-        box = PlayerBoxscore.objects.filter(game=self.game).filter(team=self.team).order_by('-stl')[0]
-        n = PlayerBoxscore.objects.filter(game=self.game).filter(team=self.team).filter(stl=box.stl).count()
-        if n > 1:
-            leaders['STL'] = [str(n) + ' players', '#', box.stl]
-        elif n == 1:
-            leaders['STL'] = [box.player.full_name, box.player.get_absolute_url(), box.stl]
-        # BLK
-        box = PlayerBoxscore.objects.filter(game=self.game).filter(team=self.team).order_by('-blk')[0]
-        n = PlayerBoxscore.objects.filter(game=self.game).filter(team=self.team).filter(blk=box.blk).count()
-        if n > 1:
-            leaders['BLK'] = [str(n) + ' players', '#', box.blk]
-        elif n == 1:
-            leaders['BLK'] = [box.player.full_name, box.player.get_absolute_url(), box.blk]
+        player_box = PlayerBoxscore.objects.filter(game=self.game).filter(team=self.team).order_by('-' + stat)[0]
+        value = getattr(player_box, stat)
+        n = PlayerBoxscore.objects.filter(game=self.game).filter(team=self.team).filter(**{stat: value}).count()
 
-        return leaders
+        if n > 1:
+            return str(n) + ' players', value
+        elif n == 1:
+            return player_box.player, value
 
-    @cached_property
-    def team_players_boxscores(self):
+    def team_players_boxscores(self, stat_fields):
         """
-        Creates a list of players boxscores in given game (TeamBoxscore).
+        Creates a list of players game boxscores with statistic fields from `stat_fields` list.
 
-        The list has a format: [Number, Name, MIN, PTS, FGM-FGA, FG%, 3PM-3PA, 3P%, FTM-FTA, FT%, ORB, DRG, TRB,
-                                AST, STL, BLK, BA, TO, PF]
+        The list has a format: [Player number, Player name, STAT0, STAT1, ...]
         Players are ordered by starter status and then by minutes played.
+        Example:
+            stats = ['min', 'pts', 'fgm', 'fga', 'fg_perc', 'three_pm', 'three_pa', 'three_perc',
+                     'ftm', 'fta', 'ft_perc', 'reb_off', 'reb_def', 'reb_all', 'ast', 'stl', 'blk']
+            players_boxscores[0] = [Michael Jordan, 29, 34, 11, 24, 0.460, 4, 13, 0.310, 8, 9, 0.890, 5, 3, 8, 5, 0, 5]
         """
         players_boxscores = list()
-        for player_box in PlayerBoxscore.objects.filter(game=self.game).filter(team=self.team).order_by('-is_starter', '-min'):
-            players_boxscores.append([player_box.player.number, '<a href="' + player_box.player.get_absolute_url() + '">' +
-                                      player_box.player.full_name + '<a/>', player_box.min, player_box.pts,
-                                      str(player_box.fgm) + '-' + str(player_box.fga), player_box.fg_perc,
-                                      str(player_box.three_pm) + '-' + str(player_box.three_pa), player_box.three_perc,
-                                      str(player_box.ftm) + '-' + str(player_box.fta), player_box.ft_perc,
-                                      player_box.reb_off, player_box.reb_def, player_box.reb_all, player_box.ast,
-                                      player_box.stl, player_box.blk, player_box.ba, player_box.to, player_box.pf])
+        for player_box in PlayerBoxscore.objects.filter(game=self.game).filter(team=self.team).order_by('-is_starter',
+                                                                                                        '-min'):
+            box = [player_box.player.number,
+                   '<a href="' + player_box.player.get_absolute_url() + '">' + player_box.player.full_name + '<a/>']
+
+            for item in stat_fields:
+                box.append(getattr(player_box, item))
+
+            players_boxscores.append(box)
 
         return players_boxscores
 
-    @cached_property
-    def team_boxscore(self):
+    def team_boxscore(self, stat_fields):
         """
-        Creates a list of team_boxscore in given game (TeamBoxscore).
+        Creates a list of team sum of statistic fields from `stat_fields` list
 
-        The list has a format: [Number of player that played, MIN, PTS, FGM-FGA, FG%, 3PM-3PA, 3P%, FTM-FTA, FT%,
-                                ORB, DRG, TRB, AST, STL, BLK, BA, TO, PF]
+        The list has a format: [Number of player that played, `MIN`, STAT0, STAT1, ...]
+        Example:
+            stats = ['min', 'pts', 'fgm', 'fga', 'fg_perc', 'three_pm', 'three_pa', 'three_perc',
+                     'ftm', 'fta', 'ft_perc', 'reb_off', 'reb_def', 'reb_all', 'ast', 'stl', 'blk', 'ba', 'to', 'pf']
+            [10 players, 240, 198, 70, 181, 0.387, 28, 75, 0.373, 30, 50, 0.600, 25, 63, 88, 57, 18, 32, 24, 42, 27]
         """
         n = PlayerBoxscore.objects.filter(game=self.game).filter(team=self.team).filter(min__gt=0).count()
-        team_boxscore = [str(n) + ' players', '240', self.pts,
-                         str(self.fgm) + '-' + str(self.fga), self.fg_perc,
-                         str(self.three_pm) + '-' + str(self.three_pa), self.three_perc,
-                         str(self.ftm) + '-' + str(self.fta), self.ft_perc,
-                         self.reb_off, self.reb_def, self.reb_all, self.ast,
-                         self.stl, self.blk, self.ba, self.to, self.pf]
+        team_box = [str(n) + ' players', '240']
 
-        return team_boxscore
+        for item in stat_fields[1:]:
+                team_box.append(getattr(self, item))
+
+        return team_box
 
     def __str__(self):
-        return str(self.team) + ' (' + str(self.game.away_team) + ' @ ' + str(
-            self.game.home_team) + ', ' + self.game.date.strftime("%d.%m.%Y") + ')'
+        """Example: Chicago Bulls (CHI at NYK, 01.01.2000)"""
+        return str(self.team.full_name) + ' (' + str(self.game.away_team.short_name) + ' at ' + str(
+            self.game.home_team.short_name) + ', ' + self.game.date.strftime("%d.%m.%Y") + ')'
 
     def save(self, *args, **kwargs):
         # Aggregate returns dict
@@ -201,14 +195,14 @@ class TeamBoxscore(models.Model):
         self.ba = PlayerBoxscore.objects.filter(team_boxscore=self).aggregate(Sum('ba'))['ba__sum']
         self.fgm = PlayerBoxscore.objects.filter(team_boxscore=self).aggregate(Sum('fgm'))['fgm__sum']
         self.fga = PlayerBoxscore.objects.filter(team_boxscore=self).aggregate(Sum('fga'))['fga__sum']
-        self.fg_perc = "{0:.2f}".format(self.fgm / self.fga) * 100 if self.fga > 0 else "-"
+        self.fg_perc = '{0:.3f}'.format(self.fgm / self.fga) if self.fga > 0 else '-'
         self.three_pm = PlayerBoxscore.objects.filter(team_boxscore=self).aggregate(Sum('three_pm'))['three_pm__sum']
         self.three_pa = PlayerBoxscore.objects.filter(team_boxscore=self).aggregate(Sum('three_pa'))['three_pa__sum']
-        self.three_perc = "{0:.2f}".format(self.three_pm / self.three_pa) * 100 if self.three_pa > 0 else "-"
+        self.three_perc = '{0:.3f}'.format(self.three_pm / self.three_pa) if self.three_pa > 0 else '-'
         self.ftm = PlayerBoxscore.objects.filter(team_boxscore=self).aggregate(Sum('ftm'))['ftm__sum']
         self.fta = PlayerBoxscore.objects.filter(team_boxscore=self).aggregate(Sum('fta'))['fta__sum']
-        self.ft_perc = "{0:.2f}".format(self.ftm / self.fta) * 100 if self.fta > 0 else "-"
-        self.pf = PlayerBoxscore.objects.filter(team_boxscore=sel).aggregate(Sum('pf'))['pf__sum']
+        self.ft_perc = '{0:.3f}'.format(self.ftm / self.fta) if self.fta > 0 else '-'
+        self.pf = PlayerBoxscore.objects.filter(team_boxscore=self).aggregate(Sum('pf'))['pf__sum']
 
         super(TeamBoxscore, self).save(*args, **kwargs)
 
@@ -220,5 +214,6 @@ class PeriodScore(models.Model):
     away_team_points = models.PositiveIntegerField()
 
     def __str__(self):
-        return str(self.game.home_team) + " : " + str(self.home_team_points) + " | " + str(
-            self.game.away_team) + " : " + str(self.away_team_points)
+        """Example: CHI: 40 | NYK: 10 (1Q)"""
+        return str(self.game.home_team.short_name) + ': ' + str(self.home_team_points) + ' | ' + str(
+            self.game.away_team.short_name) + ': ' + str(self.away_team_points) + ' (' + str(self.quarter) + 'Q)'

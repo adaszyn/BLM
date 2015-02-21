@@ -30,4 +30,25 @@ def player_page(request, player_fullname):
     except Player.DoesNotExist:
         raise Http404
 
-    return render(request, 'Players/player_page.html', {'player': player})
+    boxscore_fields = [
+        ['Date', 'Opp', 'Score', 'MIN', 'PTS', 'FGM', 'FGA', 'FG%', '3PM', '3PA', '3P%', 'FTM', 'FTA', 'FT%',
+         'ORB', 'DRG', 'TRB', 'AST', 'STL', 'BLK', 'BA', 'TO', 'PF'],
+        ['min', 'pts', 'fgm', 'fga', 'fg_perc', 'three_pm', 'three_pa', 'three_perc', 'ftm', 'fta', 'ft_perc',
+         'reb_off', 'reb_def', 'reb_all', 'ast', 'stl', 'blk', 'ba', 'to', 'pf']
+    ]
+
+    season_stats = player.season_stats(boxscore_fields[1])
+
+    number_of_games = player.number_of_games()
+
+    average = list()
+    for item in boxscore_fields[1]:
+        average.append(player.cat_average(item))
+
+    total = list()
+    for item in boxscore_fields[1]:
+        total.append(player.cat_total(item))
+
+    return render(request, 'Players/player_page.html',
+                  {'player': player, 'boxscore_fields': boxscore_fields[0], 'season_stats': season_stats,
+                   'number_of_games': number_of_games, 'average': average, 'total': total})

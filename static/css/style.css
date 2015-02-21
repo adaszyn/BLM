@@ -4,10 +4,6 @@ body {
   padding-bottom: 20px;
 }
 
-a {
-    text-decoration: none !important;
-}
-
 
 /***  http://bootsnipp.com/snippets/featured/simple-user-profile  ***/
 .table-user-information > tbody > tr {
@@ -87,7 +83,15 @@ a {
     background-color: #4a9fe9;
 }
 
-/*** Misc ***/
+/*** Misc edits ***/
+a {
+  text-decoration: none !important;
+}
+
+.panel a:hover {
+  color: white !important;
+}
+
 .label {
   margin-left: 5px;
   margin-right: 5px;
