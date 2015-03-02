@@ -97,8 +97,14 @@ def get_game_by_date(request, game_date):
         'away_score' : TeamBoxscore.objects.filter(game=game, team=game.away_team).get().pts,
     }
     return HttpResponse(json.dumps(jsonObj))
-def get_games_after_date(request, game_date, quantity):
-    games = Game.objects.filter(date__gte=game_date).order_by('date')
+
+
+def get_games_by_date(request, game_date, quantity, direction):
+    if int(direction) == 1:
+        games = Game.objects.filter(date__gt=game_date).order_by('date')
+    else:
+        games = Game.objects.filter(date__lt=game_date).order_by('-date')
+        print(games)
     games_in_days = {}
     jsonObj = {}
     for game in list(games):
@@ -114,9 +120,9 @@ def get_games_after_date(request, game_date, quantity):
         jsonObj[key] = []
         for game in val:
             jsonObj[key].append({
-                'home_team' : game.home_team.full_name,
-                'away_team' : game.away_team.full_name,
-                'home_score' : TeamBoxscore.objects.filter(game=game, team=game.home_team).get().pts,
-                'away_score' : TeamBoxscore.objects.filter(game=game, team=game.away_team).get().pts,
+                'home_team': game.home_team.full_name,
+                'away_team': game.away_team.full_name,
+                'home_score': TeamBoxscore.objects.filter(game=game, team=game.home_team).get().pts,
+                'away_score': TeamBoxscore.objects.filter(game=game, team=game.away_team).get().pts
             })
     return HttpResponse(json.dumps(jsonObj))
