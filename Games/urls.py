@@ -11,8 +11,8 @@ urlpatterns = patterns('',
         views.game_page, name='game_page'),
     # api
     # ex: /game/json/date=2014-12-24/
-    url(r'^json/date=(?P<game_date>[0-9]{4}-[0-9]{2}-[0-9]{2})/$', views.get_game_by_date, name='game_index'),
+    url(r'^json/date=(?P<game_date>[0-9]{4}-[0-9]{2}-[0-9]{2})/$', views.get_games_by_date, name='game_index'),
     # ex: /game/json/date=2014-12-24&limitTo=2/
-    url(r'^json/date=(?P<game_date>[0-9]{4}-[0-9]{2}-[0-9]{2})&limitTo=(?P<quantity>\d)&dir=(?P<direction>[0-1]{1})/$', views.get_games_by_date, name='game_index')
+    url(r'^json/date=(?P<game_date>[0-9]{4}-[0-9]{2}-[0-9]{2})&limitTo=(?P<quantity>\d)&dir=(?P<direction>[0-1]{1})/$', views.get_gamesdates, name='game_index')
 )
 

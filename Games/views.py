@@ -84,22 +84,25 @@ def game_page(request, game_date, away_team_short, home_team_short):
                    'home_players_boxscores': home_players_boxscores, 'home_team_boxscore': home_team_boxscore,
                    'away_players_boxscores': away_players_boxscores, 'away_team_boxscore': away_team_boxscore})
 
-def get_game_by_date(request, game_date):
+def get_games_by_date(request, game_date):
+    jsonObj = []
     try:
-        game = Game.objects.filter(date=game_date)[:1].get()
+        games = Game.objects.filter(date=game_date)
+        for game in list(games):
+            jsonObj.append({
+                "date": str(game.date),
+                'away_team': game.away_team.full_name,
+                'home_team': game.home_team.full_name,
+                'home_score': TeamBoxscore.objects.filter(game=game, team=game.home_team).get().pts,
+                'away_score': TeamBoxscore.objects.filter(game=game, team=game.away_team).get().pts,
+                'url': game.get_absolute_url(),
+            })
     except(Game.DoesNotExist):
         raise Http404
-    jsonObj = {
-        "date" : str(game.date),
-        'away_team' : game.away_team.full_name,
-        'home_team' : game.home_team.full_name,
-        'home_score' : TeamBoxscore.objects.filter(game=game, team=game.home_team).get().pts,
-        'away_score' : TeamBoxscore.objects.filter(game=game, team=game.away_team).get().pts,
-    }
     return HttpResponse(json.dumps(jsonObj))
 
 
-def get_games_by_date(request, game_date, quantity, direction):
+def get_gamesdates(request, game_date, quantity, direction):
     if int(direction) == 1:
         games = Game.objects.filter(date__gt=game_date).order_by('date')
     else:

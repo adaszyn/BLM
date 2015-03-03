@@ -29,7 +29,7 @@ class Game(models.Model):
         from django.core.urlresolvers import reverse
 
         return reverse('game_page',
-                       args=[self.date.strftime("%d.%m.%Y"), self.away_team.short_name, self.home_team.short_name])
+                       args=[self.date.strftime("%Y-%m-%d"), self.away_team.short_name, self.home_team.short_name])
 
     def __str__(self):
         return str(self.away_team) + ' @ ' + str(self.home_team) + ' (' + self.date.strftime("%d.%m.%Y") + ')'
