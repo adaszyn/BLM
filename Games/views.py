@@ -114,13 +114,7 @@ def game_page(request, game_date, away_team_short, home_team_short):
 
         return render(request, 'Games/game_page_future.html',
                       {'home_team': home_team, 'away_team': away_team, 'game_date': game_date,
-                       'home_team_leaders': home_team_leaders, 'away_team_leaders': away_team_leaders})    return render(request, 'Games/game_page.html',
-                  {'home_team': home_team, 'away_team': away_team, 'game_date': game_date,
-                   'period_score': period_score, 'final_score': final_score, 'boxscore_fields': boxscore_fields,
-                   'home_team_leaders': home_team_leaders, 'away_team_leaders': away_team_leaders,
-                   'home_players_boxscores': home_players_boxscores, 'home_team_boxscore': home_team_boxscore,
-                   'away_players_boxscores': away_players_boxscores, 'away_team_boxscore': away_team_boxscore})
-
+                       'home_team_leaders': home_team_leaders, 'away_team_leaders': away_team_leaders})
 def get_games_by_date(request, game_date):
     jsonObj = []
     try:
