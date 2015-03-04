@@ -1,74 +1,34 @@
 {% extends 'base.html' %}
 
 {% load staticfiles %}
+<script src="{% static 'js/jquery.min.js' %}"></script>
+{% block bootstrap3_extra_script %}
 
+    <script src="{% static 'js/GamePageTimeLine.js' %}"></script>
+
+{% endblock %}
 {% block page_content %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/Games/GamePageStyles.css' %}">
 
-<div class="jumbotron" xmlns="http://www.w3.org/1999/html">
     <div class="container">
-        <p>Mecze z ostatniego tygodnia:</p>
-        {%  for game in context %}
+    <br/>
 
-            <div class="panel panel-default">
-                <div class="panel-heading" style="text-align: center; letter-spacing: 2px">
-                    <b>{{ game.home.full_name }} vs {{ game.away.full_name }}</b>
-                    <h3>{{ game.home_points.0 }} : {{ game.away_points.0 }}</h3>
-                    <div class="progress" style="background-color: #ff0000">
-                            <div id="game-bar-{{ game.id }}" class="progress-bar" style="width:0px; background-color: mediumseagreen"></div>
-                    </div>
-
-
-{#                    <h3 style="color: cornsilk">{{ game.home_points.0}} : {{ game.away_points.0 }}</h3>#}
-
+        <div class="bs-docs-section">
+            <div class="panel panel-primary" id="gamesPane">
+                <div class="panel-heading">
+                    <h3 class="panel-title" id="gamePaneTitle" style="text-align: center">
+                        <span onclick="timeLine.fillTheFirstOne()" class="timeLineSwitch"><<</span><!--
+                     --><div id="timeline1" class="timeLineElem"> - </div><!--
+                     --><div id="timeline2" class="timeLineElem"> - </div><!--
+                     --><div id="timeline3" class="timeLineElem"> - </div><!--
+                     --><span class="timeLineSwitch" onclick="timeLine.fillTheLastOne()">>></span>
+                    </h3>
                 </div>
-                <div class="panel-body">
-                    <div style="width: 100%; text-align: center'"></div>
-{#                    <img src="{{ MEDIA_URL }}{{ game.home.logo }}">#}
-
-
-
-                       <div class="col-md-6" style="border-right: 1px dotted floralwhite;">
-                           <span class="pull-left label label-default"style="border-bottom: thick solid mediumseagreen;">
-                           <img src="{{ MEDIA_URL }}{{ game.home.logo }}" width="150px">
-                            </span>
-                             <div class="well" style="background-color: #464545; text-align:right">
-                                    {% for partial_score in game.home_points %}
-                                             <a class="btn btn-warning">{{ partial_score }}</a>
-
-                                     {% endfor %}
-                            </div>
-                       </div>
-                        <div class="col-md-6">
-
-                            <span class="pull-right label label-default" style="border-bottom: thick solid #ff0000;">
-
-                               <img src="{{ MEDIA_URL }}{{ game.away.logo }}"width="150px">
-                            </span>
-                            <div class="well" style="background-color: #464545; text-align: left">
-                                    {% for partial_score in game.away_points %}
-                                             <a class="btn btn-warning">{{ partial_score }}</a>
-
-                                     {% endfor %}
-                            </div>
-                        </div>
-
-                    <br/>{{ game.away_team }}
+                <div class="panel-body" id="gamePaneBody">
+                    Choose date from the visible dates.
                 </div>
             </div>
-
-        {% endfor %}
+        </div>
     </div>
-</div>
-<script>
-$(document).ready(function() {
-
-    $('.progress-bar').each(function () {
-        {% for game in context %}
-           $("#game-bar-{{ game.id }}").animate({"width": "{{ game.ratio }}%" }, 'fast');
-        {% endfor %}
-
-    });
-});
-</script>
 
 {% endblock %}

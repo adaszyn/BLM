@@ -1,0 +1,12 @@
+.progress {
+    overflow: auto;
+    height: 60px;
+    font-size: 30px;
+}
+.bar {
+    background-color: #ddd;
+    text-align: center;
+    float: left;
+    font-size: 30px;
+    line-height: 60px;
+}

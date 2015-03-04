@@ -4,8 +4,10 @@ from django.shortcuts import render
 from Games.models import *
 from Teams.models import *
 from datetime import datetime, timedelta
-
-
+from django.core import serializers
+from django.shortcuts import HttpResponse
+import json
+import itertools
 def game_index(request):
     # TODO: Do przepisania
     '''
@@ -42,8 +44,6 @@ def game_index(request):
 
 
 def game_page(request, game_date, away_team_short, home_team_short):
-    game_date = datetime.strptime(game_date, '%Y-%m-%d').date()
-
     try:
         home_team = Team.objects.get(short_name=home_team_short)
         away_team = Team.objects.get(short_name=away_team_short)
@@ -91,12 +91,12 @@ def game_page(request, game_date, away_team_short, home_team_short):
         away_team_boxscore = away_team_box.team_boxscore(boxscore_fields[1])
 
         return render(request, 'Games/game_page.html',
-                      {'home_team': home_team, 'away_team': away_team, 'game_date': game_date,
-                       'period_score': period_score, 'final_score': final_score,
-                       'boxscore_fields': boxscore_fields[0], 'leaders_fields': leaders_fields[0],
-                       'home_game_leaders': home_game_leaders, 'away_game_leaders': away_game_leaders,
-                       'home_players_boxscores': home_players_boxscores, 'home_team_boxscore': home_team_boxscore,
-                       'away_players_boxscores': away_players_boxscores, 'away_team_boxscore': away_team_boxscore})
+                {'home_team': home_team, 'away_team': away_team, 'game_date': game_date,
+                'period_score': period_score, 'final_score': final_score,
+                'boxscore_fields': boxscore_fields[0], 'leaders_fields': leaders_fields[0],
+                'home_game_leaders': home_game_leaders, 'away_game_leaders': away_game_leaders,
+                'home_players_boxscores': home_players_boxscores, 'home_team_boxscore': home_team_boxscore,
+                'away_players_boxscores': away_players_boxscores, 'away_team_boxscore': away_team_boxscore})
 
     else:
         leaders_fields = [
@@ -114,4 +114,55 @@ def game_page(request, game_date, away_team_short, home_team_short):
 
         return render(request, 'Games/game_page_future.html',
                       {'home_team': home_team, 'away_team': away_team, 'game_date': game_date,
-                       'home_team_leaders': home_team_leaders, 'away_team_leaders': away_team_leaders})
+                       'home_team_leaders': home_team_leaders, 'away_team_leaders': away_team_leaders})    return render(request, 'Games/game_page.html',
+                  {'home_team': home_team, 'away_team': away_team, 'game_date': game_date,
+                   'period_score': period_score, 'final_score': final_score, 'boxscore_fields': boxscore_fields,
+                   'home_team_leaders': home_team_leaders, 'away_team_leaders': away_team_leaders,
+                   'home_players_boxscores': home_players_boxscores, 'home_team_boxscore': home_team_boxscore,
+                   'away_players_boxscores': away_players_boxscores, 'away_team_boxscore': away_team_boxscore})
+
+def get_games_by_date(request, game_date):
+    jsonObj = []
+    try:
+        games = Game.objects.filter(date=game_date)
+        for game in list(games):
+            jsonObj.append({
+                "date": str(game.date),
+                'away_team': game.away_team.full_name,
+                'home_team': game.home_team.full_name,
+                'home_score': TeamBoxscore.objects.filter(game=game, team=game.home_team).get().pts,
+                'away_score': TeamBoxscore.objects.filter(game=game, team=game.away_team).get().pts,
+                'url': game.get_absolute_url(),
+            })
+    except(Game.DoesNotExist):
+        raise Http404
+    return HttpResponse(json.dumps(jsonObj))
+
+
+def get_gamesdates(request, game_date, quantity, direction):
+    if int(direction) == 1:
+        games = Game.objects.filter(date__gt=game_date).order_by('date')
+    else:
+        games = Game.objects.filter(date__lt=game_date).order_by('-date')
+        print(games)
+    games_in_days = {}
+    jsonObj = {}
+    for game in list(games):
+        date_string = str(game.date)
+        if date_string not in games_in_days:
+            if len(games_in_days.keys()) == int(quantity):
+                break
+            else:
+                games_in_days[date_string] = [game]
+        else:
+            games_in_days[date_string].append(game)
+    for key, val in games_in_days.items():
+        jsonObj[key] = []
+        for game in val:
+            jsonObj[key].append({
+                'home_team': game.home_team.full_name,
+                'away_team': game.away_team.full_name,
+                'home_score': TeamBoxscore.objects.filter(game=game, team=game.home_team).get().pts,
+                'away_score': TeamBoxscore.objects.filter(game=game, team=game.away_team).get().pts
+            })
+    return HttpResponse(json.dumps(jsonObj))
