@@ -88,7 +88,7 @@ a {
   text-decoration: none !important;
 }
 
-.panel a:hover {
+.panel-body a:hover {
   color: white !important;
 }
 

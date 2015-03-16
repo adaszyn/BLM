@@ -2,6 +2,7 @@ from django.db import models
 from django.db.models import Q, Sum
 from django.utils.functional import cached_property
 from datetime import datetime
+from collections import OrderedDict
 
 from Players.models import Player
 from Teams.models import Team
@@ -11,6 +12,9 @@ class Game(models.Model):
     home_team = models.ForeignKey(Team, related_name='home_team')
     away_team = models.ForeignKey(Team, related_name='away_team')
     date = models.DateField()
+
+    class Meta:
+        ordering = ['date']
 
     @cached_property
     def happened(self):
@@ -44,8 +48,9 @@ class Game(models.Model):
     @cached_property
     def short_name(self):
         """Example: CHI at NYK (01.01.2000)"""
-        return str(self.away_team.short_name) + ' at ' + str(self.home_team.short_name) + ' (' + self.date.strftime(
-            "%d.%m.%Y") + ')'
+        return '{away_team} at {home_team} ({date})'.format(away_team=self.away_team.short_name,
+                                                            home_team=self.home_team.short_name,
+                                                            date=self.date.strftime("%d.%m.%Y"))
 
     def get_absolute_url(self):
         from django.core.urlresolvers import reverse
@@ -55,8 +60,9 @@ class Game(models.Model):
 
     def __str__(self):
         """Example: Chicago Bulls at New York Knicks (01.01.2000)"""
-        return str(self.away_team.full_name) + ' at ' + str(self.home_team.full_name) + ' (' + self.date.strftime(
-            "%d.%m.%Y") + ')'
+        return '{away_team} at {home_team} ({date})'.format(away_team=self.away_team.full_name,
+                                                            home_team=self.home_team.full_name,
+                                                            date=self.date.strftime("%d.%m.%Y"))
 
 
 class PlayerBoxscore(models.Model):
@@ -87,8 +93,10 @@ class PlayerBoxscore(models.Model):
 
     def __str__(self):
         """Example: Michael Jordan (CHI at NYK, 01.01.2000)"""
-        return str(self.player) + ' (' + str(self.game.away_team) + ' at ' + str(
-            self.game.home_team) + ', ' + self.game.date.strftime("%d.%m.%Y") + ')'
+        return '{player} ({away_team} at {home_team}, {date})'.format(player=self.player.full_name,
+                                                                      away_team=self.away_team.short_name,
+                                                                      home_team=self.home_team.short_name,
+                                                                      date=self.date.strftime("%d.%m.%Y"))
 
     def save(self, *args, **kwargs):
         self.pts = self.ftm + (self.fgm - self.three_pm) * 2 + self.three_pm * 3
@@ -138,25 +146,24 @@ class TeamBoxscore(models.Model):
 
     def team_players_boxscores(self, stat_fields):
         """
-        Creates a list of players game boxscores with statistic fields from `stat_fields` list.
+        Creates an OrderedDict of players game boxscores with statistic fields from `stat_fields` list as value,
+        and Player as a key.
 
-        The list has a format: [Player number, Player name, STAT0, STAT1, ...]
+        The dict has a format: dict[Player] = [STAT0, STAT1, ...]
         Players are ordered by starter status and then by minutes played.
         Example:
             stats = ['min', 'pts', 'fgm', 'fga', 'fg_perc', 'three_pm', 'three_pa', 'three_perc',
                      'ftm', 'fta', 'ft_perc', 'reb_off', 'reb_def', 'reb_all', 'ast', 'stl', 'blk']
-            players_boxscores[0] = [Michael Jordan, 29, 34, 11, 24, 0.460, 4, 13, 0.310, 8, 9, 0.890, 5, 3, 8, 5, 0, 5]
+            players_boxscores[Michael Jordan] = [29, 34, 11, 24, 0.460, 4, 13, 0.310, 8, 9, 0.890, 5, 3, 8, 5, 0, 5]
         """
-        players_boxscores = list()
+        players_boxscores = OrderedDict()
         for player_box in PlayerBoxscore.objects.filter(game=self.game).filter(team=self.team).order_by('-is_starter',
                                                                                                         '-min'):
-            box = [player_box.player.number,
-                   '<a href="' + player_box.player.get_absolute_url() + '">' + player_box.player.full_name + '<a/>']
+            player = player_box.player
+            players_boxscores[player] = list()
 
             for item in stat_fields:
-                box.append(getattr(player_box, item))
-
-            players_boxscores.append(box)
+                players_boxscores[player].append(getattr(player_box, item))
 
         return players_boxscores
 
@@ -180,8 +187,10 @@ class TeamBoxscore(models.Model):
 
     def __str__(self):
         """Example: Chicago Bulls (CHI at NYK, 01.01.2000)"""
-        return str(self.team.full_name) + ' (' + str(self.game.away_team.short_name) + ' at ' + str(
-            self.game.home_team.short_name) + ', ' + self.game.date.strftime("%d.%m.%Y") + ')'
+        return '{team} ({away_team} at {home_team}, {date})'.format(team=self.team.full_name,
+                                                                    away_team=self.game.away_team.short_name,
+                                                                    home_team=self.game.home_team.short_name,
+                                                                    date=self.game.date.strftime("%d.%m.%Y"))
 
     def save(self, *args, **kwargs):
         # Aggregate returns dict
@@ -213,7 +222,14 @@ class PeriodScore(models.Model):
     home_team_points = models.PositiveIntegerField()
     away_team_points = models.PositiveIntegerField()
 
+    class Meta:
+        ordering = ['game', 'quarter']
+
     def __str__(self):
         """Example: CHI: 40 | NYK: 10 (1Q)"""
-        return str(self.game.home_team.short_name) + ': ' + str(self.home_team_points) + ' | ' + str(
-            self.game.away_team.short_name) + ': ' + str(self.away_team_points) + ' (' + str(self.quarter) + 'Q)'
+        return ('{away_team}: {away_points} | '
+                '{home_team}: {home_points} ({q}Q)').format(away_team=self.game.away_team.short_name,
+                                                            away_points=self.away_team_points,
+                                                            home_team=self.game.home_team.short_name,
+                                                            home_points=self.home_team_points,
+                                                            q=self.quarter)

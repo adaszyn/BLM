@@ -1,15 +1,13 @@
 from django.http import Http404
+from django.shortcuts import HttpResponse
 from django.shortcuts import render
+import json
 
 from Games.models import *
 from Teams.models import *
-from datetime import datetime, timedelta
-from django.core import serializers
-from django.shortcuts import HttpResponse
-import json
-import itertools
+
+
 def game_index(request):
-    # TODO: Do przepisania
     '''
     context_dict = []
     home_points = []
@@ -53,18 +51,18 @@ def game_page(request, game_date, away_team_short, home_team_short):
 
     if game.happened:
         period_score = list()
-        for item in PeriodScore.objects.filter(game=game).order_by('quarter'):
+        for item in PeriodScore.objects.filter(game=game):
             period_score.append(item)
 
         final_score = game.final_score
 
         boxscore_fields = [
-            ['#', 'Name', 'MIN', 'PTS', 'FGM', 'FGA', 'FG%', '3PM', '3PA', '3P%', 'FTM', 'FTA', 'FT%',
+            ['MIN', 'PTS', 'FGM', 'FGA', 'FG%', '3PM', '3PA', '3P%', 'FTM', 'FTA', 'FT%',
              'ORB', 'DRG', 'TRB', 'AST', 'STL', 'BLK', 'BA', 'TO', 'PF'],
             ['min', 'pts', 'fgm', 'fga', 'fg_perc', 'three_pm', 'three_pa', 'three_perc', 'ftm', 'fta', 'ft_perc',
              'reb_off', 'reb_def', 'reb_all', 'ast', 'stl', 'blk', 'ba', 'to', 'pf']
         ]
-        leaders_fields = [
+        total_leader_fields = [
             ['PTS', 'REB', 'AST', 'STL', 'BLK'],
             ['pts', 'reb_all', 'ast', 'stl', 'blk']
         ]
@@ -73,16 +71,22 @@ def game_page(request, game_date, away_team_short, home_team_short):
         away_team_box = TeamBoxscore.objects.get(Q(game=game), Q(team=away_team))
 
         home_game_leaders = list()
+        for stat, item in zip(total_leader_fields[0], total_leader_fields[1]):
+            player, value = home_team_box.team_game_leader(item)
+            if isinstance(player, Player):
+                home_game_leaders.append({'stat': stat, 'string': player.full_name, 'link': player.get_absolute_url(),
+                                          'value': value})
+            else:
+                home_game_leaders.append({'stat': stat, 'string': player, 'link': '#', 'value': value})
+
         away_game_leaders = list()
-        for team in [[home_team_box, home_game_leaders], [away_team_box, away_game_leaders]]:
-            for stat, item in zip(leaders_fields[0], leaders_fields[1]):
-                player, value = team[0].team_game_leader(item)
-                if isinstance(player, Player):
-                    # Example: ['PTS', 'Michael Jordan', '/player/Michael_Jordan/', 55]
-                    team[1].append([stat, player.full_name, player.get_absolute_url(), value])
-                else:
-                    # Example: ['PTS', '2 players', '#', 55]
-                    team[1].append([stat, player, '#', value])
+        for stat, item in zip(total_leader_fields[0], total_leader_fields[1]):
+            player, value = away_team_box.team_game_leader(item)
+            if isinstance(player, Player):
+                away_game_leaders.append({'stat': stat, 'string': player.full_name, 'link': player.get_absolute_url(),
+                                          'value': value})
+            else:
+                away_game_leaders.append({'stat': stat, 'string': player, 'link': '#', 'value': value})
 
         home_players_boxscores = home_team_box.team_players_boxscores(boxscore_fields[1])
         away_players_boxscores = away_team_box.team_players_boxscores(boxscore_fields[1])
@@ -91,30 +95,33 @@ def game_page(request, game_date, away_team_short, home_team_short):
         away_team_boxscore = away_team_box.team_boxscore(boxscore_fields[1])
 
         return render(request, 'Games/game_page.html',
-                {'home_team': home_team, 'away_team': away_team, 'game_date': game_date,
-                'period_score': period_score, 'final_score': final_score,
-                'boxscore_fields': boxscore_fields[0], 'leaders_fields': leaders_fields[0],
-                'home_game_leaders': home_game_leaders, 'away_game_leaders': away_game_leaders,
-                'home_players_boxscores': home_players_boxscores, 'home_team_boxscore': home_team_boxscore,
-                'away_players_boxscores': away_players_boxscores, 'away_team_boxscore': away_team_boxscore})
+                      {'home_team': home_team, 'away_team': away_team, 'game_date': game_date,
+                       'period_score': period_score, 'final_score': final_score, 'boxscore_fields': boxscore_fields[0],
+                       'home_game_leaders': home_game_leaders, 'away_game_leaders': away_game_leaders,
+                       'home_players_boxscores': home_players_boxscores, 'home_team_boxscore': home_team_boxscore,
+                       'away_players_boxscores': away_players_boxscores, 'away_team_boxscore': away_team_boxscore})
 
     else:
-        leaders_fields = [
+        avg_leader_fields = [
             ['PPG', 'RPG', 'APG', 'SPG', 'BPG'],
             ['pts', 'reb_all', 'ast', 'stl', 'blk']
         ]
 
         home_team_leaders = list()
+        for stat, item in zip(avg_leader_fields[0], avg_leader_fields[1]):
+            player, value = home_team.team_average_leader(item)
+            home_team_leaders.append({'stat': stat, 'player': player, 'value': value})
+
         away_team_leaders = list()
-        for team in [[home_team, home_team_leaders], [away_team, away_team_leaders]]:
-            for stat, item in zip(leaders_fields[0], leaders_fields[1]):
-                player, value = team[0].team_average_leader(item)
-                # Example: ['PPG', 'Michael Jordan', '/player/Michael_Jordan/', 55]
-                team[1].append([stat, player.full_name, player.get_absolute_url(), value])
+        for stat, item in zip(avg_leader_fields[0], avg_leader_fields[1]):
+            player, value = away_team.team_average_leader(item)
+            away_team_leaders.append({'stat': stat, 'player': player, 'value': value})
 
         return render(request, 'Games/game_page_future.html',
                       {'home_team': home_team, 'away_team': away_team, 'game_date': game_date,
                        'home_team_leaders': home_team_leaders, 'away_team_leaders': away_team_leaders})
+
+
 def get_games_by_date(request, game_date):
     jsonObj = []
     try:

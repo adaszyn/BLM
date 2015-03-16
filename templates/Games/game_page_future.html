@@ -100,8 +100,10 @@
                                         <ul class="list-group">
                                             {% for item in away_team_leaders %}
                                             <li class="list-group-item">
-                                                <span class="badge">{{ item.3 }} {{ item.0 }}</span>
-                                                <a href="{{ item.2 }}">{{ item.1 }}</a>
+                                                <span class="badge">{{ item.value }} {{ item.stat }}</span>
+                                                <a href="{{ item.player.get_absolute_url }}">
+                                                    {{ item.player.full_name }}
+                                                </a>
                                             </li>
                                             {% endfor %}
                                         </ul>
@@ -128,8 +130,10 @@
                                         <ul class="list-group">
                                             {% for item in home_team_leaders %}
                                             <li class="list-group-item">
-                                                <span class="badge">{{ item.3 }} {{ item.0 }}</span>
-                                                <a href="{{ item.2 }}">{{ item.1 }}</a>
+                                                <span class="badge">{{ item.value }} {{ item.stat }}</span>
+                                                <a href="{{ item.player.get_absolute_url }}">
+                                                    {{ item.player.full_name }}
+                                                </a>
                                             </li>
                                             {% endfor %}
                                         </ul>

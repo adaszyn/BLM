@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load staticfiles %}
+{% load games_tags %}
 
 
 {% block page_content %}
@@ -34,42 +35,24 @@
                                         </h1>
                                     </div>
                                     <div class="col-lg-6">
-                                        {# Top team #}
+                                        {# Away team #}
                                         <h3 class="text-left at-top">
-                                            {% if final_score.away_team > final_score.home_team %}
-                                                <span class="pull-left label label-success">
-                                                    {{ final_score.away_team }}
-                                                </span>
-                                                <a href="{{ away_team.get_absolute_url }}" class="text-success">
-                                                    {{ away_team.full_name }}
-                                                </a>
-                                            {% else %}
-                                                <span class="pull-left label label-danger">
-                                                    {{ final_score.away_team }}
-                                                </span>
-                                                <a href="{{ away_team.get_absolute_url }}" class="text-danger">
-                                                    {{ away_team.full_name }}
-                                                </a>
-                                            {% endif %}
+                                            <span class="pull-left label {{ final_score|label_color:"away_team" }}">
+                                                {{ final_score.away_team }}
+                                            </span>
+                                            <a href="{{ away_team.get_absolute_url }}" class="{{ final_score|text_color:"away_team" }}">
+                                                {{ away_team.full_name }}
+                                            </a>
                                         </h3>
                                         <p class="text-center at">at</p>
-                                        {# Bottom team #}
+                                        {# Home team #}
                                         <h3 class="text-right at-bottom">
-                                            {% if final_score.home_team > final_score.away_team %}
-                                                <span class="pull-right label label-success">
-                                                    {{ final_score.home_team }}
-                                                </span>
-                                                <a href="{{ home_team.get_absolute_url }}" class="text-success">
-                                                    {{ home_team.full_name }}
-                                                </a>
-                                            {% else %}
-                                                <span class="pull-right label label-danger">
-                                                    {{ final_score.home_team }}
-                                                </span>
-                                                <a href="{{ home_team.get_absolute_url }}" class="text-danger">
-                                                    {{ home_team.full_name }}
-                                                </a>
-                                            {% endif %}
+                                            <span class="pull-right label {{ final_score|label_color:"home_team" }}">
+                                                {{ final_score.home_team }}
+                                            </span>
+                                            <a href="{{ home_team.get_absolute_url }}" class="{{ final_score|text_color:"home_team" }}">
+                                                {{ home_team.full_name }}
+                                            </a>
                                         </h3>
                                         <hr>
                                         {# Score table #}
@@ -87,6 +70,7 @@
                                             {# Away team scores #}
                                             <tr>
                                                 <td>{{ away_team.short_name }}</td>
+                                                {# TODO: Zmiana nazw w modelu i dołączenie do templatetaga #}
                                                 {% for period in period_score %}
                                                     {% if period.away_team_points > period.home_team_points %}
                                                         <td class="text-success">{{ period.away_team_points }}</td>
@@ -94,11 +78,7 @@
                                                         <td class="text-danger">{{ period.away_team_points }}</td>
                                                     {% endif %}
                                                 {% endfor %}
-                                                {% if final_score.away_team > final_score.home_team %}
-                                                    <td class="text-center text-success">{{ final_score.away_team }}</td>
-                                                {% else %}
-                                                    <td class="text-center text-danger">{{ final_score.away_team }}</td>
-                                                {% endif %}
+                                                <td class="text-center {{ final_score|text_color:"away_team" }}">{{ final_score.away_team }}</td>
                                             </tr>
                                             {# Home team scores #}
                                             <tr>
@@ -110,11 +90,7 @@
                                                         <td class="text-danger">{{ period.home_team_points }}</td>
                                                     {% endif %}
                                                 {% endfor %}
-                                                {% if final_score.home_team > final_score.away_team %}
-                                                    <td class="text-center text-success">{{ final_score.home_team }}</td>
-                                                {% else %}
-                                                    <td class="text-center text-danger">{{ final_score.home_team }}</td>
-                                                {% endif %}
+                                                <td class="text-center {{ final_score|text_color:"home_team" }}">{{ final_score.home_team }}</td>
                                             </tr>
                                             </tbody>
                                         </table>
@@ -139,8 +115,8 @@
                                         <ul class="list-group">
                                             {% for item in away_game_leaders %}
                                             <li class="list-group-item">
-                                                <span class="badge">{{ item.3 }} {{ item.0 }}</span>
-                                                <a href="{{ item.2 }}">{{ item.1 }}</a>
+                                                <span class="badge">{{ item.value }} {{ item.stat }}</span>
+                                                <a href="{{ item.link }}">{{ item.string }}</a>
                                             </li>
                                             {% endfor %}
                                         </ul>
@@ -167,8 +143,8 @@
                                         <ul class="list-group">
                                             {% for item in home_game_leaders %}
                                             <li class="list-group-item">
-                                                <span class="badge">{{ item.3 }} {{ item.0 }}</span>
-                                                <a href="{{ item.2 }}">{{ item.1 }}</a>
+                                                <span class="badge">{{ item.value }} {{ item.stat }}</span>
+                                                <a href="{{ item.link }}">{{ item.string }}</a>
                                             </li>
                                             {% endfor %}
                                         </ul>
@@ -180,6 +156,8 @@
                                 <table class="table table-hover table-condensed table-bordered">
                                     <thead>
                                     <tr>
+                                        <th>#</th>
+                                        <th>Name</th>
                                         {% for field in boxscore_fields %}
                                             <th>{{ field }}</th>
                                         {% endfor %}
@@ -197,14 +175,16 @@
                                     </tr>
                                     </tfoot>
                                     <tbody>
-                                    {% for player_box in away_players_boxscores %}
+                                    {% for player, player_box in away_players_boxscores.items %}
                                         {% if forloop.counter < 6 %}
                                             <tr class="active">
                                         {% else %}
                                             <tr>
                                         {% endif %}
+                                        <td>{{ player.number }}</td>
+                                        <td><a href="{{ player.get_absolute_url }}">{{ player.full_name }}</a></td>
                                             {% for item in player_box %}
-                                                <td>{{ item|safe }}</td>
+                                                <td>{{ item }}</td>
                                             {% endfor %}
                                         </tr>
                                     {% endfor %}
@@ -216,6 +196,8 @@
                                 <table class="table table-hover table-condensed table-bordered">
                                     <thead>
                                     <tr>
+                                        <th>#</th>
+                                        <th>Name</th>
                                         {% for field in boxscore_fields %}
                                             <th>{{ field }}</th>
                                         {% endfor %}
@@ -233,14 +215,16 @@
                                     </tr>
                                     </tfoot>
                                     <tbody>
-                                    {% for player_box in home_players_boxscores %}
+                                    {% for player, player_box in home_players_boxscores.items %}
                                         {% if forloop.counter < 6 %}
                                             <tr class="active">
                                         {% else %}
                                             <tr>
                                         {% endif %}
+                                        <td>{{ player.number }}</td>
+                                        <td><a href="{{ player.get_absolute_url }}">{{ player.full_name }}</a></td>
                                             {% for item in player_box %}
-                                                <td>{{ item|safe }}</td>
+                                                <td>{{ item }}</td>
                                             {% endfor %}
                                         </tr>
                                     {% endfor %}

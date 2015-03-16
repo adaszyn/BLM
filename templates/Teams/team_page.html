@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load staticfiles %}
+{% load teams_tags %}
 
 
 {% block page_content %}
@@ -12,7 +13,9 @@
                     <div class="panel-heading main">
                         <ul class="nav nav-tabs main">
                             <li class="active"><a href="#tabInfo" data-toggle="tab">Info</a></li>
-                            <li><a href="#tabPlayers" data-toggle="tab">Players</a></li>
+                            {# TODO: Schedule tab #}
+                            <li><a href="#tabRoster" data-toggle="tab">Roster</a></li>
+                            <li><a href="#tabStats" data-toggle="tab">Stats</a></li>
                         </ul>
                     </div>
                     <div class="panel-body">
@@ -70,8 +73,10 @@
                                         <ul class="list-group">
                                             {% for item in team_leaders %}
                                             <li class="list-group-item">
-                                                <span class="badge">{{ item.3 }} {{ item.0 }}</span>
-                                                <a href="{{ item.2 }}">{{ item.1 }}</a>
+                                                <span class="badge">{{ item.value }} {{ item.stat }}</span>
+                                                <a href="{{ item.player.get_absolute_url }}">
+                                                    {{ item.player.full_name }}
+                                                </a>
                                             </li>
                                             {% endfor %}
                                         </ul>
@@ -80,10 +85,12 @@
                                     <div class="col-lg-4">
                                         <h2>Previous games</h2>
                                         <ul class="list-group">
-                                            {% for item in previous_games %}
+                                            {% for game in previous_games %}
                                             <li class="list-group-item">
-                                                <span class="badge">{{ item.2 }}</span>
-                                                <a href="{{ item.1 }}" class="{{ item.3 }}">{{ item.0 }}</a>
+                                                <span class="badge">{{ game.date|date:"d N" }}</span>
+                                                <a href="{{ game.get_absolute_url }}" class="{{ game|color:team }}">
+                                                    {{ game|past_game_name:team }}
+                                                </a>
                                             </li>
                                             {% endfor %}
                                         </ul>
@@ -92,10 +99,12 @@
                                     <div class="col-lg-4">
                                         <h2>Next games</h2>
                                         <ul class="list-group">
-                                            {% for item in next_games %}
+                                            {% for game in next_games %}
                                             <li class="list-group-item">
-                                                <span class="badge">{{ item.2 }}</span>
-                                                <a href="{{ item.1 }}">{{ item.0 }}</a>
+                                                <span class="badge">{{ game.date|date:"d N" }}</span>
+                                                <a href="{{ game.get_absolute_url }}">
+                                                    {{ game|future_game_name:team }}
+                                                </a>
                                             </li>
                                             {% endfor %}
                                         </ul>
@@ -103,12 +112,13 @@
                                 </div>
                             </div>
                             {# Second tab #}
-                            <div class="tab-pane fade" id="tabPlayers">
+                            <div class="tab-pane fade" id="tabRoster">
                                 <table class="table table-striped table-hover">
                                     <thead>
                                     <tr>
                                         <th>&#35;</th>
                                         <th>Name</th>
+                                        <th>Birth date</th>
                                         <th>Age</th>
                                         <th>Position</th>
                                         <th>Height</th>
@@ -122,10 +132,36 @@
                                             <td><a href="{{ player.get_absolute_url }}">
                                                 {{ player.full_name }}
                                             </a></td>
+                                            <td>{{ player.birth_date }}</td>
                                             <td>{{ player.age }}</td>
                                             <td>{{ player.position }}</td>
                                             <td>{{ player.height }} cm</td>
                                             <td>{{ player.weight }} kg</td>
+                                        </tr>
+                                    {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+                            {# Third tab #}
+                            <div class="tab-pane fade" id="tabStats">
+                                <table class="table table-striped table-hover table-bordered table-condensed">
+                                    <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        {% for field in stat_fields %}
+                                            <th>{{ field }}</th>
+                                        {% endfor %}
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    {% for player, stats in players_stats.items %}
+                                        <tr>
+                                            <td><a href="{{ player.get_absolute_url }}">
+                                                {{ player.full_name }}
+                                            </a></td>
+                                            {% for value in stats %}
+                                                <td>{{ value }}</td>
+                                            {% endfor %}
                                         </tr>
                                     {% endfor %}
                                     </tbody>
