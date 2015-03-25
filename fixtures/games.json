@@ -667,8 +667,8 @@
         "fields": {
             "game": 0,
             "quarter": 1,
-            "home_team_points": 25,
-            "away_team_points": 42
+            "home_team": 25,
+            "away_team": 42
         },
         "model": "Games.periodscore"
     },
@@ -677,8 +677,8 @@
         "fields": {
             "game": 0,
             "quarter": 2,
-            "home_team_points": 44,
-            "away_team_points": 24
+            "home_team": 44,
+            "away_team": 24
         },
         "model": "Games.periodscore"
     },
@@ -687,8 +687,8 @@
         "fields": {
             "game": 0,
             "quarter": 3,
-            "home_team_points": 52,
-            "away_team_points": 57
+            "home_team": 52,
+            "away_team": 57
         },
         "model": "Games.periodscore"
     },
@@ -697,8 +697,8 @@
         "fields": {
             "game": 0,
             "quarter": 4,
-            "home_team_points": 56,
-            "away_team_points": 42
+            "home_team": 56,
+            "away_team": 42
         },
         "model": "Games.periodscore"
     },
@@ -1370,8 +1370,8 @@
         "fields": {
             "game": 1,
             "quarter": 1,
-            "home_team_points": 50,
-            "away_team_points": 27
+            "home_team": 50,
+            "away_team": 27
         },
         "model": "Games.periodscore"
     },
@@ -1380,8 +1380,8 @@
         "fields": {
             "game": 1,
             "quarter": 2,
-            "home_team_points": 20,
-            "away_team_points": 52
+            "home_team": 20,
+            "away_team": 52
         },
         "model": "Games.periodscore"
     },
@@ -1390,8 +1390,8 @@
         "fields": {
             "game": 1,
             "quarter": 3,
-            "home_team_points": 45,
-            "away_team_points": 40
+            "home_team": 45,
+            "away_team": 40
         },
         "model": "Games.periodscore"
     },
@@ -1400,8 +1400,8 @@
         "fields": {
             "game": 1,
             "quarter": 4,
-            "home_team_points": 61,
-            "away_team_points": 105
+            "home_team": 61,
+            "away_team": 105
         },
         "model": "Games.periodscore"
     },
@@ -2073,8 +2073,8 @@
         "fields": {
             "game": 2,
             "quarter": 1,
-            "home_team_points": 45,
-            "away_team_points": 24
+            "home_team": 45,
+            "away_team": 24
         },
         "model": "Games.periodscore"
     },
@@ -2083,8 +2083,8 @@
         "fields": {
             "game": 2,
             "quarter": 2,
-            "home_team_points": 36,
-            "away_team_points": 48
+            "home_team": 36,
+            "away_team": 48
         },
         "model": "Games.periodscore"
     },
@@ -2093,8 +2093,8 @@
         "fields": {
             "game": 2,
             "quarter": 3,
-            "home_team_points": 51,
-            "away_team_points": 41
+            "home_team": 51,
+            "away_team": 41
         },
         "model": "Games.periodscore"
     },
@@ -2103,8 +2103,8 @@
         "fields": {
             "game": 2,
             "quarter": 4,
-            "home_team_points": 74,
-            "away_team_points": 88
+            "home_team": 74,
+            "away_team": 88
         },
         "model": "Games.periodscore"
     },
@@ -2776,8 +2776,8 @@
         "fields": {
             "game": 3,
             "quarter": 1,
-            "home_team_points": 40,
-            "away_team_points": 40
+            "home_team": 40,
+            "away_team": 40
         },
         "model": "Games.periodscore"
     },
@@ -2786,8 +2786,8 @@
         "fields": {
             "game": 3,
             "quarter": 2,
-            "home_team_points": 37,
-            "away_team_points": 48
+            "home_team": 37,
+            "away_team": 48
         },
         "model": "Games.periodscore"
     },
@@ -2796,8 +2796,8 @@
         "fields": {
             "game": 3,
             "quarter": 3,
-            "home_team_points": 20,
-            "away_team_points": 37
+            "home_team": 20,
+            "away_team": 37
         },
         "model": "Games.periodscore"
     },
@@ -2806,8 +2806,8 @@
         "fields": {
             "game": 3,
             "quarter": 4,
-            "home_team_points": 83,
-            "away_team_points": 62
+            "home_team": 83,
+            "away_team": 62
         },
         "model": "Games.periodscore"
     },
@@ -3479,8 +3479,8 @@
         "fields": {
             "game": 4,
             "quarter": 1,
-            "home_team_points": 26,
-            "away_team_points": 36
+            "home_team": 26,
+            "away_team": 36
         },
         "model": "Games.periodscore"
     },
@@ -3489,8 +3489,8 @@
         "fields": {
             "game": 4,
             "quarter": 2,
-            "home_team_points": 32,
-            "away_team_points": 43
+            "home_team": 32,
+            "away_team": 43
         },
         "model": "Games.periodscore"
     },
@@ -3499,8 +3499,8 @@
         "fields": {
             "game": 4,
             "quarter": 3,
-            "home_team_points": 34,
-            "away_team_points": 21
+            "home_team": 34,
+            "away_team": 21
         },
         "model": "Games.periodscore"
     },
@@ -3509,8 +3509,8 @@
         "fields": {
             "game": 4,
             "quarter": 4,
-            "home_team_points": 100,
-            "away_team_points": 0
+            "home_team": 100,
+            "away_team": 0
         },
         "model": "Games.periodscore"
     },
@@ -4182,8 +4182,8 @@
         "fields": {
             "game": 5,
             "quarter": 1,
-            "home_team_points": 44,
-            "away_team_points": 60
+            "home_team": 44,
+            "away_team": 60
         },
         "model": "Games.periodscore"
     },
@@ -4192,8 +4192,8 @@
         "fields": {
             "game": 5,
             "quarter": 2,
-            "home_team_points": 59,
-            "away_team_points": 42
+            "home_team": 59,
+            "away_team": 42
         },
         "model": "Games.periodscore"
     },
@@ -4202,8 +4202,8 @@
         "fields": {
             "game": 5,
             "quarter": 3,
-            "home_team_points": 21,
-            "away_team_points": 38
+            "home_team": 21,
+            "away_team": 38
         },
         "model": "Games.periodscore"
     },
@@ -4212,8 +4212,8 @@
         "fields": {
             "game": 5,
             "quarter": 4,
-            "home_team_points": 9,
-            "away_team_points": 39
+            "home_team": 9,
+            "away_team": 39
         },
         "model": "Games.periodscore"
     },
@@ -4885,8 +4885,8 @@
         "fields": {
             "game": 6,
             "quarter": 1,
-            "home_team_points": 36,
-            "away_team_points": 38
+            "home_team": 36,
+            "away_team": 38
         },
         "model": "Games.periodscore"
     },
@@ -4895,8 +4895,8 @@
         "fields": {
             "game": 6,
             "quarter": 2,
-            "home_team_points": 37,
-            "away_team_points": 38
+            "home_team": 37,
+            "away_team": 38
         },
         "model": "Games.periodscore"
     },
@@ -4905,8 +4905,8 @@
         "fields": {
             "game": 6,
             "quarter": 3,
-            "home_team_points": 41,
-            "away_team_points": 27
+            "home_team": 41,
+            "away_team": 27
         },
         "model": "Games.periodscore"
     },
@@ -4915,8 +4915,8 @@
         "fields": {
             "game": 6,
             "quarter": 4,
-            "home_team_points": 51,
-            "away_team_points": 90
+            "home_team": 51,
+            "away_team": 90
         },
         "model": "Games.periodscore"
     },
@@ -5588,8 +5588,8 @@
         "fields": {
             "game": 7,
             "quarter": 1,
-            "home_team_points": 20,
-            "away_team_points": 24
+            "home_team": 20,
+            "away_team": 24
         },
         "model": "Games.periodscore"
     },
@@ -5598,8 +5598,8 @@
         "fields": {
             "game": 7,
             "quarter": 2,
-            "home_team_points": 32,
-            "away_team_points": 29
+            "home_team": 32,
+            "away_team": 29
         },
         "model": "Games.periodscore"
     },
@@ -5608,8 +5608,8 @@
         "fields": {
             "game": 7,
             "quarter": 3,
-            "home_team_points": 36,
-            "away_team_points": 50
+            "home_team": 36,
+            "away_team": 50
         },
         "model": "Games.periodscore"
     },
@@ -5618,8 +5618,8 @@
         "fields": {
             "game": 7,
             "quarter": 4,
-            "home_team_points": 97,
-            "away_team_points": 117
+            "home_team": 97,
+            "away_team": 117
         },
         "model": "Games.periodscore"
     },
@@ -6291,8 +6291,8 @@
         "fields": {
             "game": 8,
             "quarter": 1,
-            "home_team_points": 20,
-            "away_team_points": 50
+            "home_team": 20,
+            "away_team": 50
         },
         "model": "Games.periodscore"
     },
@@ -6301,8 +6301,8 @@
         "fields": {
             "game": 8,
             "quarter": 2,
-            "home_team_points": 56,
-            "away_team_points": 52
+            "home_team": 56,
+            "away_team": 52
         },
         "model": "Games.periodscore"
     },
@@ -6311,8 +6311,8 @@
         "fields": {
             "game": 8,
             "quarter": 3,
-            "home_team_points": 60,
-            "away_team_points": 35
+            "home_team": 60,
+            "away_team": 35
         },
         "model": "Games.periodscore"
     },
@@ -6321,8 +6321,8 @@
         "fields": {
             "game": 8,
             "quarter": 4,
-            "home_team_points": 62,
-            "away_team_points": 15
+            "home_team": 62,
+            "away_team": 15
         },
         "model": "Games.periodscore"
     },
@@ -6994,8 +6994,8 @@
         "fields": {
             "game": 9,
             "quarter": 1,
-            "home_team_points": 30,
-            "away_team_points": 21
+            "home_team": 30,
+            "away_team": 21
         },
         "model": "Games.periodscore"
     },
@@ -7004,8 +7004,8 @@
         "fields": {
             "game": 9,
             "quarter": 2,
-            "home_team_points": 28,
-            "away_team_points": 52
+            "home_team": 28,
+            "away_team": 52
         },
         "model": "Games.periodscore"
     },
@@ -7014,8 +7014,8 @@
         "fields": {
             "game": 9,
             "quarter": 3,
-            "home_team_points": 26,
-            "away_team_points": 60
+            "home_team": 26,
+            "away_team": 60
         },
         "model": "Games.periodscore"
     },
@@ -7024,8 +7024,8 @@
         "fields": {
             "game": 9,
             "quarter": 4,
-            "home_team_points": 86,
-            "away_team_points": 5
+            "home_team": 86,
+            "away_team": 5
         },
         "model": "Games.periodscore"
     },
@@ -7697,8 +7697,8 @@
         "fields": {
             "game": 10,
             "quarter": 1,
-            "home_team_points": 44,
-            "away_team_points": 40
+            "home_team": 44,
+            "away_team": 40
         },
         "model": "Games.periodscore"
     },
@@ -7707,8 +7707,8 @@
         "fields": {
             "game": 10,
             "quarter": 2,
-            "home_team_points": 35,
-            "away_team_points": 36
+            "home_team": 35,
+            "away_team": 36
         },
         "model": "Games.periodscore"
     },
@@ -7717,8 +7717,8 @@
         "fields": {
             "game": 10,
             "quarter": 3,
-            "home_team_points": 51,
-            "away_team_points": 34
+            "home_team": 51,
+            "away_team": 34
         },
         "model": "Games.periodscore"
     },
@@ -7727,8 +7727,8 @@
         "fields": {
             "game": 10,
             "quarter": 4,
-            "home_team_points": 69,
-            "away_team_points": 88
+            "home_team": 69,
+            "away_team": 88
         },
         "model": "Games.periodscore"
     },
@@ -8400,8 +8400,8 @@
         "fields": {
             "game": 11,
             "quarter": 1,
-            "home_team_points": 42,
-            "away_team_points": 42
+            "home_team": 42,
+            "away_team": 42
         },
         "model": "Games.periodscore"
     },
@@ -8410,8 +8410,8 @@
         "fields": {
             "game": 11,
             "quarter": 2,
-            "home_team_points": 22,
-            "away_team_points": 44
+            "home_team": 22,
+            "away_team": 44
         },
         "model": "Games.periodscore"
     },
@@ -8420,8 +8420,8 @@
         "fields": {
             "game": 11,
             "quarter": 3,
-            "home_team_points": 36,
-            "away_team_points": 28
+            "home_team": 36,
+            "away_team": 28
         },
         "model": "Games.periodscore"
     },
@@ -8430,8 +8430,8 @@
         "fields": {
             "game": 11,
             "quarter": 4,
-            "home_team_points": 124,
-            "away_team_points": 58
+            "home_team": 124,
+            "away_team": 58
         },
         "model": "Games.periodscore"
     },
@@ -9103,8 +9103,8 @@
         "fields": {
             "game": 12,
             "quarter": 1,
-            "home_team_points": 32,
-            "away_team_points": 40
+            "home_team": 32,
+            "away_team": 40
         },
         "model": "Games.periodscore"
     },
@@ -9113,8 +9113,8 @@
         "fields": {
             "game": 12,
             "quarter": 2,
-            "home_team_points": 43,
-            "away_team_points": 22
+            "home_team": 43,
+            "away_team": 22
         },
         "model": "Games.periodscore"
     },
@@ -9123,8 +9123,8 @@
         "fields": {
             "game": 12,
             "quarter": 3,
-            "home_team_points": 55,
-            "away_team_points": 53
+            "home_team": 55,
+            "away_team": 53
         },
         "model": "Games.periodscore"
     },
@@ -9133,8 +9133,8 @@
         "fields": {
             "game": 12,
             "quarter": 4,
-            "home_team_points": 57,
-            "away_team_points": 133
+            "home_team": 57,
+            "away_team": 133
         },
         "model": "Games.periodscore"
     },
@@ -9806,8 +9806,8 @@
         "fields": {
             "game": 13,
             "quarter": 1,
-            "home_team_points": 60,
-            "away_team_points": 25
+            "home_team": 60,
+            "away_team": 25
         },
         "model": "Games.periodscore"
     },
@@ -9816,8 +9816,8 @@
         "fields": {
             "game": 13,
             "quarter": 2,
-            "home_team_points": 45,
-            "away_team_points": 28
+            "home_team": 45,
+            "away_team": 28
         },
         "model": "Games.periodscore"
     },
@@ -9826,8 +9826,8 @@
         "fields": {
             "game": 13,
             "quarter": 3,
-            "home_team_points": 26,
-            "away_team_points": 33
+            "home_team": 26,
+            "away_team": 33
         },
         "model": "Games.periodscore"
     },
@@ -9836,8 +9836,8 @@
         "fields": {
             "game": 13,
             "quarter": 4,
-            "home_team_points": 49,
-            "away_team_points": 79
+            "home_team": 49,
+            "away_team": 79
         },
         "model": "Games.periodscore"
     },
@@ -10509,8 +10509,8 @@
         "fields": {
             "game": 14,
             "quarter": 1,
-            "home_team_points": 36,
-            "away_team_points": 24
+            "home_team": 36,
+            "away_team": 24
         },
         "model": "Games.periodscore"
     },
@@ -10519,8 +10519,8 @@
         "fields": {
             "game": 14,
             "quarter": 2,
-            "home_team_points": 42,
-            "away_team_points": 43
+            "home_team": 42,
+            "away_team": 43
         },
         "model": "Games.periodscore"
     },
@@ -10529,8 +10529,8 @@
         "fields": {
             "game": 14,
             "quarter": 3,
-            "home_team_points": 51,
-            "away_team_points": 51
+            "home_team": 51,
+            "away_team": 51
         },
         "model": "Games.periodscore"
     },
@@ -10539,8 +10539,8 @@
         "fields": {
             "game": 14,
             "quarter": 4,
-            "home_team_points": 51,
-            "away_team_points": 29
+            "home_team": 51,
+            "away_team": 29
         },
         "model": "Games.periodscore"
     },
@@ -11212,8 +11212,8 @@
         "fields": {
             "game": 15,
             "quarter": 1,
-            "home_team_points": 47,
-            "away_team_points": 44
+            "home_team": 47,
+            "away_team": 44
         },
         "model": "Games.periodscore"
     },
@@ -11222,8 +11222,8 @@
         "fields": {
             "game": 15,
             "quarter": 2,
-            "home_team_points": 49,
-            "away_team_points": 47
+            "home_team": 49,
+            "away_team": 47
         },
         "model": "Games.periodscore"
     },
@@ -11232,8 +11232,8 @@
         "fields": {
             "game": 15,
             "quarter": 3,
-            "home_team_points": 15,
-            "away_team_points": 31
+            "home_team": 15,
+            "away_team": 31
         },
         "model": "Games.periodscore"
     },
@@ -11242,8 +11242,8 @@
         "fields": {
             "game": 15,
             "quarter": 4,
-            "home_team_points": 0,
-            "away_team_points": 37
+            "home_team": 0,
+            "away_team": 37
         },
         "model": "Games.periodscore"
     },
@@ -11915,8 +11915,8 @@
         "fields": {
             "game": 16,
             "quarter": 1,
-            "home_team_points": 35,
-            "away_team_points": 45
+            "home_team": 35,
+            "away_team": 45
         },
         "model": "Games.periodscore"
     },
@@ -11925,8 +11925,8 @@
         "fields": {
             "game": 16,
             "quarter": 2,
-            "home_team_points": 21,
-            "away_team_points": 58
+            "home_team": 21,
+            "away_team": 58
         },
         "model": "Games.periodscore"
     },
@@ -11935,8 +11935,8 @@
         "fields": {
             "game": 16,
             "quarter": 3,
-            "home_team_points": 58,
-            "away_team_points": 25
+            "home_team": 58,
+            "away_team": 25
         },
         "model": "Games.periodscore"
     },
@@ -11945,8 +11945,8 @@
         "fields": {
             "game": 16,
             "quarter": 4,
-            "home_team_points": 61,
-            "away_team_points": 64
+            "home_team": 61,
+            "away_team": 64
         },
         "model": "Games.periodscore"
     },
@@ -12618,8 +12618,8 @@
         "fields": {
             "game": 17,
             "quarter": 1,
-            "home_team_points": 56,
-            "away_team_points": 32
+            "home_team": 56,
+            "away_team": 32
         },
         "model": "Games.periodscore"
     },
@@ -12628,8 +12628,8 @@
         "fields": {
             "game": 17,
             "quarter": 2,
-            "home_team_points": 57,
-            "away_team_points": 27
+            "home_team": 57,
+            "away_team": 27
         },
         "model": "Games.periodscore"
     },
@@ -12638,8 +12638,8 @@
         "fields": {
             "game": 17,
             "quarter": 3,
-            "home_team_points": 50,
-            "away_team_points": 44
+            "home_team": 50,
+            "away_team": 44
         },
         "model": "Games.periodscore"
     },
@@ -12648,8 +12648,8 @@
         "fields": {
             "game": 17,
             "quarter": 4,
-            "home_team_points": 29,
-            "away_team_points": 112
+            "home_team": 29,
+            "away_team": 112
         },
         "model": "Games.periodscore"
     },
@@ -13321,8 +13321,8 @@
         "fields": {
             "game": 18,
             "quarter": 1,
-            "home_team_points": 26,
-            "away_team_points": 24
+            "home_team": 26,
+            "away_team": 24
         },
         "model": "Games.periodscore"
     },
@@ -13331,8 +13331,8 @@
         "fields": {
             "game": 18,
             "quarter": 2,
-            "home_team_points": 38,
-            "away_team_points": 35
+            "home_team": 38,
+            "away_team": 35
         },
         "model": "Games.periodscore"
     },
@@ -13341,8 +13341,8 @@
         "fields": {
             "game": 18,
             "quarter": 3,
-            "home_team_points": 20,
-            "away_team_points": 21
+            "home_team": 20,
+            "away_team": 21
         },
         "model": "Games.periodscore"
     },
@@ -13351,8 +13351,8 @@
         "fields": {
             "game": 18,
             "quarter": 4,
-            "home_team_points": 117,
-            "away_team_points": 94
+            "home_team": 117,
+            "away_team": 94
         },
         "model": "Games.periodscore"
     },
@@ -13361,8 +13361,8 @@
         "fields": {
             "game": 18,
             "quarter": 5,
-            "home_team_points": 0,
-            "away_team_points": 0
+            "home_team": 0,
+            "away_team": 0
         },
         "model": "Games.periodscore"
     },
@@ -14034,8 +14034,8 @@
         "fields": {
             "game": 19,
             "quarter": 1,
-            "home_team_points": 30,
-            "away_team_points": 46
+            "home_team": 30,
+            "away_team": 46
         },
         "model": "Games.periodscore"
     },
@@ -14044,8 +14044,8 @@
         "fields": {
             "game": 19,
             "quarter": 2,
-            "home_team_points": 44,
-            "away_team_points": 57
+            "home_team": 44,
+            "away_team": 57
         },
         "model": "Games.periodscore"
     },
@@ -14054,8 +14054,8 @@
         "fields": {
             "game": 19,
             "quarter": 3,
-            "home_team_points": 37,
-            "away_team_points": 35
+            "home_team": 37,
+            "away_team": 35
         },
         "model": "Games.periodscore"
     },
@@ -14064,8 +14064,8 @@
         "fields": {
             "game": 19,
             "quarter": 4,
-            "home_team_points": 62,
-            "away_team_points": 31
+            "home_team": 62,
+            "away_team": 31
         },
         "model": "Games.periodscore"
     },
@@ -14737,8 +14737,8 @@
         "fields": {
             "game": 20,
             "quarter": 1,
-            "home_team_points": 55,
-            "away_team_points": 21
+            "home_team": 55,
+            "away_team": 21
         },
         "model": "Games.periodscore"
     },
@@ -14747,8 +14747,8 @@
         "fields": {
             "game": 20,
             "quarter": 2,
-            "home_team_points": 46,
-            "away_team_points": 31
+            "home_team": 46,
+            "away_team": 31
         },
         "model": "Games.periodscore"
     },
@@ -14757,8 +14757,8 @@
         "fields": {
             "game": 20,
             "quarter": 3,
-            "home_team_points": 45,
-            "away_team_points": 56
+            "home_team": 45,
+            "away_team": 56
         },
         "model": "Games.periodscore"
     },
@@ -14767,8 +14767,8 @@
         "fields": {
             "game": 20,
             "quarter": 4,
-            "home_team_points": 15,
-            "away_team_points": 143
+            "home_team": 15,
+            "away_team": 143
         },
         "model": "Games.periodscore"
     },
@@ -15440,8 +15440,8 @@
         "fields": {
             "game": 21,
             "quarter": 1,
-            "home_team_points": 48,
-            "away_team_points": 23
+            "home_team": 48,
+            "away_team": 23
         },
         "model": "Games.periodscore"
     },
@@ -15450,8 +15450,8 @@
         "fields": {
             "game": 21,
             "quarter": 2,
-            "home_team_points": 50,
-            "away_team_points": 35
+            "home_team": 50,
+            "away_team": 35
         },
         "model": "Games.periodscore"
     },
@@ -15460,8 +15460,8 @@
         "fields": {
             "game": 21,
             "quarter": 3,
-            "home_team_points": 53,
-            "away_team_points": 58
+            "home_team": 53,
+            "away_team": 58
         },
         "model": "Games.periodscore"
     },
@@ -15470,8 +15470,8 @@
         "fields": {
             "game": 21,
             "quarter": 4,
-            "home_team_points": 23,
-            "away_team_points": 93
+            "home_team": 23,
+            "away_team": 93
         },
         "model": "Games.periodscore"
     },
@@ -16143,8 +16143,8 @@
         "fields": {
             "game": 22,
             "quarter": 1,
-            "home_team_points": 35,
-            "away_team_points": 27
+            "home_team": 35,
+            "away_team": 27
         },
         "model": "Games.periodscore"
     },
@@ -16153,8 +16153,8 @@
         "fields": {
             "game": 22,
             "quarter": 2,
-            "home_team_points": 45,
-            "away_team_points": 54
+            "home_team": 45,
+            "away_team": 54
         },
         "model": "Games.periodscore"
     },
@@ -16163,8 +16163,8 @@
         "fields": {
             "game": 22,
             "quarter": 3,
-            "home_team_points": 60,
-            "away_team_points": 42
+            "home_team": 60,
+            "away_team": 42
         },
         "model": "Games.periodscore"
     },
@@ -16173,8 +16173,8 @@
         "fields": {
             "game": 22,
             "quarter": 4,
-            "home_team_points": 33,
-            "away_team_points": 29
+            "home_team": 33,
+            "away_team": 29
         },
         "model": "Games.periodscore"
     },
@@ -16846,8 +16846,8 @@
         "fields": {
             "game": 23,
             "quarter": 1,
-            "home_team_points": 35,
-            "away_team_points": 49
+            "home_team": 35,
+            "away_team": 49
         },
         "model": "Games.periodscore"
     },
@@ -16856,8 +16856,8 @@
         "fields": {
             "game": 23,
             "quarter": 2,
-            "home_team_points": 49,
-            "away_team_points": 58
+            "home_team": 49,
+            "away_team": 58
         },
         "model": "Games.periodscore"
     },
@@ -16866,8 +16866,8 @@
         "fields": {
             "game": 23,
             "quarter": 3,
-            "home_team_points": 35,
-            "away_team_points": 8
+            "home_team": 35,
+            "away_team": 8
         },
         "model": "Games.periodscore"
     },
@@ -16876,8 +16876,8 @@
         "fields": {
             "game": 23,
             "quarter": 4,
-            "home_team_points": 75,
-            "away_team_points": 0
+            "home_team": 75,
+            "away_team": 0
         },
         "model": "Games.periodscore"
     },
@@ -17549,8 +17549,8 @@
         "fields": {
             "game": 24,
             "quarter": 1,
-            "home_team_points": 52,
-            "away_team_points": 55
+            "home_team": 52,
+            "away_team": 55
         },
         "model": "Games.periodscore"
     },
@@ -17559,8 +17559,8 @@
         "fields": {
             "game": 24,
             "quarter": 2,
-            "home_team_points": 49,
-            "away_team_points": 24
+            "home_team": 49,
+            "away_team": 24
         },
         "model": "Games.periodscore"
     },
@@ -17569,8 +17569,8 @@
         "fields": {
             "game": 24,
             "quarter": 3,
-            "home_team_points": 57,
-            "away_team_points": 48
+            "home_team": 57,
+            "away_team": 48
         },
         "model": "Games.periodscore"
     },
@@ -17579,8 +17579,8 @@
         "fields": {
             "game": 24,
             "quarter": 4,
-            "home_team_points": 0,
-            "away_team_points": 82
+            "home_team": 0,
+            "away_team": 82
         },
         "model": "Games.periodscore"
     },
@@ -18252,8 +18252,8 @@
         "fields": {
             "game": 25,
             "quarter": 1,
-            "home_team_points": 34,
-            "away_team_points": 56
+            "home_team": 34,
+            "away_team": 56
         },
         "model": "Games.periodscore"
     },
@@ -18262,8 +18262,8 @@
         "fields": {
             "game": 25,
             "quarter": 2,
-            "home_team_points": 26,
-            "away_team_points": 47
+            "home_team": 26,
+            "away_team": 47
         },
         "model": "Games.periodscore"
     },
@@ -18272,8 +18272,8 @@
         "fields": {
             "game": 25,
             "quarter": 3,
-            "home_team_points": 49,
-            "away_team_points": 46
+            "home_team": 49,
+            "away_team": 46
         },
         "model": "Games.periodscore"
     },
@@ -18282,8 +18282,8 @@
         "fields": {
             "game": 25,
             "quarter": 4,
-            "home_team_points": 101,
-            "away_team_points": 34
+            "home_team": 101,
+            "away_team": 34
         },
         "model": "Games.periodscore"
     },
@@ -18955,8 +18955,8 @@
         "fields": {
             "game": 26,
             "quarter": 1,
-            "home_team_points": 40,
-            "away_team_points": 22
+            "home_team": 40,
+            "away_team": 22
         },
         "model": "Games.periodscore"
     },
@@ -18965,8 +18965,8 @@
         "fields": {
             "game": 26,
             "quarter": 2,
-            "home_team_points": 59,
-            "away_team_points": 44
+            "home_team": 59,
+            "away_team": 44
         },
         "model": "Games.periodscore"
     },
@@ -18975,8 +18975,8 @@
         "fields": {
             "game": 26,
             "quarter": 3,
-            "home_team_points": 44,
-            "away_team_points": 33
+            "home_team": 44,
+            "away_team": 33
         },
         "model": "Games.periodscore"
     },
@@ -18985,8 +18985,8 @@
         "fields": {
             "game": 26,
             "quarter": 4,
-            "home_team_points": 27,
-            "away_team_points": 32
+            "home_team": 27,
+            "away_team": 32
         },
         "model": "Games.periodscore"
     },
@@ -19658,8 +19658,8 @@
         "fields": {
             "game": 27,
             "quarter": 1,
-            "home_team_points": 35,
-            "away_team_points": 39
+            "home_team": 35,
+            "away_team": 39
         },
         "model": "Games.periodscore"
     },
@@ -19668,8 +19668,8 @@
         "fields": {
             "game": 27,
             "quarter": 2,
-            "home_team_points": 51,
-            "away_team_points": 36
+            "home_team": 51,
+            "away_team": 36
         },
         "model": "Games.periodscore"
     },
@@ -19678,8 +19678,8 @@
         "fields": {
             "game": 27,
             "quarter": 3,
-            "home_team_points": 49,
-            "away_team_points": 49
+            "home_team": 49,
+            "away_team": 49
         },
         "model": "Games.periodscore"
     },
@@ -19688,8 +19688,8 @@
         "fields": {
             "game": 27,
             "quarter": 4,
-            "home_team_points": 77,
-            "away_team_points": 65
+            "home_team": 77,
+            "away_team": 65
         },
         "model": "Games.periodscore"
     },
@@ -20361,8 +20361,8 @@
         "fields": {
             "game": 28,
             "quarter": 1,
-            "home_team_points": 36,
-            "away_team_points": 55
+            "home_team": 36,
+            "away_team": 55
         },
         "model": "Games.periodscore"
     },
@@ -20371,8 +20371,8 @@
         "fields": {
             "game": 28,
             "quarter": 2,
-            "home_team_points": 31,
-            "away_team_points": 24
+            "home_team": 31,
+            "away_team": 24
         },
         "model": "Games.periodscore"
     },
@@ -20381,8 +20381,8 @@
         "fields": {
             "game": 28,
             "quarter": 3,
-            "home_team_points": 57,
-            "away_team_points": 21
+            "home_team": 57,
+            "away_team": 21
         },
         "model": "Games.periodscore"
     },
@@ -20391,8 +20391,8 @@
         "fields": {
             "game": 28,
             "quarter": 4,
-            "home_team_points": 12,
-            "away_team_points": 77
+            "home_team": 12,
+            "away_team": 77
         },
         "model": "Games.periodscore"
     },
@@ -21064,8 +21064,8 @@
         "fields": {
             "game": 29,
             "quarter": 1,
-            "home_team_points": 58,
-            "away_team_points": 37
+            "home_team": 58,
+            "away_team": 37
         },
         "model": "Games.periodscore"
     },
@@ -21074,8 +21074,8 @@
         "fields": {
             "game": 29,
             "quarter": 2,
-            "home_team_points": 54,
-            "away_team_points": 28
+            "home_team": 54,
+            "away_team": 28
         },
         "model": "Games.periodscore"
     },
@@ -21084,8 +21084,8 @@
         "fields": {
             "game": 29,
             "quarter": 3,
-            "home_team_points": 32,
-            "away_team_points": 36
+            "home_team": 32,
+            "away_team": 36
         },
         "model": "Games.periodscore"
     },
@@ -21094,8 +21094,8 @@
         "fields": {
             "game": 29,
             "quarter": 4,
-            "home_team_points": 35,
-            "away_team_points": 33
+            "home_team": 35,
+            "away_team": 33
         },
         "model": "Games.periodscore"
     },
@@ -21767,8 +21767,8 @@
         "fields": {
             "game": 30,
             "quarter": 1,
-            "home_team_points": 47,
-            "away_team_points": 23
+            "home_team": 47,
+            "away_team": 23
         },
         "model": "Games.periodscore"
     },
@@ -21777,8 +21777,8 @@
         "fields": {
             "game": 30,
             "quarter": 2,
-            "home_team_points": 43,
-            "away_team_points": 52
+            "home_team": 43,
+            "away_team": 52
         },
         "model": "Games.periodscore"
     },
@@ -21787,8 +21787,8 @@
         "fields": {
             "game": 30,
             "quarter": 3,
-            "home_team_points": 54,
-            "away_team_points": 24
+            "home_team": 54,
+            "away_team": 24
         },
         "model": "Games.periodscore"
     },
@@ -21797,8 +21797,8 @@
         "fields": {
             "game": 30,
             "quarter": 4,
-            "home_team_points": 55,
-            "away_team_points": 83
+            "home_team": 55,
+            "away_team": 83
         },
         "model": "Games.periodscore"
     },
@@ -22470,8 +22470,8 @@
         "fields": {
             "game": 31,
             "quarter": 1,
-            "home_team_points": 21,
-            "away_team_points": 39
+            "home_team": 21,
+            "away_team": 39
         },
         "model": "Games.periodscore"
     },
@@ -22480,8 +22480,8 @@
         "fields": {
             "game": 31,
             "quarter": 2,
-            "home_team_points": 50,
-            "away_team_points": 24
+            "home_team": 50,
+            "away_team": 24
         },
         "model": "Games.periodscore"
     },
@@ -22490,8 +22490,8 @@
         "fields": {
             "game": 31,
             "quarter": 3,
-            "home_team_points": 55,
-            "away_team_points": 42
+            "home_team": 55,
+            "away_team": 42
         },
         "model": "Games.periodscore"
     },
@@ -22500,8 +22500,8 @@
         "fields": {
             "game": 31,
             "quarter": 4,
-            "home_team_points": 68,
-            "away_team_points": 39
+            "home_team": 68,
+            "away_team": 39
         },
         "model": "Games.periodscore"
     },
@@ -23173,8 +23173,8 @@
         "fields": {
             "game": 32,
             "quarter": 1,
-            "home_team_points": 41,
-            "away_team_points": 55
+            "home_team": 41,
+            "away_team": 55
         },
         "model": "Games.periodscore"
     },
@@ -23183,8 +23183,8 @@
         "fields": {
             "game": 32,
             "quarter": 2,
-            "home_team_points": 35,
-            "away_team_points": 40
+            "home_team": 35,
+            "away_team": 40
         },
         "model": "Games.periodscore"
     },
@@ -23193,8 +23193,8 @@
         "fields": {
             "game": 32,
             "quarter": 3,
-            "home_team_points": 55,
-            "away_team_points": 42
+            "home_team": 55,
+            "away_team": 42
         },
         "model": "Games.periodscore"
     },
@@ -23203,8 +23203,8 @@
         "fields": {
             "game": 32,
             "quarter": 4,
-            "home_team_points": 81,
-            "away_team_points": 44
+            "home_team": 81,
+            "away_team": 44
         },
         "model": "Games.periodscore"
     },
@@ -23876,8 +23876,8 @@
         "fields": {
             "game": 33,
             "quarter": 1,
-            "home_team_points": 50,
-            "away_team_points": 34
+            "home_team": 50,
+            "away_team": 34
         },
         "model": "Games.periodscore"
     },
@@ -23886,8 +23886,8 @@
         "fields": {
             "game": 33,
             "quarter": 2,
-            "home_team_points": 20,
-            "away_team_points": 37
+            "home_team": 20,
+            "away_team": 37
         },
         "model": "Games.periodscore"
     },
@@ -23896,8 +23896,8 @@
         "fields": {
             "game": 33,
             "quarter": 3,
-            "home_team_points": 55,
-            "away_team_points": 58
+            "home_team": 55,
+            "away_team": 58
         },
         "model": "Games.periodscore"
     },
@@ -23906,8 +23906,8 @@
         "fields": {
             "game": 33,
             "quarter": 4,
-            "home_team_points": 50,
-            "away_team_points": 60
+            "home_team": 50,
+            "away_team": 60
         },
         "model": "Games.periodscore"
     },
@@ -24579,8 +24579,8 @@
         "fields": {
             "game": 34,
             "quarter": 1,
-            "home_team_points": 29,
-            "away_team_points": 58
+            "home_team": 29,
+            "away_team": 58
         },
         "model": "Games.periodscore"
     },
@@ -24589,8 +24589,8 @@
         "fields": {
             "game": 34,
             "quarter": 2,
-            "home_team_points": 25,
-            "away_team_points": 23
+            "home_team": 25,
+            "away_team": 23
         },
         "model": "Games.periodscore"
     },
@@ -24599,8 +24599,8 @@
         "fields": {
             "game": 34,
             "quarter": 3,
-            "home_team_points": 36,
-            "away_team_points": 31
+            "home_team": 36,
+            "away_team": 31
         },
         "model": "Games.periodscore"
     },
@@ -24609,8 +24609,8 @@
         "fields": {
             "game": 34,
             "quarter": 4,
-            "home_team_points": 114,
-            "away_team_points": 125
+            "home_team": 114,
+            "away_team": 125
         },
         "model": "Games.periodscore"
     },
@@ -25282,8 +25282,8 @@
         "fields": {
             "game": 35,
             "quarter": 1,
-            "home_team_points": 25,
-            "away_team_points": 20
+            "home_team": 25,
+            "away_team": 20
         },
         "model": "Games.periodscore"
     },
@@ -25292,8 +25292,8 @@
         "fields": {
             "game": 35,
             "quarter": 2,
-            "home_team_points": 43,
-            "away_team_points": 48
+            "home_team": 43,
+            "away_team": 48
         },
         "model": "Games.periodscore"
     },
@@ -25302,8 +25302,8 @@
         "fields": {
             "game": 35,
             "quarter": 3,
-            "home_team_points": 50,
-            "away_team_points": 54
+            "home_team": 50,
+            "away_team": 54
         },
         "model": "Games.periodscore"
     },
@@ -25312,8 +25312,8 @@
         "fields": {
             "game": 35,
             "quarter": 4,
-            "home_team_points": 62,
-            "away_team_points": 34
+            "home_team": 62,
+            "away_team": 34
         },
         "model": "Games.periodscore"
     },
@@ -25985,8 +25985,8 @@
         "fields": {
             "game": 36,
             "quarter": 1,
-            "home_team_points": 31,
-            "away_team_points": 29
+            "home_team": 31,
+            "away_team": 29
         },
         "model": "Games.periodscore"
     },
@@ -25995,8 +25995,8 @@
         "fields": {
             "game": 36,
             "quarter": 2,
-            "home_team_points": 41,
-            "away_team_points": 50
+            "home_team": 41,
+            "away_team": 50
         },
         "model": "Games.periodscore"
     },
@@ -26005,8 +26005,8 @@
         "fields": {
             "game": 36,
             "quarter": 3,
-            "home_team_points": 23,
-            "away_team_points": 48
+            "home_team": 23,
+            "away_team": 48
         },
         "model": "Games.periodscore"
     },
@@ -26015,8 +26015,8 @@
         "fields": {
             "game": 36,
             "quarter": 4,
-            "home_team_points": 96,
-            "away_team_points": 62
+            "home_team": 96,
+            "away_team": 62
         },
         "model": "Games.periodscore"
     },

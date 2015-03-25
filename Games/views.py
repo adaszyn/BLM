@@ -52,7 +52,9 @@ def game_page(request, game_date, away_team_short, home_team_short):
     if game.happened:
         period_score = list()
         for item in PeriodScore.objects.filter(game=game):
-            period_score.append(item)
+            period_score.append({'quarter': item.quarter,
+                                 'home_team': item.home_team,
+                                 'away_team': item.away_team})
 
         final_score = game.final_score
 

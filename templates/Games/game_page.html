@@ -70,13 +70,8 @@
                                             {# Away team scores #}
                                             <tr>
                                                 <td>{{ away_team.short_name }}</td>
-                                                {# TODO: Zmiana nazw w modelu i dołączenie do templatetaga #}
                                                 {% for period in period_score %}
-                                                    {% if period.away_team_points > period.home_team_points %}
-                                                        <td class="text-success">{{ period.away_team_points }}</td>
-                                                    {% else %}
-                                                        <td class="text-danger">{{ period.away_team_points }}</td>
-                                                    {% endif %}
+                                                    <td class="{{ period|text_color:"away_team" }}">{{ period.away_team }}</td>
                                                 {% endfor %}
                                                 <td class="text-center {{ final_score|text_color:"away_team" }}">{{ final_score.away_team }}</td>
                                             </tr>
@@ -84,11 +79,7 @@
                                             <tr>
                                                 <td>{{ home_team.short_name }}</td>
                                                 {% for period in period_score %}
-                                                    {% if period.home_team_points > period.away_team_points %}
-                                                        <td class="text-success">{{ period.home_team_points }}</td>
-                                                    {% else %}
-                                                        <td class="text-danger">{{ period.home_team_points }}</td>
-                                                    {% endif %}
+                                                    <td class="{{ period|text_color:"home_team" }}">{{ period.home_team }}</td>
                                                 {% endfor %}
                                                 <td class="text-center {{ final_score|text_color:"home_team" }}">{{ final_score.home_team }}</td>
                                             </tr>

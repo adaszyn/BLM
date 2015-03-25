@@ -43,7 +43,7 @@ class Game(models.Model):
     @cached_property
     def overtime(self):
         """Returns number of overtimes; 0 if none"""
-        return PeriodScore.objects.filter(game=self).count - 4
+        return PeriodScore.objects.filter(game=self).count() - 4
 
     @cached_property
     def short_name(self):
@@ -219,8 +219,8 @@ class TeamBoxscore(models.Model):
 class PeriodScore(models.Model):
     game = models.ForeignKey(Game)
     quarter = models.PositiveIntegerField()
-    home_team_points = models.PositiveIntegerField()
-    away_team_points = models.PositiveIntegerField()
+    home_team = models.PositiveIntegerField()
+    away_team = models.PositiveIntegerField()
 
     class Meta:
         ordering = ['game', 'quarter']
@@ -229,7 +229,7 @@ class PeriodScore(models.Model):
         """Example: CHI: 40 | NYK: 10 (1Q)"""
         return ('{away_team}: {away_points} | '
                 '{home_team}: {home_points} ({q}Q)').format(away_team=self.game.away_team.short_name,
-                                                            away_points=self.away_team_points,
+                                                            away_points=self.away_team,
                                                             home_team=self.game.home_team.short_name,
-                                                            home_points=self.home_team_points,
+                                                            home_points=self.home_team,
                                                             q=self.quarter)

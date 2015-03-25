@@ -4,11 +4,30 @@ from django.utils.functional import cached_property
 from datetime import datetime
 
 
+class Coach(models.Model):
+    first_name = models.CharField(max_length=64)
+    last_name = models.CharField(max_length=64)
+    birth_date = models.DateField()
+
+    @cached_property
+    def full_name(self):
+        """Example: Phil Jackson"""
+        return '{first_name} {last_name}'.format(first_name=self.first_name,
+                                                 last_name=self.last_name)
+
+    def __str__(self):
+        """Example: Phil Jackson (Chicago Bulls)"""
+        return '{first_name} {last_name} ({team})'.format(first_name=self.first_name,
+                                                          last_name=self.last_name,
+                                                          team=self.team.full_name)
+
+
 class Team(models.Model):
     full_name = models.CharField(max_length=64)
     short_name = models.CharField(max_length=5)
     logo = models.ImageField(default='team_logos/default.png', upload_to='team_logos')
     description = models.TextField(max_length=1024, blank=True, default='')
+    coach = models.OneToOneField(Coach)
 
     @cached_property
     def count_players(self):
