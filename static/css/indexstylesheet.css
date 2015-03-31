@@ -1,0 +1,221 @@
+@font-face{
+    font-family: AdventPro;
+    src : url("http://fonts.gstatic.com/s/adventpro/v4/rjFlM5pzkJXhqq9bH4mmJyEAvth_LlrfE80CYdSH47w.woff2")
+}
+@font-face{
+    font-family: Inconsolata;
+    src : url("/static/css/Inconsolata.otf")
+}
+@font-face{
+    font-family: CodePro;
+    src : url("/static/css/CodePro.ttf")
+}
+@font-face{
+    font-family: Asfalto;
+    src : url("/static/css/Asfalto.ttf")
+}
+@font-face{
+    font-family: LatoLig;
+    src : url("/static/css/Lato-Lig.otf")
+}
+
+@-webkit-keyframes blink {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@-moz-keyframes blink {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@-o-keyframes blink {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+html {
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  margin:0;
+  padding:0;
+	perspective: 1px;
+	transform-style: preserve-3d;
+  height: 100%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+h1 {
+   font-size: 250%
+}
+
+p {
+  font-size: 140%;
+  line-height: 150%;
+  color: #ffffff;
+    margin: 0 0 0 0;
+
+}
+
+.slide {
+  font-family: CodePro;
+  position: relative;
+  padding: 15vh 10% 15vh;
+  min-height: 100vh;
+  width: 100vw;
+  box-sizing: border-box;
+  box-shadow: 0 -1px 10px rgba(0, 0, 0, .7);
+	transform-style: inherit;
+}
+
+
+.slide:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left:0;
+  right:0;
+}
+
+.title {
+    font-family: Asfalto;
+    font-size: 50px;
+  width: 70%;
+margin: auto;
+    color: whitesmoke;
+        text-shadow: 2px 2px #918d89;
+
+}
+
+
+
+.slide, .slide:before {
+  background: 50% 50% / cover;
+}
+
+.header {
+  text-align: left;
+  font-size: 200%;
+  color: #fff;
+  text-shadow: 0 2px 2px #000;
+    letter-spacing: 10px;
+}
+
+#title {
+  background-image: url("/static/css/hipsterimg.jpg");
+  background-attachment: fixed;
+
+}
+
+#slide2:before {
+  background-image: url("/static/css/bricks.jpg");
+    background-color: white;
+
+  z-index:-1;
+}
+
+
+.frontphrase{
+    display: none;
+}
+.arrowframe{
+    text-align: center;
+    border-top : 3px solid white;
+    display: none;
+}
+.arrow{
+    /*bottom: 200px;*/
+    display: inline-block;
+    height: 80px;
+    width: 126px;
+    background: url("/static/css/arrow.png");
+    /*opacity: 0.8;*/
+    -webkit-animation: blink 5s;
+    -webkit-animation-iteration-count: infinite;
+    -moz-animation: blink 5s;
+    -moz-animation-iteration-count: infinite;
+    -o-animation: blink 5s;
+    -o-animation-iteration-count: infinite;
+
+}
+
+.fancyNumbers{
+    border-left: 4px solid black;
+    border-right: 4px solid black;
+    border-radius: 50px;
+    text-align: center; font-family: LatoLig
+}
+.contactBubble{
+      text-shadow: 2px 2px black;
+    display: inline-block;
+    margin-top: 10px;
+    margin-left: 15px;
+    border-radius: 10vh;
+    width: 20vh;
+    height: 20vh;
+    transition: 0.3s;
+    background: url('/static/css/wojo.png') no-repeat center;
+    background-size: cover;
+    border: 2px white solid;
+}
+.contactBubble:hover{
+    color: transparent;
+    text-shadow: none;
+    background-image: url("/static/css/contact.png");
+}
+.wojoContact{
+    background-image: url('/static/css/wojo.png')
+}
+.pabloContact{
+    background-image: url('/static/css/pablo.png')
+}
+.bubbleText{
+    font-size: 30px;
+    color: white;
+}
+.default-hyperlink{
+    color:lightseagreen;
+    text-decoration: none;
+    font-size: 50px;
+}
+.default-hyperlink:hover{
+    color: red;
+    transform: rotate(7deg);
+}
+.brief-info-box{
+    float: left; width: calc(50% - 2px);
+    text-align: center;
+}
+.brief-info-itemize{
+    font-size: 30px;
+}
+.authors-info{
+    float: left;
+    width: calc(50% - 2px);
+    text-align: center;
+    border-left: 4px dashed rgb(197, 191, 174);
+}
