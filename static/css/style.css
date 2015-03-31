@@ -1,9 +1,25 @@
+@font-face {
+    font-family: CodePro;
+    src: url("/static/css/CodePro.ttf");
+}
+@font-face {
+    font-family: CodeBold;
+    src: url('/static/css/CodeBold.otf');
+}
+@font-face {
+    font-family: LatoLig;
+    src: url('/static/css/Lato-Lig.otf');
+}
+@font-face {
+    font-family: Muncie;
+    src: url('/static/css/Muncie.ttf');
+}
+
 /* Move down content because we have a fixed navbar that is 50px tall */
 body {
   padding-top: 50px;
   padding-bottom: 20px;
 }
-
 
 /***  http://bootsnipp.com/snippets/featured/simple-user-profile  ***/
 .table-user-information > tbody > tr {
@@ -107,4 +123,71 @@ a {
 
 .at-bottom {
   margin-top: 5px;
+}
+.custom-logo{
+    font-family: CodeBold;
+    font-size: 26px;
+    color: navajowhite;
+    text-shadow: 1px 1px gold;
+}
+.custom-logo:hover{
+    color: gold;
+}
+.main-page-img{
+    margin-bottom: 0px;
+    border-top: 2px white solid;
+    background: url('/static/css/mainImg.jpg') center;
+    height: 55vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: -1;
+    border-bottom: 3px solid white;
+}
+.navbar-black{
+    background-color: #020508;
+}
+.custom-menu {
+     font-family: Muncie;
+}
+.navbar-blm-custom{
+    font-family: CodePro;
+    border-bottom : 2px solid white;
+}
+.navbar-blm-custom:hover{
+    color: red;
+}
+.info-row{
+    background-color: #00dba3;
+}
+.info-row:hover{
+    transform: scale(1.5)
+}
+.logo-text {
+    margin: 10px 10px 10px 10px;
+    font-size: 6vw;
+    letter-spacing: 2px;
+    color: white;
+    font-family: Muncie;
+    text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+    opacity: 0.7;
+}
+.logo-text-animate:hover {
+opacity: 1.0;
+        text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+    border-bottom: 2px dashed white;
+
+    transition: opacity .4s ease-in-out;
+
+}
+.logo-text-animate{
+    font-size: 6vw;
+    color: #ffffff;
+
+    letter-spacing: 2px;
+    font-family: Muncie;
+    /*border: 1px solid white;*/
+    /*background-color: #ffffff;*/
+    text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+    opacity: 0.7;
+    border-bottom: 2px dashed white;
 }

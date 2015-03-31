@@ -106,3 +106,12 @@ class Team(models.Model):
     def __str__(self):
         """Example: Chicago Bulls"""
         return self.full_name
+
+
+class Coach(models.Model):
+    first_name = models.CharField(max_length=64)
+    last_name = models.CharField(max_length=64)
+    team = models.ForeignKey(Team)
+
+    def __str__(self):
+        return self.first_name + " " + self.last_name
