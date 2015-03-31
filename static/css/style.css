@@ -164,7 +164,7 @@ a {
 }
 .logo-text {
     margin: 10px 10px 10px 10px;
-    font-size: 6vw;
+    font-size: 4vw;
     letter-spacing: 2px;
     color: white;
     font-family: Muncie;
@@ -180,7 +180,7 @@ opacity: 1.0;
 
 }
 .logo-text-animate{
-    font-size: 6vw;
+    font-size: 4vw;
     color: #ffffff;
 
     letter-spacing: 2px;
