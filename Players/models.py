@@ -1,7 +1,8 @@
 from django.db import models
-from django.utils.datetime_safe import date
-from django.db.models import Q, Sum
+from django.db.models import Sum
 from django.utils.functional import cached_property
+from django.core.exceptions import ValidationError
+from datetime import date
 from collections import OrderedDict
 
 from Teams.models import Team
@@ -23,23 +24,22 @@ class Player(models.Model):
     first_name = models.CharField(max_length=64)
     last_name = models.CharField(max_length=64)
     team = models.ForeignKey(Team)
-    is_captain = models.BooleanField(default=False)
     position = models.CharField(max_length=5, choices=position_choices)
+    number = models.PositiveSmallIntegerField()
     birth_date = models.DateField()
-    height = models.PositiveIntegerField(verbose_name='Height [cm]')
-    weight = models.PositiveIntegerField(verbose_name='Weight [kg]')
-    number = models.PositiveIntegerField()
+    height = models.PositiveSmallIntegerField(verbose_name='Height [cm]')
+    weight = models.PositiveSmallIntegerField(verbose_name='Weight [kg]')
     image = models.ImageField(verbose_name='Player photo', default='player_photos/default.jpg',
                               upload_to='player_photos')
 
     class Meta:
         ordering = ['last_name', 'first_name']
+        unique_together = ('team', 'number',)
 
     @cached_property
     def full_name(self):
         """Example: Michael Jordan"""
-        return '{first_name} {last_name}'.format(first_name=self.first_name,
-                                                 last_name=self.last_name)
+        return '{first_name} {last_name}'.format(first_name=self.first_name, last_name=self.last_name)
 
     @cached_property
     def age(self):
@@ -66,14 +66,17 @@ class Player(models.Model):
         from Games.models import PlayerBoxscore
 
         # Calculates percentage from total values, instead of rounded game percentages
-        if stat == 'fg_perc':
-            return '{0:.3f}'.format(self.cat_total('fgm') / self.cat_total('fga'))
-        elif stat == 'three_perc':
-            return '{0:.3f}'.format(self.cat_total('three_pm') / self.cat_total('three_pa'))
-        elif stat == 'ft_perc':
-            return '{0:.3f}'.format(self.cat_total('ftm') / self.cat_total('fta'))
-        else:
-            return PlayerBoxscore.objects.filter(player=self).aggregate(total=Sum(stat))['total']
+        try:
+            if stat == 'fg_perc':
+                return float('{0:.3f}'.format(self.cat_total('fgm') / self.cat_total('fga')))
+            elif stat == 'three_perc':
+                return float('{0:.3f}'.format(self.cat_total('three_pm') / self.cat_total('three_pa')))
+            elif stat == 'ft_perc':
+                return float('{0:.3f}'.format(self.cat_total('ftm') / self.cat_total('fta')))
+            else:
+                return PlayerBoxscore.objects.filter(player=self).aggregate(total=Sum(stat))['total']
+        except ZeroDivisionError:
+                return 0
 
     def cat_average(self, stat):
         """Returns per game average of given statistic, rounded to one decimal place"""
@@ -83,7 +86,10 @@ class Player(models.Model):
         if stat in ['fg_perc', 'three_perc', 'ft_perc']:
             return self.cat_total(stat)
         else:
-            return '{0:.1f}'.format(self.cat_total(stat) / self.number_of_games())
+            try:
+                return float('{0:.1f}'.format(self.cat_total(stat) / self.number_of_games()))
+            except ZeroDivisionError:
+                return 0.0
 
     def season_stats(self, stat_fields):
         """
@@ -117,3 +123,20 @@ class Player(models.Model):
         return '{first_name} {last_name} ({team})'.format(first_name=self.first_name,
                                                           last_name=self.last_name,
                                                           team=self.team.full_name)
+
+    def clean(self):
+        if self.birth_date >= date.today():
+            raise ValidationError({'birth_date': "Player can't be born in the future."})
+
+        if self.number not in range(100):
+            raise ValidationError({'number': "Players number must be between 0 and 99."})
+
+        if self.pk is not None:
+            org = Player.objects.get(pk=self.pk)
+            if Player.objects.filter(team=org.team).count() == 5 and self.team != org.team:
+                raise ValidationError({'team': "The team has to have at least 5 players."})
+
+            # If captain changes teams, orginal team has no captain
+            if self == org.team.captain and self.team != org.team:
+                org.team.captain = None
+                org.team.save()

@@ -29,9 +29,9 @@ def color(value, arg):
 def future_game_name(value, arg):
     if value.home_team == arg:
         # Example: CHI vs NYK
-        return '{home_team} at {away_team}'.format(home_team=value.home_team.short_name,
+        return '{home_team} vs {away_team}'.format(home_team=value.home_team.short_name,
                                                    away_team=value.away_team.short_name)
     else:
         # Example: NYK at CHI
-        return '{away_team} vs {home_team}'.format(away_team=value.away_team.short_name,
+        return '{away_team} at {home_team}'.format(away_team=value.away_team.short_name,
                                                    home_team=value.home_team.short_name)

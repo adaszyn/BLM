@@ -1,7 +1,8 @@
 from django.db import models
 from django.db.models import Q, Sum
 from django.utils.functional import cached_property
-from datetime import datetime
+from django.core.exceptions import ValidationError
+from datetime import date
 from collections import OrderedDict
 
 from Players.models import Player
@@ -9,41 +10,39 @@ from Teams.models import Team
 
 
 class Game(models.Model):
-    home_team = models.ForeignKey(Team, related_name='home_team')
     away_team = models.ForeignKey(Team, related_name='away_team')
+    home_team = models.ForeignKey(Team, related_name='home_team')
     date = models.DateField()
 
     class Meta:
         ordering = ['date']
+        unique_together = ('away_team', 'home_team', 'date',)
 
-    @cached_property
     def happened(self):
         """Returns True if the game happened"""
-        if self.date < datetime.today().date() and TeamBoxscore.objects.filter(game=self).count() == 2:
-            return True
-        else:
-            return False
+        s = self.final_score
+        return True if self.date <= date.today() and (s['away_team'] != 0 or s['home_team'] != 0) else False
+    happened.boolean = True
 
     @cached_property
     def final_score(self):
         """Returns a dict with teams final score"""
         final_score = {'home_team': TeamBoxscore.objects.get(Q(game=self), Q(team=self.home_team)).pts,
                        'away_team': TeamBoxscore.objects.get(Q(game=self), Q(team=self.away_team)).pts}
-
         return final_score
 
     @cached_property
     def winner(self):
-        """Returns the team that won"""
-        if self.final_score['home_team'] > self.final_score['away_team']:
-            return self.home_team
+        """Returns the team that won; None if game hadn't happened yet"""
+        if self.happened():
+            return self.home_team if self.final_score['home_team'] > self.final_score['away_team'] else self.away_team
         else:
-            return self.away_team
+            return None
 
     @cached_property
     def overtime(self):
-        """Returns number of overtimes; 0 if none"""
-        return PeriodScore.objects.filter(game=self).count() - 4
+        """Returns number of overtimes, 0 if none and None if game hadn't happened yet."""
+        return PeriodScore.objects.filter(game=self).count() - 4 if self.happened() else None
 
     @cached_property
     def short_name(self):
@@ -64,10 +63,17 @@ class Game(models.Model):
                                                             home_team=self.home_team.full_name,
                                                             date=self.date.strftime("%d.%m.%Y"))
 
+    def clean(self):
+        if self.away_team == self.home_team:
+            raise ValidationError("Team can't play itself.")
+
+        if TeamBoxscore.objects.filter(game=self).count() not in [0, 2]:
+            raise ValidationError("Game has wrong number of TeamBoxscores.")
+
 
 class PlayerBoxscore(models.Model):
     player = models.ForeignKey(Player)
-    team = models.ForeignKey(Team)
+    team = models.ForeignKey(Team)  # Should be deleted
     game = models.ForeignKey(Game)
     is_starter = models.BooleanField(default=False)
     min = models.PositiveIntegerField(verbose_name='MIN', default=0)
@@ -91,25 +97,40 @@ class PlayerBoxscore(models.Model):
     ft_perc = models.TextField(verbose_name='FT%', default=0, editable=False)
     pf = models.PositiveIntegerField(verbose_name='PF', default=0)
 
+    class Meta:
+        unique_together = ('player', 'game',)
+
     def __str__(self):
         """Example: Michael Jordan (CHI at NYK, 01.01.2000)"""
-        return '{player} ({away_team} at {home_team}, {date})'.format(player=self.player.full_name,
-                                                                      away_team=self.away_team.short_name,
-                                                                      home_team=self.home_team.short_name,
-                                                                      date=self.date.strftime("%d.%m.%Y"))
+        return '{player} ({game})'.format(player=self.player.full_name, game=self.game.short_name)
+
+    def clean(self):
+        if self.min == 0:
+            raise ValidationError({'min': "Player who played in the game can't have 0 minutes."})
+
+        # TODO: Zmienna minut w kwarcie
+        if self.min > 48:
+            raise ValidationError({'min': "Player can't play more than 48 minutes"})
+
+        if any([self.fgm > self.fga, self.three_pm > self.three_pa, self.ftm > self.fta]):
+            raise ValidationError({'player': "Player can't hit more shots then attempted."})
+
+        if self.three_pa > self.fga:
+            raise ValidationError({'three_pa': "Player can't attempt more threes then field goals."})
 
     def save(self, *args, **kwargs):
         self.pts = self.ftm + (self.fgm - self.three_pm) * 2 + self.three_pm * 3
-        self.reb_all = self.rebounds_def + self.rebounds_off
+        self.reb_all = self.reb_def + self.reb_off
         self.fg_perc = '{0:.3f}'.format(self.fgm / self.fga) if self.fga > 0 else '-'
         self.three_perc = '{0:.3f}'.format(self.three_pm / self.three_pa) if self.three_pa > 0 else '-'
         self.ft_perc = '{0:.3f}'.format(self.ftm / self.fta) if self.fta > 0 else '-'
+
         super(PlayerBoxscore, self).save(*args, **kwargs)
 
 
 class TeamBoxscore(models.Model):
-    game = models.ForeignKey(Game)
     team = models.ForeignKey(Team)
+    game = models.ForeignKey(Game)
     pts = models.PositiveIntegerField(default=0, editable=False)
     reb_def = models.PositiveIntegerField(default=0, editable=False)
     reb_off = models.PositiveIntegerField(default=0, editable=False)
@@ -129,6 +150,9 @@ class TeamBoxscore(models.Model):
     fta = models.PositiveIntegerField(default=0, editable=False)
     ft_perc = models.TextField(default=0, editable=False)
     pf = models.PositiveIntegerField(default=0, editable=False)
+
+    class Meta:
+        unique_together = ('team', 'game',)
 
     def team_game_leader(self, stat):
         """
@@ -178,6 +202,7 @@ class TeamBoxscore(models.Model):
             [10 players, 240, 198, 70, 181, 0.387, 28, 75, 0.373, 30, 50, 0.600, 25, 63, 88, 57, 18, 32, 24, 42, 27]
         """
         n = PlayerBoxscore.objects.filter(game=self.game).filter(team=self.team).filter(min__gt=0).count()
+        # TODO: Zmienna minut w kwarcie
         team_box = [str(n) + ' players', '240']
 
         for item in stat_fields[1:]:
@@ -193,25 +218,32 @@ class TeamBoxscore(models.Model):
                                                                     date=self.game.date.strftime("%d.%m.%Y"))
 
     def save(self, *args, **kwargs):
-        # Aggregate returns dict
+        super(TeamBoxscore, self).save(*args, **kwargs)
+
+        s = PlayerBoxscore.objects.filter(game=self.game).filter(team=self.team).aggregate(
+            reb_def=Sum('reb_def'), reb_off=Sum('reb_off'), ast=Sum('ast'), stl=Sum('stl'), blk=Sum('blk'),
+            ba=Sum('ba'), fgm=Sum('fgm'), fga=Sum('fga'), three_pm=Sum('three_pm'), three_pa=Sum('three_pa'),
+            ftm=Sum('ftm'), fta=Sum('fta'), pf=Sum('pf'))
+
+        self.reb_def = s['reb_def']
+        self.reb_off = s['reb_off']
+        self.ast = s['ast']
+        self.stl = s['stl']
+        self.blk = s['blk']
+        self.ba = s['ba']
+        self.fgm = s['fgm']
+        self.fga = s['fga']
+        self.three_pm = s['three_pm']
+        self.three_pa = s['three_pa']
+        self.ftm = s['ftm']
+        self.fta = s['fta']
+        self.pf = s['pf']
+
         self.pts = self.ftm + (self.fgm - self.three_pm) * 2 + self.three_pm * 3
-        self.reb_def = PlayerBoxscore.objects.filter(team_boxscore=self).aggregate(Sum('reb_def'))['reb_def__sum']
-        self.reb_off = PlayerBoxscore.objects.filter(team_boxscore=self).aggregate(Sum('reb_off'))['reb_off__sum']
-        self.reb_all = self.rebounds_def + self.rebounds_off
-        self.ast = PlayerBoxscore.objects.filter(team_boxscore=self).aggregate(Sum('ast'))['ast__sum']
-        self.stl = PlayerBoxscore.objects.filter(team_boxscore=self).aggregate(Sum('stl'))['stl__sum']
-        self.blk = PlayerBoxscore.objects.filter(team_boxscore=self).aggregate(Sum('blk'))['blk__sum']
-        self.ba = PlayerBoxscore.objects.filter(team_boxscore=self).aggregate(Sum('ba'))['ba__sum']
-        self.fgm = PlayerBoxscore.objects.filter(team_boxscore=self).aggregate(Sum('fgm'))['fgm__sum']
-        self.fga = PlayerBoxscore.objects.filter(team_boxscore=self).aggregate(Sum('fga'))['fga__sum']
+        self.reb_all = self.reb_def + self.reb_off
         self.fg_perc = '{0:.3f}'.format(self.fgm / self.fga) if self.fga > 0 else '-'
-        self.three_pm = PlayerBoxscore.objects.filter(team_boxscore=self).aggregate(Sum('three_pm'))['three_pm__sum']
-        self.three_pa = PlayerBoxscore.objects.filter(team_boxscore=self).aggregate(Sum('three_pa'))['three_pa__sum']
         self.three_perc = '{0:.3f}'.format(self.three_pm / self.three_pa) if self.three_pa > 0 else '-'
-        self.ftm = PlayerBoxscore.objects.filter(team_boxscore=self).aggregate(Sum('ftm'))['ftm__sum']
-        self.fta = PlayerBoxscore.objects.filter(team_boxscore=self).aggregate(Sum('fta'))['fta__sum']
         self.ft_perc = '{0:.3f}'.format(self.ftm / self.fta) if self.fta > 0 else '-'
-        self.pf = PlayerBoxscore.objects.filter(team_boxscore=self).aggregate(Sum('pf'))['pf__sum']
 
         super(TeamBoxscore, self).save(*args, **kwargs)
 
@@ -219,11 +251,12 @@ class TeamBoxscore(models.Model):
 class PeriodScore(models.Model):
     game = models.ForeignKey(Game)
     quarter = models.PositiveIntegerField()
-    home_team = models.PositiveIntegerField()
-    away_team = models.PositiveIntegerField()
+    away_team = models.PositiveIntegerField(default=0)
+    home_team = models.PositiveIntegerField(default=0)
 
     class Meta:
         ordering = ['game', 'quarter']
+        unique_together = ('game', 'quarter',)
 
     def __str__(self):
         """Example: CHI: 40 | NYK: 10 (1Q)"""

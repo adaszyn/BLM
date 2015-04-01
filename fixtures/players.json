@@ -2,15 +2,14 @@
     {
         "pk": 0,
         "fields": {
-            "first_name": "James",
-            "last_name": "Crawford",
+            "first_name": "Ira",
+            "last_name": "Couchman",
             "team": 0,
-            "is_captain": "True",
-            "position": "SF",
-            "birth_date": "1989-02-02",
-            "height": 201,
-            "weight": 132,
-            "number": 81,
+            "position": "PG/SG",
+            "birth_date": "1991-05-17",
+            "height": 205,
+            "weight": 150,
+            "number": 32,
             "image": "player_photos/default.jpg"
         },
         "model": "Players.player"
@@ -18,15 +17,14 @@
     {
         "pk": 1,
         "fields": {
-            "first_name": "Allan",
-            "last_name": "Brown",
+            "first_name": "Eric",
+            "last_name": "Longmire",
             "team": 0,
-            "is_captain": "False",
-            "position": "SF/PF",
-            "birth_date": "1980-10-30",
-            "height": 192,
-            "weight": 135,
-            "number": 74,
+            "position": "SG/SF",
+            "birth_date": "1989-08-27",
+            "height": 178,
+            "weight": 91,
+            "number": 75,
             "image": "player_photos/default.jpg"
         },
         "model": "Players.player"
@@ -34,15 +32,14 @@
     {
         "pk": 2,
         "fields": {
-            "first_name": "Houston",
-            "last_name": "Henry",
+            "first_name": "Jose",
+            "last_name": "Wilson",
             "team": 0,
-            "is_captain": "False",
-            "position": "SG",
-            "birth_date": "1987-11-11",
-            "height": 220,
-            "weight": 113,
-            "number": 45,
+            "position": "PF",
+            "birth_date": "1993-11-27",
+            "height": 217,
+            "weight": 97,
+            "number": 22,
             "image": "player_photos/default.jpg"
         },
         "model": "Players.player"
@@ -50,15 +47,14 @@
     {
         "pk": 3,
         "fields": {
-            "first_name": "Robbie",
-            "last_name": "Coleman",
+            "first_name": "Danial",
+            "last_name": "Greer",
             "team": 0,
-            "is_captain": "False",
-            "position": "PF",
-            "birth_date": "1986-12-19",
-            "height": 175,
-            "weight": 142,
-            "number": 51,
+            "position": "PF/C",
+            "birth_date": "1994-07-23",
+            "height": 182,
+            "weight": 144,
+            "number": 87,
             "image": "player_photos/default.jpg"
         },
         "model": "Players.player"
@@ -66,15 +62,14 @@
     {
         "pk": 4,
         "fields": {
-            "first_name": "Erik",
-            "last_name": "Cline",
+            "first_name": "Troy",
+            "last_name": "Yuen",
             "team": 0,
-            "is_captain": "False",
-            "position": "SF",
-            "birth_date": "1993-10-13",
-            "height": 220,
-            "weight": 108,
-            "number": 39,
+            "position": "SF/PF",
+            "birth_date": "1984-12-04",
+            "height": 180,
+            "weight": 116,
+            "number": 4,
             "image": "player_photos/default.jpg"
         },
         "model": "Players.player"
@@ -82,15 +77,14 @@
     {
         "pk": 5,
         "fields": {
-            "first_name": "Ruben",
-            "last_name": "Johnson",
+            "first_name": "Murray",
+            "last_name": "Chavez",
             "team": 0,
-            "is_captain": "False",
             "position": "PG/SG",
-            "birth_date": "1994-02-14",
-            "height": 203,
-            "weight": 136,
-            "number": 47,
+            "birth_date": "1991-09-06",
+            "height": 182,
+            "weight": 117,
+            "number": 12,
             "image": "player_photos/default.jpg"
         },
         "model": "Players.player"
@@ -98,15 +92,14 @@
     {
         "pk": 6,
         "fields": {
-            "first_name": "Michael",
-            "last_name": "Miller",
+            "first_name": "Francisco",
+            "last_name": "Sutton",
             "team": 0,
-            "is_captain": "False",
             "position": "PG",
-            "birth_date": "1993-07-29",
-            "height": 197,
-            "weight": 149,
-            "number": 76,
+            "birth_date": "1987-07-11",
+            "height": 209,
+            "weight": 108,
+            "number": 95,
             "image": "player_photos/default.jpg"
         },
         "model": "Players.player"
@@ -114,15 +107,14 @@
     {
         "pk": 7,
         "fields": {
-            "first_name": "Stephen",
-            "last_name": "Schwartz",
+            "first_name": "Wallace",
+            "last_name": "Farfaglia",
             "team": 0,
-            "is_captain": "False",
-            "position": "SG",
-            "birth_date": "1988-02-08",
-            "height": 220,
-            "weight": 87,
-            "number": 8,
+            "position": "PG/SG",
+            "birth_date": "1980-12-22",
+            "height": 213,
+            "weight": 143,
+            "number": 6,
             "image": "player_photos/default.jpg"
         },
         "model": "Players.player"
@@ -130,15 +122,14 @@
     {
         "pk": 8,
         "fields": {
-            "first_name": "Raymond",
-            "last_name": "Majure",
+            "first_name": "Clarence",
+            "last_name": "Iddings",
             "team": 0,
-            "is_captain": "False",
-            "position": "SF",
-            "birth_date": "1990-09-03",
-            "height": 182,
-            "weight": 127,
-            "number": 47,
+            "position": "SG",
+            "birth_date": "1986-10-08",
+            "height": 189,
+            "weight": 113,
+            "number": 27,
             "image": "player_photos/default.jpg"
         },
         "model": "Players.player"
@@ -146,15 +137,14 @@
     {
         "pk": 9,
         "fields": {
-            "first_name": "Edward",
-            "last_name": "Kelley",
+            "first_name": "Jack",
+            "last_name": "Parrett",
             "team": 0,
-            "is_captain": "False",
-            "position": "SG",
-            "birth_date": "1982-03-31",
-            "height": 211,
-            "weight": 84,
-            "number": 11,
+            "position": "C",
+            "birth_date": "1988-09-30",
+            "height": 202,
+            "weight": 134,
+            "number": 30,
             "image": "player_photos/default.jpg"
         },
         "model": "Players.player"
@@ -163,14 +153,13 @@
         "pk": 10,
         "fields": {
             "first_name": "Charles",
-            "last_name": "Mccafferty",
+            "last_name": "James",
             "team": 1,
-            "is_captain": "True",
-            "position": "PG/SG",
-            "birth_date": "1993-08-02",
-            "height": 202,
-            "weight": 111,
-            "number": 54,
+            "position": "SF",
+            "birth_date": "1984-06-05",
+            "height": 197,
+            "weight": 125,
+            "number": 14,
             "image": "player_photos/default.jpg"
         },
         "model": "Players.player"
@@ -178,15 +167,14 @@
     {
         "pk": 11,
         "fields": {
-            "first_name": "Terry",
-            "last_name": "Yates",
+            "first_name": "Brett",
+            "last_name": "Robinson",
             "team": 1,
-            "is_captain": "False",
-            "position": "SF/PF",
-            "birth_date": "1986-06-02",
-            "height": 206,
-            "weight": 105,
-            "number": 53,
+            "position": "PG",
+            "birth_date": "1995-02-16",
+            "height": 192,
+            "weight": 147,
+            "number": 12,
             "image": "player_photos/default.jpg"
         },
         "model": "Players.player"
@@ -194,15 +182,14 @@
     {
         "pk": 12,
         "fields": {
-            "first_name": "Charles",
-            "last_name": "Saucedo",
+            "first_name": "Jeremy",
+            "last_name": "Walczak",
             "team": 1,
-            "is_captain": "False",
-            "position": "C",
-            "birth_date": "1983-01-11",
-            "height": 185,
-            "weight": 131,
-            "number": 19,
+            "position": "PG/SG",
+            "birth_date": "1985-01-29",
+            "height": 218,
+            "weight": 96,
+            "number": 36,
             "image": "player_photos/default.jpg"
         },
         "model": "Players.player"
@@ -210,15 +197,14 @@
     {
         "pk": 13,
         "fields": {
-            "first_name": "Harold",
-            "last_name": "Stepp",
+            "first_name": "Donald",
+            "last_name": "Scales",
             "team": 1,
-            "is_captain": "False",
-            "position": "SF",
-            "birth_date": "1985-02-16",
-            "height": 201,
-            "weight": 93,
-            "number": 4,
+            "position": "SG",
+            "birth_date": "1987-05-29",
+            "height": 204,
+            "weight": 133,
+            "number": 42,
             "image": "player_photos/default.jpg"
         },
         "model": "Players.player"
@@ -226,15 +212,14 @@
     {
         "pk": 14,
         "fields": {
-            "first_name": "Kenneth",
-            "last_name": "Kenney",
+            "first_name": "Larry",
+            "last_name": "Hood",
             "team": 1,
-            "is_captain": "False",
-            "position": "SF",
-            "birth_date": "1980-06-13",
-            "height": 220,
-            "weight": 92,
-            "number": 92,
+            "position": "C",
+            "birth_date": "1989-11-17",
+            "height": 185,
+            "weight": 95,
+            "number": 16,
             "image": "player_photos/default.jpg"
         },
         "model": "Players.player"
@@ -242,15 +227,14 @@
     {
         "pk": 15,
         "fields": {
-            "first_name": "Joe",
-            "last_name": "Billups",
+            "first_name": "Robert",
+            "last_name": "Gutierrez",
             "team": 1,
-            "is_captain": "False",
             "position": "SF",
-            "birth_date": "1987-07-28",
-            "height": 201,
-            "weight": 138,
-            "number": 35,
+            "birth_date": "1993-07-10",
+            "height": 184,
+            "weight": 120,
+            "number": 26,
             "image": "player_photos/default.jpg"
         },
         "model": "Players.player"
@@ -258,15 +242,14 @@
     {
         "pk": 16,
         "fields": {
-            "first_name": "Lawerence",
-            "last_name": "Taylor",
+            "first_name": "Roy",
+            "last_name": "Kellner",
             "team": 1,
-            "is_captain": "False",
-            "position": "PG/SG",
-            "birth_date": "1983-11-20",
-            "height": 201,
-            "weight": 103,
-            "number": 53,
+            "position": "PG",
+            "birth_date": "1980-04-29",
+            "height": 177,
+            "weight": 148,
+            "number": 54,
             "image": "player_photos/default.jpg"
         },
         "model": "Players.player"
@@ -274,15 +257,14 @@
     {
         "pk": 17,
         "fields": {
-            "first_name": "Alberto",
-            "last_name": "Bolton",
+            "first_name": "Michael",
+            "last_name": "Anderson",
             "team": 1,
-            "is_captain": "False",
-            "position": "PG",
-            "birth_date": "1983-04-24",
-            "height": 180,
-            "weight": 126,
-            "number": 3,
+            "position": "PF/C",
+            "birth_date": "1994-05-11",
+            "height": 203,
+            "weight": 112,
+            "number": 23,
             "image": "player_photos/default.jpg"
         },
         "model": "Players.player"
@@ -290,15 +272,14 @@
     {
         "pk": 18,
         "fields": {
-            "first_name": "Eric",
-            "last_name": "Dickson",
+            "first_name": "William",
+            "last_name": "Quinones",
             "team": 1,
-            "is_captain": "False",
-            "position": "PF",
-            "birth_date": "1981-06-12",
-            "height": 211,
-            "weight": 87,
-            "number": 40,
+            "position": "SF",
+            "birth_date": "1994-01-22",
+            "height": 187,
+            "weight": 108,
+            "number": 58,
             "image": "player_photos/default.jpg"
         },
         "model": "Players.player"
@@ -306,15 +287,14 @@
     {
         "pk": 19,
         "fields": {
-            "first_name": "Michael",
-            "last_name": "Plascencia",
+            "first_name": "Ricky",
+            "last_name": "Reed",
             "team": 1,
-            "is_captain": "False",
-            "position": "PF",
-            "birth_date": "1990-06-20",
-            "height": 177,
-            "weight": 106,
-            "number": 3,
+            "position": "C",
+            "birth_date": "1983-07-06",
+            "height": 178,
+            "weight": 84,
+            "number": 46,
             "image": "player_photos/default.jpg"
         },
         "model": "Players.player"
@@ -322,15 +302,14 @@
     {
         "pk": 20,
         "fields": {
-            "first_name": "Frank",
-            "last_name": "Schmal",
+            "first_name": "Phillip",
+            "last_name": "Morris",
             "team": 2,
-            "is_captain": "True",
-            "position": "PF",
-            "birth_date": "1985-01-19",
-            "height": 202,
-            "weight": 86,
-            "number": 16,
+            "position": "C",
+            "birth_date": "1991-02-20",
+            "height": 197,
+            "weight": 90,
+            "number": 23,
             "image": "player_photos/default.jpg"
         },
         "model": "Players.player"
@@ -338,15 +317,14 @@
     {
         "pk": 21,
         "fields": {
-            "first_name": "David",
-            "last_name": "Folk",
+            "first_name": "Alan",
+            "last_name": "Janes",
             "team": 2,
-            "is_captain": "False",
             "position": "PF/C",
-            "birth_date": "1995-11-02",
-            "height": 179,
-            "weight": 80,
-            "number": 7,
+            "birth_date": "1987-06-18",
+            "height": 206,
+            "weight": 81,
+            "number": 8,
             "image": "player_photos/default.jpg"
         },
         "model": "Players.player"
@@ -354,15 +332,14 @@
     {
         "pk": 22,
         "fields": {
-            "first_name": "Oscar",
-            "last_name": "Greenberg",
+            "first_name": "Vincent",
+            "last_name": "Amberg",
             "team": 2,
-            "is_captain": "False",
-            "position": "SF",
-            "birth_date": "1984-03-12",
-            "height": 180,
-            "weight": 114,
-            "number": 76,
+            "position": "SG",
+            "birth_date": "1980-08-25",
+            "height": 212,
+            "weight": 98,
+            "number": 67,
             "image": "player_photos/default.jpg"
         },
         "model": "Players.player"
@@ -370,15 +347,14 @@
     {
         "pk": 23,
         "fields": {
-            "first_name": "Scott",
-            "last_name": "Jones",
+            "first_name": "Juan",
+            "last_name": "Jenkins",
             "team": 2,
-            "is_captain": "False",
-            "position": "PF/C",
-            "birth_date": "1987-12-17",
-            "height": 220,
-            "weight": 109,
-            "number": 14,
+            "position": "PF",
+            "birth_date": "1991-06-12",
+            "height": 189,
+            "weight": 111,
+            "number": 62,
             "image": "player_photos/default.jpg"
         },
         "model": "Players.player"
@@ -386,15 +362,14 @@
     {
         "pk": 24,
         "fields": {
-            "first_name": "Quincy",
-            "last_name": "Price",
+            "first_name": "Timothy",
+            "last_name": "Ralston",
             "team": 2,
-            "is_captain": "False",
-            "position": "SF",
-            "birth_date": "1995-01-22",
-            "height": 210,
-            "weight": 131,
-            "number": 83,
+            "position": "SG/SF",
+            "birth_date": "1995-06-26",
+            "height": 197,
+            "weight": 125,
+            "number": 55,
             "image": "player_photos/default.jpg"
         },
         "model": "Players.player"
@@ -402,15 +377,14 @@
     {
         "pk": 25,
         "fields": {
-            "first_name": "John",
-            "last_name": "Stewart",
+            "first_name": "Henry",
+            "last_name": "Gonzalez",
             "team": 2,
-            "is_captain": "False",
-            "position": "PF",
-            "birth_date": "1990-07-26",
-            "height": 176,
-            "weight": 142,
-            "number": 56,
+            "position": "SG/SF",
+            "birth_date": "1994-05-29",
+            "height": 177,
+            "weight": 101,
+            "number": 96,
             "image": "player_photos/default.jpg"
         },
         "model": "Players.player"
@@ -418,15 +392,14 @@
     {
         "pk": 26,
         "fields": {
-            "first_name": "Justin",
-            "last_name": "Player",
+            "first_name": "Milford",
+            "last_name": "Castro",
             "team": 2,
-            "is_captain": "False",
-            "position": "PG/SG",
-            "birth_date": "1985-11-08",
-            "height": 196,
-            "weight": 131,
-            "number": 78,
+            "position": "PF",
+            "birth_date": "1992-07-08",
+            "height": 220,
+            "weight": 90,
+            "number": 71,
             "image": "player_photos/default.jpg"
         },
         "model": "Players.player"
@@ -434,15 +407,14 @@
     {
         "pk": 27,
         "fields": {
-            "first_name": "Jonathan",
-            "last_name": "Quan",
+            "first_name": "Efrain",
+            "last_name": "Davila",
             "team": 2,
-            "is_captain": "False",
-            "position": "PF/C",
-            "birth_date": "1980-07-24",
-            "height": 203,
-            "weight": 143,
-            "number": 11,
+            "position": "SF",
+            "birth_date": "1988-01-05",
+            "height": 221,
+            "weight": 96,
+            "number": 83,
             "image": "player_photos/default.jpg"
         },
         "model": "Players.player"
@@ -450,15 +422,14 @@
     {
         "pk": 28,
         "fields": {
-            "first_name": "Allen",
-            "last_name": "Lent",
+            "first_name": "Robert",
+            "last_name": "Hernandez",
             "team": 2,
-            "is_captain": "False",
-            "position": "SG/SF",
-            "birth_date": "1993-11-30",
-            "height": 188,
-            "weight": 141,
-            "number": 89,
+            "position": "PG/SG",
+            "birth_date": "1992-07-23",
+            "height": 202,
+            "weight": 90,
+            "number": 85,
             "image": "player_photos/default.jpg"
         },
         "model": "Players.player"
@@ -466,15 +437,14 @@
     {
         "pk": 29,
         "fields": {
-            "first_name": "Anthony",
-            "last_name": "Murphy",
+            "first_name": "Michael",
+            "last_name": "Beckman",
             "team": 2,
-            "is_captain": "False",
-            "position": "C",
-            "birth_date": "1993-05-05",
-            "height": 188,
-            "weight": 149,
-            "number": 81,
+            "position": "SG/SF",
+            "birth_date": "1981-12-16",
+            "height": 210,
+            "weight": 89,
+            "number": 30,
             "image": "player_photos/default.jpg"
         },
         "model": "Players.player"
@@ -482,15 +452,14 @@
     {
         "pk": 30,
         "fields": {
-            "first_name": "Alfredo",
-            "last_name": "Fletcher",
+            "first_name": "Nicholas",
+            "last_name": "Haggerty",
             "team": 3,
-            "is_captain": "True",
-            "position": "SG/SF",
-            "birth_date": "1993-07-26",
-            "height": 209,
-            "weight": 84,
-            "number": 76,
+            "position": "PF",
+            "birth_date": "1993-11-03",
+            "height": 215,
+            "weight": 114,
+            "number": 40,
             "image": "player_photos/default.jpg"
         },
         "model": "Players.player"
@@ -498,15 +467,14 @@
     {
         "pk": 31,
         "fields": {
-            "first_name": "Gregory",
-            "last_name": "Martinez",
+            "first_name": "John",
+            "last_name": "Glover",
             "team": 3,
-            "is_captain": "False",
-            "position": "PG/SG",
-            "birth_date": "1986-11-23",
+            "position": "SG/SF",
+            "birth_date": "1995-12-14",
             "height": 220,
-            "weight": 89,
-            "number": 85,
+            "weight": 87,
+            "number": 60,
             "image": "player_photos/default.jpg"
         },
         "model": "Players.player"
@@ -514,15 +482,14 @@
     {
         "pk": 32,
         "fields": {
-            "first_name": "David",
-            "last_name": "Kleinschmidt",
+            "first_name": "Billy",
+            "last_name": "Trinklein",
             "team": 3,
-            "is_captain": "False",
-            "position": "C",
-            "birth_date": "1989-10-02",
-            "height": 221,
-            "weight": 147,
-            "number": 63,
+            "position": "PF/C",
+            "birth_date": "1982-04-17",
+            "height": 215,
+            "weight": 112,
+            "number": 73,
             "image": "player_photos/default.jpg"
         },
         "model": "Players.player"
@@ -530,15 +497,14 @@
     {
         "pk": 33,
         "fields": {
-            "first_name": "Richard",
-            "last_name": "Rooney",
+            "first_name": "Joseph",
+            "last_name": "Blake",
             "team": 3,
-            "is_captain": "False",
             "position": "PF/C",
-            "birth_date": "1994-02-04",
-            "height": 179,
-            "weight": 117,
-            "number": 46,
+            "birth_date": "1993-02-11",
+            "height": 209,
+            "weight": 147,
+            "number": 76,
             "image": "player_photos/default.jpg"
         },
         "model": "Players.player"
@@ -546,15 +512,14 @@
     {
         "pk": 34,
         "fields": {
-            "first_name": "Joseph",
-            "last_name": "Prieto",
+            "first_name": "Christopher",
+            "last_name": "Alva",
             "team": 3,
-            "is_captain": "False",
-            "position": "PF/C",
-            "birth_date": "1995-07-24",
-            "height": 212,
-            "weight": 98,
-            "number": 54,
+            "position": "C",
+            "birth_date": "1991-01-25",
+            "height": 199,
+            "weight": 90,
+            "number": 89,
             "image": "player_photos/default.jpg"
         },
         "model": "Players.player"
@@ -562,15 +527,14 @@
     {
         "pk": 35,
         "fields": {
-            "first_name": "Glen",
-            "last_name": "Spencer",
+            "first_name": "Steven",
+            "last_name": "Edwards",
             "team": 3,
-            "is_captain": "False",
-            "position": "PF/C",
-            "birth_date": "1982-01-27",
-            "height": 193,
-            "weight": 88,
-            "number": 30,
+            "position": "PF",
+            "birth_date": "1984-11-18",
+            "height": 201,
+            "weight": 86,
+            "number": 97,
             "image": "player_photos/default.jpg"
         },
         "model": "Players.player"
@@ -578,15 +542,14 @@
     {
         "pk": 36,
         "fields": {
-            "first_name": "Daniel",
-            "last_name": "Phillips",
+            "first_name": "Albert",
+            "last_name": "Rose",
             "team": 3,
-            "is_captain": "False",
             "position": "SG",
-            "birth_date": "1994-03-31",
-            "height": 196,
-            "weight": 128,
-            "number": 70,
+            "birth_date": "1986-07-30",
+            "height": 181,
+            "weight": 111,
+            "number": 10,
             "image": "player_photos/default.jpg"
         },
         "model": "Players.player"
@@ -594,15 +557,14 @@
     {
         "pk": 37,
         "fields": {
-            "first_name": "Andrew",
-            "last_name": "Graham",
+            "first_name": "Dennis",
+            "last_name": "Jowers",
             "team": 3,
-            "is_captain": "False",
-            "position": "SG",
-            "birth_date": "1984-11-21",
-            "height": 207,
-            "weight": 107,
-            "number": 80,
+            "position": "PG/SG",
+            "birth_date": "1992-03-18",
+            "height": 195,
+            "weight": 139,
+            "number": 47,
             "image": "player_photos/default.jpg"
         },
         "model": "Players.player"
@@ -610,15 +572,14 @@
     {
         "pk": 38,
         "fields": {
-            "first_name": "Nicholas",
-            "last_name": "Vollstedt",
+            "first_name": "Billy",
+            "last_name": "Elkins",
             "team": 3,
-            "is_captain": "False",
-            "position": "PF/C",
-            "birth_date": "1986-05-01",
-            "height": 205,
-            "weight": 96,
-            "number": 64,
+            "position": "PG",
+            "birth_date": "1988-03-01",
+            "height": 197,
+            "weight": 120,
+            "number": 55,
             "image": "player_photos/default.jpg"
         },
         "model": "Players.player"
@@ -626,15 +587,14 @@
     {
         "pk": 39,
         "fields": {
-            "first_name": "Neil",
-            "last_name": "Palmer",
+            "first_name": "Keith",
+            "last_name": "Lanz",
             "team": 3,
-            "is_captain": "False",
-            "position": "PF/C",
-            "birth_date": "1986-08-26",
-            "height": 181,
-            "weight": 145,
-            "number": 19,
+            "position": "C",
+            "birth_date": "1988-08-12",
+            "height": 196,
+            "weight": 137,
+            "number": 29,
             "image": "player_photos/default.jpg"
         },
         "model": "Players.player"
@@ -642,15 +602,14 @@
     {
         "pk": 40,
         "fields": {
-            "first_name": "Charles",
-            "last_name": "Farrell",
+            "first_name": "Donald",
+            "last_name": "Reich",
             "team": 4,
-            "is_captain": "True",
-            "position": "SG/SF",
-            "birth_date": "1985-09-10",
-            "height": 180,
-            "weight": 113,
-            "number": 1,
+            "position": "PG/SG",
+            "birth_date": "1982-06-27",
+            "height": 183,
+            "weight": 105,
+            "number": 76,
             "image": "player_photos/default.jpg"
         },
         "model": "Players.player"
@@ -658,15 +617,14 @@
     {
         "pk": 41,
         "fields": {
-            "first_name": "Brian",
-            "last_name": "Sims",
+            "first_name": "Victor",
+            "last_name": "Kelly",
             "team": 4,
-            "is_captain": "False",
-            "position": "C",
-            "birth_date": "1990-11-12",
-            "height": 189,
-            "weight": 135,
-            "number": 72,
+            "position": "SF",
+            "birth_date": "1983-04-26",
+            "height": 176,
+            "weight": 93,
+            "number": 75,
             "image": "player_photos/default.jpg"
         },
         "model": "Players.player"
@@ -674,15 +632,14 @@
     {
         "pk": 42,
         "fields": {
-            "first_name": "Harold",
-            "last_name": "Smith",
+            "first_name": "Scott",
+            "last_name": "Mcentire",
             "team": 4,
-            "is_captain": "False",
-            "position": "PG/SG",
-            "birth_date": "1988-06-24",
-            "height": 191,
-            "weight": 118,
-            "number": 92,
+            "position": "PG",
+            "birth_date": "1988-05-13",
+            "height": 184,
+            "weight": 141,
+            "number": 97,
             "image": "player_photos/default.jpg"
         },
         "model": "Players.player"
@@ -690,15 +647,14 @@
     {
         "pk": 43,
         "fields": {
-            "first_name": "Wally",
-            "last_name": "Deacon",
+            "first_name": "Douglas",
+            "last_name": "Berger",
             "team": 4,
-            "is_captain": "False",
-            "position": "SF",
-            "birth_date": "1990-01-27",
-            "height": 210,
-            "weight": 150,
-            "number": 73,
+            "position": "PG/SG",
+            "birth_date": "1981-05-06",
+            "height": 176,
+            "weight": 136,
+            "number": 32,
             "image": "player_photos/default.jpg"
         },
         "model": "Players.player"
@@ -706,15 +662,14 @@
     {
         "pk": 44,
         "fields": {
-            "first_name": "Wesley",
-            "last_name": "Godinho",
+            "first_name": "Darin",
+            "last_name": "Johnson",
             "team": 4,
-            "is_captain": "False",
             "position": "SF",
-            "birth_date": "1986-06-08",
-            "height": 176,
-            "weight": 101,
-            "number": 57,
+            "birth_date": "1982-10-03",
+            "height": 195,
+            "weight": 113,
+            "number": 36,
             "image": "player_photos/default.jpg"
         },
         "model": "Players.player"
@@ -722,15 +677,14 @@
     {
         "pk": 45,
         "fields": {
-            "first_name": "Jim",
-            "last_name": "Castellano",
+            "first_name": "Mark",
+            "last_name": "Enderle",
             "team": 4,
-            "is_captain": "False",
-            "position": "PG/SG",
-            "birth_date": "1994-12-25",
-            "height": 218,
-            "weight": 127,
-            "number": 7,
+            "position": "PG",
+            "birth_date": "1981-09-24",
+            "height": 211,
+            "weight": 122,
+            "number": 30,
             "image": "player_photos/default.jpg"
         },
         "model": "Players.player"
@@ -738,15 +692,14 @@
     {
         "pk": 46,
         "fields": {
-            "first_name": "Douglas",
-            "last_name": "Niemi",
+            "first_name": "Jeffrey",
+            "last_name": "Patel",
             "team": 4,
-            "is_captain": "False",
-            "position": "SF/PF",
-            "birth_date": "1983-04-11",
-            "height": 183,
-            "weight": 126,
-            "number": 81,
+            "position": "PF",
+            "birth_date": "1982-11-03",
+            "height": 209,
+            "weight": 131,
+            "number": 38,
             "image": "player_photos/default.jpg"
         },
         "model": "Players.player"
@@ -754,15 +707,14 @@
     {
         "pk": 47,
         "fields": {
-            "first_name": "Brad",
-            "last_name": "Lewis",
+            "first_name": "Jesus",
+            "last_name": "Glenn",
             "team": 4,
-            "is_captain": "False",
-            "position": "SG",
-            "birth_date": "1995-02-18",
-            "height": 180,
-            "weight": 149,
-            "number": 26,
+            "position": "SF/PF",
+            "birth_date": "1995-01-28",
+            "height": 211,
+            "weight": 84,
+            "number": 10,
             "image": "player_photos/default.jpg"
         },
         "model": "Players.player"
@@ -770,15 +722,14 @@
     {
         "pk": 48,
         "fields": {
-            "first_name": "Anthony",
-            "last_name": "Zocklein",
+            "first_name": "Carlos",
+            "last_name": "Deibert",
             "team": 4,
-            "is_captain": "False",
-            "position": "PF",
-            "birth_date": "1980-12-16",
-            "height": 205,
-            "weight": 149,
-            "number": 34,
+            "position": "SF/PF",
+            "birth_date": "1982-07-07",
+            "height": 191,
+            "weight": 81,
+            "number": 24,
             "image": "player_photos/default.jpg"
         },
         "model": "Players.player"
@@ -786,15 +737,14 @@
     {
         "pk": 49,
         "fields": {
-            "first_name": "Archie",
-            "last_name": "Rocchio",
+            "first_name": "Richard",
+            "last_name": "Evans",
             "team": 4,
-            "is_captain": "False",
-            "position": "SG",
-            "birth_date": "1983-01-29",
-            "height": 217,
-            "weight": 118,
-            "number": 7,
+            "position": "SG/SF",
+            "birth_date": "1982-12-23",
+            "height": 182,
+            "weight": 96,
+            "number": 87,
             "image": "player_photos/default.jpg"
         },
         "model": "Players.player"
@@ -802,15 +752,14 @@
     {
         "pk": 50,
         "fields": {
-            "first_name": "Timothy",
-            "last_name": "Soto",
+            "first_name": "Clarence",
+            "last_name": "Ross",
             "team": 5,
-            "is_captain": "True",
-            "position": "SF",
-            "birth_date": "1993-09-22",
-            "height": 199,
-            "weight": 135,
-            "number": 56,
+            "position": "SG/SF",
+            "birth_date": "1993-08-22",
+            "height": 194,
+            "weight": 128,
+            "number": 84,
             "image": "player_photos/default.jpg"
         },
         "model": "Players.player"
@@ -818,15 +767,14 @@
     {
         "pk": 51,
         "fields": {
-            "first_name": "Antonio",
-            "last_name": "Alexander",
+            "first_name": "Nicholas",
+            "last_name": "Trahan",
             "team": 5,
-            "is_captain": "False",
-            "position": "SF",
-            "birth_date": "1983-12-30",
-            "height": 180,
-            "weight": 131,
-            "number": 47,
+            "position": "SF/PF",
+            "birth_date": "1992-05-02",
+            "height": 201,
+            "weight": 87,
+            "number": 74,
             "image": "player_photos/default.jpg"
         },
         "model": "Players.player"
@@ -834,15 +782,14 @@
     {
         "pk": 52,
         "fields": {
-            "first_name": "Kenneth",
-            "last_name": "Garcia",
+            "first_name": "Richard",
+            "last_name": "Mccloskey",
             "team": 5,
-            "is_captain": "False",
-            "position": "C",
-            "birth_date": "1982-01-17",
-            "height": 192,
-            "weight": 131,
-            "number": 32,
+            "position": "SG/SF",
+            "birth_date": "1995-06-27",
+            "height": 207,
+            "weight": 89,
+            "number": 48,
             "image": "player_photos/default.jpg"
         },
         "model": "Players.player"
@@ -850,15 +797,14 @@
     {
         "pk": 53,
         "fields": {
-            "first_name": "Darryl",
-            "last_name": "Rush",
+            "first_name": "Russell",
+            "last_name": "Shipp",
             "team": 5,
-            "is_captain": "False",
-            "position": "SG",
-            "birth_date": "1989-06-03",
-            "height": 185,
-            "weight": 145,
-            "number": 7,
+            "position": "PG/SG",
+            "birth_date": "1995-12-22",
+            "height": 175,
+            "weight": 143,
+            "number": 52,
             "image": "player_photos/default.jpg"
         },
         "model": "Players.player"
@@ -866,15 +812,14 @@
     {
         "pk": 54,
         "fields": {
-            "first_name": "Agustin",
-            "last_name": "Seawood",
+            "first_name": "Curtis",
+            "last_name": "Hibbard",
             "team": 5,
-            "is_captain": "False",
-            "position": "C",
-            "birth_date": "1985-01-27",
-            "height": 200,
-            "weight": 106,
-            "number": 68,
+            "position": "PG",
+            "birth_date": "1982-10-15",
+            "height": 190,
+            "weight": 80,
+            "number": 80,
             "image": "player_photos/default.jpg"
         },
         "model": "Players.player"
@@ -882,15 +827,14 @@
     {
         "pk": 55,
         "fields": {
-            "first_name": "Albert",
-            "last_name": "Howe",
+            "first_name": "Maurice",
+            "last_name": "Hunt",
             "team": 5,
-            "is_captain": "False",
-            "position": "PG",
-            "birth_date": "1984-01-07",
-            "height": 207,
-            "weight": 114,
-            "number": 16,
+            "position": "PF",
+            "birth_date": "1987-12-14",
+            "height": 178,
+            "weight": 135,
+            "number": 57,
             "image": "player_photos/default.jpg"
         },
         "model": "Players.player"
@@ -898,15 +842,14 @@
     {
         "pk": 56,
         "fields": {
-            "first_name": "Bryan",
-            "last_name": "Weisser",
+            "first_name": "Glenn",
+            "last_name": "Bell",
             "team": 5,
-            "is_captain": "False",
-            "position": "SF",
-            "birth_date": "1988-01-10",
-            "height": 208,
-            "weight": 107,
-            "number": 77,
+            "position": "PF",
+            "birth_date": "1990-03-06",
+            "height": 191,
+            "weight": 135,
+            "number": 1,
             "image": "player_photos/default.jpg"
         },
         "model": "Players.player"
@@ -914,15 +857,14 @@
     {
         "pk": 57,
         "fields": {
-            "first_name": "Peter",
-            "last_name": "Wilson",
+            "first_name": "Jerry",
+            "last_name": "Hendry",
             "team": 5,
-            "is_captain": "False",
             "position": "SF/PF",
-            "birth_date": "1988-08-13",
-            "height": 183,
-            "weight": 92,
-            "number": 43,
+            "birth_date": "1992-12-20",
+            "height": 214,
+            "weight": 94,
+            "number": 58,
             "image": "player_photos/default.jpg"
         },
         "model": "Players.player"
@@ -930,15 +872,14 @@
     {
         "pk": 58,
         "fields": {
-            "first_name": "James",
-            "last_name": "Yanez",
+            "first_name": "Rafael",
+            "last_name": "Jefferson",
             "team": 5,
-            "is_captain": "False",
-            "position": "PG",
-            "birth_date": "1990-05-30",
+            "position": "PF/C",
+            "birth_date": "1993-04-09",
             "height": 207,
-            "weight": 144,
-            "number": 47,
+            "weight": 118,
+            "number": 35,
             "image": "player_photos/default.jpg"
         },
         "model": "Players.player"
@@ -946,15 +887,14 @@
     {
         "pk": 59,
         "fields": {
-            "first_name": "William",
-            "last_name": "Kuhn",
+            "first_name": "Danny",
+            "last_name": "Cote",
             "team": 5,
-            "is_captain": "False",
-            "position": "PG/SG",
-            "birth_date": "1993-09-04",
-            "height": 198,
-            "weight": 111,
-            "number": 85,
+            "position": "PF/C",
+            "birth_date": "1990-04-06",
+            "height": 201,
+            "weight": 91,
+            "number": 97,
             "image": "player_photos/default.jpg"
         },
         "model": "Players.player"
@@ -962,15 +902,14 @@
     {
         "pk": 60,
         "fields": {
-            "first_name": "Robert",
-            "last_name": "Collins",
+            "first_name": "David",
+            "last_name": "Shaw",
             "team": 6,
-            "is_captain": "True",
             "position": "PF/C",
-            "birth_date": "1992-02-18",
-            "height": 178,
-            "weight": 110,
-            "number": 79,
+            "birth_date": "1989-05-26",
+            "height": 203,
+            "weight": 146,
+            "number": 72,
             "image": "player_photos/default.jpg"
         },
         "model": "Players.player"
@@ -978,15 +917,14 @@
     {
         "pk": 61,
         "fields": {
-            "first_name": "Gustavo",
-            "last_name": "Smithson",
+            "first_name": "Bobby",
+            "last_name": "Patterson",
             "team": 6,
-            "is_captain": "False",
-            "position": "PF",
-            "birth_date": "1992-11-04",
-            "height": 219,
-            "weight": 132,
-            "number": 3,
+            "position": "PG",
+            "birth_date": "1992-11-20",
+            "height": 216,
+            "weight": 112,
+            "number": 69,
             "image": "player_photos/default.jpg"
         },
         "model": "Players.player"
@@ -994,15 +932,14 @@
     {
         "pk": 62,
         "fields": {
-            "first_name": "Ronnie",
-            "last_name": "Shuford",
+            "first_name": "Demarcus",
+            "last_name": "Alvarez",
             "team": 6,
-            "is_captain": "False",
-            "position": "PG/SG",
-            "birth_date": "1988-06-17",
-            "height": 197,
-            "weight": 80,
-            "number": 30,
+            "position": "PF/C",
+            "birth_date": "1981-12-05",
+            "height": 182,
+            "weight": 150,
+            "number": 33,
             "image": "player_photos/default.jpg"
         },
         "model": "Players.player"
@@ -1010,15 +947,14 @@
     {
         "pk": 63,
         "fields": {
-            "first_name": "Charles",
-            "last_name": "Fields",
+            "first_name": "Joseph",
+            "last_name": "Shook",
             "team": 6,
-            "is_captain": "False",
-            "position": "PF",
-            "birth_date": "1985-03-21",
-            "height": 201,
-            "weight": 107,
-            "number": 15,
+            "position": "SF",
+            "birth_date": "1983-08-17",
+            "height": 182,
+            "weight": 129,
+            "number": 53,
             "image": "player_photos/default.jpg"
         },
         "model": "Players.player"
@@ -1026,15 +962,14 @@
     {
         "pk": 64,
         "fields": {
-            "first_name": "George",
-            "last_name": "Rose",
+            "first_name": "Richard",
+            "last_name": "Laird",
             "team": 6,
-            "is_captain": "False",
             "position": "C",
-            "birth_date": "1986-06-16",
-            "height": 193,
-            "weight": 102,
-            "number": 70,
+            "birth_date": "1982-07-02",
+            "height": 182,
+            "weight": 107,
+            "number": 19,
             "image": "player_photos/default.jpg"
         },
         "model": "Players.player"
@@ -1042,15 +977,14 @@
     {
         "pk": 65,
         "fields": {
-            "first_name": "William",
-            "last_name": "Kindle",
+            "first_name": "Austin",
+            "last_name": "Lytell",
             "team": 6,
-            "is_captain": "False",
-            "position": "SF/PF",
-            "birth_date": "1991-02-02",
-            "height": 214,
-            "weight": 108,
-            "number": 72,
+            "position": "C",
+            "birth_date": "1984-04-23",
+            "height": 199,
+            "weight": 132,
+            "number": 86,
             "image": "player_photos/default.jpg"
         },
         "model": "Players.player"
@@ -1058,15 +992,14 @@
     {
         "pk": 66,
         "fields": {
-            "first_name": "William",
-            "last_name": "Colbert",
+            "first_name": "Tyler",
+            "last_name": "Yancy",
             "team": 6,
-            "is_captain": "False",
-            "position": "PF/C",
-            "birth_date": "1986-02-23",
-            "height": 177,
-            "weight": 151,
-            "number": 42,
+            "position": "SF",
+            "birth_date": "1983-11-12",
+            "height": 193,
+            "weight": 145,
+            "number": 97,
             "image": "player_photos/default.jpg"
         },
         "model": "Players.player"
@@ -1074,15 +1007,14 @@
     {
         "pk": 67,
         "fields": {
-            "first_name": "Patrick",
-            "last_name": "Combs",
+            "first_name": "Jose",
+            "last_name": "Gatewood",
             "team": 6,
-            "is_captain": "False",
             "position": "SF",
-            "birth_date": "1981-03-15",
-            "height": 199,
-            "weight": 147,
-            "number": 35,
+            "birth_date": "1995-12-27",
+            "height": 214,
+            "weight": 144,
+            "number": 8,
             "image": "player_photos/default.jpg"
         },
         "model": "Players.player"
@@ -1090,15 +1022,14 @@
     {
         "pk": 68,
         "fields": {
-            "first_name": "James",
-            "last_name": "Meadows",
+            "first_name": "David",
+            "last_name": "Torres",
             "team": 6,
-            "is_captain": "False",
-            "position": "SG/SF",
-            "birth_date": "1995-01-06",
-            "height": 215,
-            "weight": 115,
-            "number": 85,
+            "position": "PF",
+            "birth_date": "1983-07-29",
+            "height": 180,
+            "weight": 130,
+            "number": 31,
             "image": "player_photos/default.jpg"
         },
         "model": "Players.player"
@@ -1106,15 +1037,14 @@
     {
         "pk": 69,
         "fields": {
-            "first_name": "Joe",
-            "last_name": "Harper",
+            "first_name": "Paul",
+            "last_name": "Kanas",
             "team": 6,
-            "is_captain": "False",
-            "position": "SF/PF",
-            "birth_date": "1988-06-25",
-            "height": 182,
-            "weight": 124,
-            "number": 5,
+            "position": "PF/C",
+            "birth_date": "1993-11-01",
+            "height": 202,
+            "weight": 140,
+            "number": 85,
             "image": "player_photos/default.jpg"
         },
         "model": "Players.player"
@@ -1122,15 +1052,14 @@
     {
         "pk": 70,
         "fields": {
-            "first_name": "Eric",
-            "last_name": "Evans",
+            "first_name": "Sheldon",
+            "last_name": "Mcgovern",
             "team": 7,
-            "is_captain": "True",
-            "position": "C",
-            "birth_date": "1985-11-28",
-            "height": 181,
-            "weight": 134,
-            "number": 42,
+            "position": "SF/PF",
+            "birth_date": "1993-10-12",
+            "height": 221,
+            "weight": 93,
+            "number": 91,
             "image": "player_photos/default.jpg"
         },
         "model": "Players.player"
@@ -1138,15 +1067,14 @@
     {
         "pk": 71,
         "fields": {
-            "first_name": "Albert",
-            "last_name": "Fleming",
+            "first_name": "Daniel",
+            "last_name": "Gaines",
             "team": 7,
-            "is_captain": "False",
-            "position": "SF",
-            "birth_date": "1987-10-03",
-            "height": 214,
-            "weight": 133,
-            "number": 20,
+            "position": "C",
+            "birth_date": "1983-07-08",
+            "height": 186,
+            "weight": 106,
+            "number": 15,
             "image": "player_photos/default.jpg"
         },
         "model": "Players.player"
@@ -1154,15 +1082,14 @@
     {
         "pk": 72,
         "fields": {
-            "first_name": "Jacob",
-            "last_name": "Montoya",
+            "first_name": "Terrance",
+            "last_name": "Anthony",
             "team": 7,
-            "is_captain": "False",
-            "position": "SG",
-            "birth_date": "1988-01-04",
-            "height": 183,
-            "weight": 140,
-            "number": 58,
+            "position": "SF",
+            "birth_date": "1991-01-27",
+            "height": 198,
+            "weight": 142,
+            "number": 29,
             "image": "player_photos/default.jpg"
         },
         "model": "Players.player"
@@ -1170,15 +1097,14 @@
     {
         "pk": 73,
         "fields": {
-            "first_name": "Paul",
-            "last_name": "Johnson",
+            "first_name": "David",
+            "last_name": "Eagen",
             "team": 7,
-            "is_captain": "False",
-            "position": "SG",
-            "birth_date": "1995-12-17",
-            "height": 212,
-            "weight": 109,
-            "number": 57,
+            "position": "SF/PF",
+            "birth_date": "1990-12-30",
+            "height": 195,
+            "weight": 105,
+            "number": 16,
             "image": "player_photos/default.jpg"
         },
         "model": "Players.player"
@@ -1186,15 +1112,14 @@
     {
         "pk": 74,
         "fields": {
-            "first_name": "Charles",
-            "last_name": "Fisher",
+            "first_name": "Nicholas",
+            "last_name": "Sullivan",
             "team": 7,
-            "is_captain": "False",
-            "position": "SF",
-            "birth_date": "1982-12-28",
-            "height": 197,
-            "weight": 108,
-            "number": 77,
+            "position": "PF",
+            "birth_date": "1989-10-29",
+            "height": 185,
+            "weight": 124,
+            "number": 87,
             "image": "player_photos/default.jpg"
         },
         "model": "Players.player"
@@ -1202,15 +1127,14 @@
     {
         "pk": 75,
         "fields": {
-            "first_name": "Lawrence",
-            "last_name": "Guzman",
+            "first_name": "William",
+            "last_name": "Collins",
             "team": 7,
-            "is_captain": "False",
-            "position": "SF/PF",
-            "birth_date": "1989-08-28",
-            "height": 221,
-            "weight": 119,
-            "number": 56,
+            "position": "PF/C",
+            "birth_date": "1984-10-18",
+            "height": 195,
+            "weight": 129,
+            "number": 24,
             "image": "player_photos/default.jpg"
         },
         "model": "Players.player"
@@ -1218,15 +1142,14 @@
     {
         "pk": 76,
         "fields": {
-            "first_name": "Jeffery",
-            "last_name": "Lawson",
+            "first_name": "Frank",
+            "last_name": "Gray",
             "team": 7,
-            "is_captain": "False",
-            "position": "PF",
-            "birth_date": "1993-06-07",
-            "height": 207,
-            "weight": 148,
-            "number": 24,
+            "position": "C",
+            "birth_date": "1995-10-25",
+            "height": 216,
+            "weight": 132,
+            "number": 78,
             "image": "player_photos/default.jpg"
         },
         "model": "Players.player"
@@ -1234,15 +1157,14 @@
     {
         "pk": 77,
         "fields": {
-            "first_name": "Anthony",
-            "last_name": "Jacobson",
+            "first_name": "Michael",
+            "last_name": "Moody",
             "team": 7,
-            "is_captain": "False",
-            "position": "SF",
-            "birth_date": "1991-08-23",
-            "height": 182,
-            "weight": 122,
-            "number": 78,
+            "position": "SG/SF",
+            "birth_date": "1981-06-07",
+            "height": 209,
+            "weight": 110,
+            "number": 25,
             "image": "player_photos/default.jpg"
         },
         "model": "Players.player"
@@ -1250,15 +1172,14 @@
     {
         "pk": 78,
         "fields": {
-            "first_name": "George",
-            "last_name": "Meyers",
+            "first_name": "Brenton",
+            "last_name": "Carner",
             "team": 7,
-            "is_captain": "False",
-            "position": "SF/PF",
-            "birth_date": "1980-03-09",
-            "height": 202,
-            "weight": 130,
-            "number": 100,
+            "position": "PF/C",
+            "birth_date": "1990-05-30",
+            "height": 183,
+            "weight": 144,
+            "number": 68,
             "image": "player_photos/default.jpg"
         },
         "model": "Players.player"
@@ -1266,15 +1187,14 @@
     {
         "pk": 79,
         "fields": {
-            "first_name": "Robert",
-            "last_name": "Smith",
+            "first_name": "Kevin",
+            "last_name": "Ferguson",
             "team": 7,
-            "is_captain": "False",
-            "position": "SG",
-            "birth_date": "1989-10-15",
-            "height": 211,
-            "weight": 110,
-            "number": 55,
+            "position": "C",
+            "birth_date": "1994-04-21",
+            "height": 189,
+            "weight": 85,
+            "number": 11,
             "image": "player_photos/default.jpg"
         },
         "model": "Players.player"

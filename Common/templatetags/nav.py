@@ -5,6 +5,7 @@ from Teams.models import Team
 
 register = template.Library()
 
+
 @register.inclusion_tag('nav.html', takes_context=True)
 def nav(context):
     links = [{'name': 'Home', 'url': reverse('home')},

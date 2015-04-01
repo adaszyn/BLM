@@ -15,6 +15,7 @@
         "description": "Officia pariatur voluptate aliqua do dolore velit. Labore et esse proident ut dolor Lorem nulla. Consectetur eu tempor pariatur et culpa labore eu deserunt dolore. Amet sunt aute cillum Lorem cupidatat nulla dolore adipisicing labore laboris id ut irure nostrud. Proident exercitation dolor labore sint laborum consectetur veniam labore consectetur Lorem aute ullamco dolor. Labore cillum quis culpa enim cillum. Sunt proident reprehenderit Lorem eu officia aliqua veniam amet proident.\r\n",
         "short_name": "CHI",
         "logo": "team_logos/bulls_logo.png",
+        "captain": 0,
         "coach": 0
     },
     "model": "Teams.team"
@@ -35,6 +36,7 @@
         "description": "Reprehenderit anim eiusmod occaecat enim sit. Sint magna incididunt enim labore laborum. Lorem consectetur aliquip elit enim do ex culpa Lorem aliquip qui ad anim nostrud enim. Lorem ex ex excepteur velit culpa ut sint et Lorem est Lorem.\r\n",
         "short_name": "NYK",
         "logo": "team_logos/knicks_logo.png",
+        "captain": 10,
         "coach": 1
     },
     "model": "Teams.team"
@@ -55,6 +57,7 @@
         "description": "Velit pariatur nostrud quis nisi adipisicing ea. Sint magna esse duis eu nostrud eu minim ex eiusmod sunt ea exercitation cillum commodo. Culpa irure tempor fugiat eu. Dolore enim sint ex occaecat labore ipsum consectetur commodo occaecat reprehenderit elit eiusmod. Qui cupidatat labore et amet tempor pariatur do ad tempor eu occaecat.\r\n",
         "short_name": "OKC",
         "logo": "team_logos/default.png",
+        "captain": 20,
         "coach": 2
     },
     "model": "Teams.team"
@@ -75,6 +78,7 @@
         "description": "Excepteur id do fugiat fugiat excepteur qui commodo consectetur laboris qui et esse. Sint et pariatur reprehenderit est quis deserunt aliquip. Proident magna enim non proident duis sunt est Lorem et adipisicing incididunt minim aute ipsum. Duis tempor deserunt nisi amet dolor. Deserunt reprehenderit proident enim nisi ipsum culpa aliquip labore commodo exercitation do eiusmod. Deserunt proident enim cillum voluptate voluptate labore labore aliqua.\r\n",
         "short_name": "SAS",
         "logo": "team_logos/default.png",
+        "captain": 30,
         "coach": 3
     },
     "model": "Teams.team"
@@ -95,6 +99,7 @@
         "description": "Est ex sunt enim commodo enim incididunt. Deserunt ad veniam laborum sunt incididunt nostrud anim consectetur sit consectetur ad. Consequat fugiat aliquip deserunt pariatur do consequat eiusmod. Sint reprehenderit pariatur non quis sit adipisicing sint occaecat ad. Incididunt est commodo aliqua sint occaecat. Cillum ut nostrud magna ea reprehenderit proident aliqua cupidatat ipsum esse commodo proident. Ullamco anim id mollit aute irure cupidatat est ea magna elit pariatur aliquip sunt.\r\n",
         "short_name": "ATL",
         "logo": "team_logos/default.png",
+        "captain": 40,
         "coach": 4
     },
     "model": "Teams.team"
@@ -115,6 +120,7 @@
         "description": "Id officia voluptate quis consequat ut labore id voluptate enim. Ea proident aliquip aliquip in adipisicing tempor magna commodo sunt ad quis laboris. Est eiusmod nisi aliqua nisi ullamco dolore elit nostrud quis velit cillum culpa irure. Anim voluptate ut tempor eiusmod anim magna. Sit culpa commodo amet voluptate cupidatat dolore in elit irure dolor consectetur deserunt. Excepteur eiusmod pariatur est nostrud mollit ut culpa do ipsum dolore labore ullamco nulla. Occaecat pariatur magna ut exercitation magna et duis non nulla tempor veniam sint ipsum.\r\n",
         "short_name": "DAL",
         "logo": "team_logos/default.png",
+        "captain": 50,
         "coach": 5
     },
     "model": "Teams.team"
@@ -135,6 +141,7 @@
         "description": "",
         "short_name": "BOS",
         "logo": "team_logos/default.png",
+        "captain": 60,
         "coach": 6
     },
     "model": "Teams.team"
@@ -155,6 +162,7 @@
         "description": "",
         "short_name": "MEM",
         "logo": "team_logos/default.png",
+        "captain": 70,
         "coach": 7
     },
     "model": "Teams.team"
